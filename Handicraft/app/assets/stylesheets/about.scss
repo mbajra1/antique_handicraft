@@ -1,0 +1,27 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+
+  background: #E3DFD7;
+}
+#heading {
+  background: #EF6555;
+  padding: 10px;
+  margin-bottom: 1px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #E3DFD7;
+  text-align: center;
+
+}
+
+p{
+
+  font-size: 20px;
+  font-family: "Lucida Grande", "Bitstream Vera Sans";
+  color:#253E66;
+  text-align: center;
+  margin:10px;
+
+}
