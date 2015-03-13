@@ -20,3 +20,9 @@ Product.create(product_id:'JP01',name:'Brass Double Dorje',description:%{A doubl
 
 Product.create(product_id:'JP02',name:'Medicine Buddha Pendant',description:%{Yakushi (the Medicine Buddha) is the Bodhisattva doctor. He holds a medicine jar in his hand and is attended by twelve gods each of whom represents one of his twelve vows. The main object of his appearance among us is to cure us of ignorance, which is the most fundamental of all the ills the flesh is heir to},image_url:'buddha.jpg',category:'Jewellery',subcategory:'Pendants',product_condition:'New',price:5.00)
 
+
+Customer.delete_all
+
+Customer.create(customer_id:"cid1", password:"ruby", customer_name:'vamshi', customer_lastname:'vkorlepara', address:'6914 Taylor Ave, Baltimore, MD, 21230', email_address:'vkorlepara@gmail.com', seller_id:nil)
+Customer.create(customer_id:"cid2", password:"ruby", customer_name:'manish', customer_lastname:'bajracharya', address:'1200 York Rd, Baltimore, MD, 21230', email_address:'mbajra@gmail.com', seller_id:nil)
+Customer.create(customer_id:"cid3", password:"ruby", customer_name:'sameer', customer_lastname:'bharati', address:'6914 burke Rd, Baltimore, MD, 21230', email_address:'sbharati@gmail.com', seller_id:nil)
