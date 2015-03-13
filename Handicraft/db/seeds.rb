@@ -23,6 +23,7 @@ Product.create(product_id:'JP02',name:'Medicine Buddha Pendant',description:%{Ya
 
 Customer.delete_all
 
-Customer.create(customer_id:"cid1", password:"ruby", customer_name:'vamshi', customer_lastname:'vkorlepara', address:'6914 Taylor Ave, Baltimore, MD, 21230', email_address:'vkorlepara@gmail.com', seller_id:nil)
-Customer.create(customer_id:"cid2", password:"ruby", customer_name:'manish', customer_lastname:'bajracharya', address:'1200 York Rd, Baltimore, MD, 21230', email_address:'mbajra@gmail.com', seller_id:nil)
-Customer.create(customer_id:"cid3", password:"ruby", customer_name:'sameer', customer_lastname:'bharati', address:'6914 burke Rd, Baltimore, MD, 21230', email_address:'sbharati@gmail.com', seller_id:nil)
+Customer.create(customer_id:"cid1", password:"ruby", customer_firstname:'vamshi', customer_lastname:'vkorlepara', address:'6914 Taylor Ave, Baltimore, MD, 21230', email_address:'vkorlepara@gmail.com', seller_id:nil)
+Customer.create(customer_id:"cid2", password:"ruby", customer_firstname:'manish', customer_lastname:'bajracharya', address:'1200 York Rd, Baltimore, MD, 21230', email_address:'mbajra@gmail.com', seller_id:nil)
+Customer.create(customer_id:"cid3", password:"ruby", customer_firstname:'sameer', customer_lastname:'bharati', address:'6914 burke Rd, Baltimore, MD, 21230', email_address:'sbharati@gmail.com', seller_id:nil)
+
