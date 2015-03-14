@@ -1,120 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f462ad83-d970-4f7c-baaa-652f08ccd1cc" name="Default" comment="Added Bootstrap scss and js. Updated all the pages">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/.keep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/images/.keep" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/amitabha.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/buddha.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/horsehead-dorje-phurba.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/longevity-vase.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/pendant.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/images/thumbnails/vaishravana.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_alerts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_alerts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_background-variant.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_badges.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/_bootstrap-compass.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/_bootstrap-mincer.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/_bootstrap-sprockets.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/_bootstrap.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_border-radius.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_breadcrumbs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_button-groups.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_buttons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_carousel.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_center-block.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_clearfix.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_close.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_code.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_component-animations.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_dropdowns.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_forms.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_forms.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_glyphicons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_gradients.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_grid-framework.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_grid.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_grid.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_hide-text.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_image.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_input-groups.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_jumbotron.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_labels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_labels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_list-group.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_list-group.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_media.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_modals.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_nav-divider.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_nav-vertical-align.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_navbar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_navs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_normalize.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_opacity.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_pager.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_pagination.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_pagination.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_panels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_panels.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_popovers.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_print.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_progress-bar.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_progress-bars.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_reset-filter.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_resize.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_responsive-embed.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_responsive-utilities.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_responsive-visibility.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_scaffolding.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_size.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_tab-focus.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_table-row.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_tables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_text-emphasis.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_text-overflow.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_theme.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_thumbnails.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_tooltip.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_type.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_utilities.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/stylesheets/bootstrap/_wells.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/affix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/alert.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/application.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap-sprockets.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/button.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/carousel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/collapse.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/modal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/popover.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/scrollspy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/tab.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/vendor/assets/javascripts/bootstrap/transition.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Handicraft/app/assets/images/.keep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/application.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/Gemfile.lock" afterPath="$PROJECT_DIR$/Handicraft/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/Gemfile" afterPath="$PROJECT_DIR$/Handicraft/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/Handicraft/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/config/application.rb" afterPath="$PROJECT_DIR$/Handicraft/config/application.rb" />
+    <list default="true" id="f462ad83-d970-4f7c-baaa-652f08ccd1cc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb" afterPath="$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb" afterPath="$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/views/customers/index.html.erb" afterPath="$PROJECT_DIR$/Handicraft/app/views/customers/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/views/products/index.html.erb" afterPath="$PROJECT_DIR$/Handicraft/app/views/products/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/config/routes.rb" afterPath="$PROJECT_DIR$/Handicraft/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="antique_handicraft.iws" />
@@ -191,8 +81,8 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Handicraft/app/views/customers/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.59366757" vertical-offset="0" max-vertical-offset="675">
-              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.15831135" vertical-offset="0" max-vertical-offset="675">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -201,8 +91,8 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handicraft/app/views/about/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="285">
-              <caret line="5" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="4" />
+            <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="285">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -211,8 +101,18 @@
       <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.083333336" vertical-offset="737" max-vertical-offset="1125">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.5" vertical-offset="630" max-vertical-offset="1350">
+              <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_navigation.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -232,16 +132,6 @@
         <entry file="file://$PROJECT_DIR$/Handicraft/app/views/products/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="6.25" vertical-offset="150" max-vertical-offset="750">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.json.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Handicraft/app/views/products/index.json.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -303,7 +193,6 @@
         <option value="$PROJECT_DIR$/Handicraft/app/views/about/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/db/migrate/20150301002032_create_products.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/products.scss" />
-        <option value="$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/Admin.html" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/Admin/Admin.html.erb" />
@@ -315,12 +204,13 @@
         <option value="$PROJECT_DIR$/Handicraft/config/application.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/shared/navigation.html.erb" />
-        <option value="$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/application.css.scss" />
         <option value="$PROJECT_DIR$/Handicraft/config/routes.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/controllers/products_controller.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/products/index.html.erb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/customers/index.html.erb" />
       </list>
     </option>
@@ -329,7 +219,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="145" />
+    <option name="x" value="196" />
     <option name="y" value="23" />
     <option name="width" value="931" />
     <option name="height" value="709" />
@@ -411,6 +301,32 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -461,6 +377,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="customers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contact" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="about" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -811,7 +779,13 @@
       <option name="project" value="LOCAL" />
       <updated>1426280014836</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added Bootstrap scss and js. Updated all the pages">
+      <created>1426294916653</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1426294916653</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -835,7 +809,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="23" width="931" height="709" extended-state="0" />
+    <frame x="196" y="23" width="931" height="709" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -888,7 +862,8 @@
     <MESSAGE value="used scaffold customer, db:migrate and db:seed" />
     <MESSAGE value="fixed the typo(email_addresss) and reused scaffold customer, db:migrate and db:seed" />
     <MESSAGE value="updated the seed" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated the seed" />
+    <MESSAGE value="Added Bootstrap scss and js. Updated all the pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Bootstrap scss and js. Updated all the pages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1119,14 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="300">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5025773" vertical-offset="0" max-vertical-offset="388">
@@ -1241,14 +1208,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.083333336" vertical-offset="737" max-vertical-offset="1125">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/views/home/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45833334" vertical-offset="416" max-vertical-offset="780">
@@ -1280,16 +1239,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/views/about/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="285">
-          <caret line="5" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="4" />
+        <state vertical-scroll-proportion="-6.875" vertical-offset="0" max-vertical-offset="285">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5" vertical-offset="630" max-vertical-offset="1350">
+          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/shared/_navigation.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.5" vertical-offset="0" max-vertical-offset="270">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/views/customers/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59366757" vertical-offset="0" max-vertical-offset="675">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.15831135" vertical-offset="0" max-vertical-offset="675">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding />
         </state>
       </provider>
