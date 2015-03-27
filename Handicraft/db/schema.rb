@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327150547) do
+ActiveRecord::Schema.define(version: 20150327161417) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(version: 20150327150547) do
     t.string   "seller_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "histories", force: :cascade do |t|
+    t.string   "customer_id"
+    t.string   "product_id"
+    t.string   "product_name"
+    t.string   "image_url"
+    t.decimal  "price"
+    t.datetime "date_visited"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 # Could not dump table "products" because of following NoMethodError
