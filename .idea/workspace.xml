@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f462ad83-d970-4f7c-baaa-652f08ccd1cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/catalog.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/catalog.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/controllers/catalog_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/controllers/catalog_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/helpers/catalog_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/catalog/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/product_details/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/product_details.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/product_details.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/controllers/product_details_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/controllers/product_details_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/helpers/product_details_helper.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/config/routes.rb" afterPath="$PROJECT_DIR$/Handicraft/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -55,7 +53,28 @@
     <favorites_list name="antique_handicraft" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="product_details_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/product_details_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="660">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Handicraft/app/views/product_details/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3978494" vertical-offset="0" max-vertical-offset="1350">
+              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -98,6 +117,8 @@
         <option value="$PROJECT_DIR$/Handicraft/app/controllers/catalog_controller.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/catalog/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/config/routes.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/controllers/product_details_controller.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/views/product_details/index.html.erb" />
       </list>
     </option>
   </component>
@@ -105,8 +126,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="103" />
-    <option name="y" value="23" />
+    <option name="x" value="-2" />
+    <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="651" />
   </component>
@@ -207,6 +228,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="products" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="antique_handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Handicraft" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product_details" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -643,11 +690,17 @@
       <option name="project" value="LOCAL" />
       <updated>1427474836636</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="implemented Catalog based on Product table">
+      <created>1427475511575</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1427475511575</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="103" y="23" width="1280" height="651" extended-state="0" />
+    <frame x="-2" y="22" width="1280" height="651" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -703,29 +756,14 @@
     <MESSAGE value="added new fields to product table&#10;&#10;modified partial view to include drop down list" />
     <MESSAGE value="set root to home page&#10;&#10;&#10;modified view to display trending items, viewing history, best selling items &#10;&#10;modified model to provide data for views" />
     <MESSAGE value="added History table" />
-    <option name="LAST_COMMIT_MESSAGE" value="added History table" />
+    <MESSAGE value="implemented Catalog based on Product table" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented Catalog based on Product table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/about/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="285">
-          <caret line="5" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/products_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1200">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="513" max-vertical-offset="1125">
@@ -1096,6 +1134,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5445545" vertical-offset="0" max-vertical-offset="303">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/product_details_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="660">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/views/product_details/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3978494" vertical-offset="0" max-vertical-offset="1350">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding />
         </state>
       </provider>

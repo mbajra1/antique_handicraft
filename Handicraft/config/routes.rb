@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'product_details/index'
+
   #get 'catalog/index'
 
   get '/catalog' =>"catalog#index"

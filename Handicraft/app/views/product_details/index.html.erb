@@ -1,0 +1,84 @@
+<h1> Product Details </h1>
+
+<table border="0">
+
+  <% for product in @product_details %>
+
+      <tr>
+        <td><%= image_tag(product.image_url, class: 'list_detail_image') %></td>
+
+        <td>
+
+          <dt><%=product.product_name%></dt>
+          <dt><%=product.description%></dt>
+          <hr>
+          <dt>Price:<%=number_to_currency(product.price)%></dt>
+          <dt>Stocks left:<%=product.quantity%></dt>
+        </td>
+
+        <td>
+          <form>
+            Qty <input type="number" name="quantity" min="1" max="5"><br>
+            <!-- <input type="button" onClick="" value="Add to Cart"><br>-->
+
+
+          </form>
+          <!--<%#=button_to 'Add to Cart', cart_items_path(product_id: product.id)%>-->
+          <!--<%#=button_to 'Add to Cart',cart_items_path(product_id: product.product_id)%>-->
+        </td>
+      </tr>
+
+  <%end%>
+
+</table>
+
+<br>
+<hr>
+
+<h1> Suggested Products </h1>
+<div class="scroll">
+  <table>
+    <% if @suggested_items %>
+        <%  @suggested_items.each do |suggestion| %>
+            <td>
+
+              <dt><%= link_to image_tag(suggestion.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: suggestion.product_id)%></dt>
+              <dt><%= suggestion.product_name %></dt>
+              <dt><%= truncate suggestion.description,lenght: 50 %></dt>
+              <dt><%= number_to_currency(suggestion.price) %></dt>
+
+            </td>
+        <%end%>
+    <% end %>
+  </table>
+</div>
+<br>
+<hr>
+
+<h1>Your viewing history</h1><%=link_to "See more...", histories_path%>
+
+
+<div class="scroll">
+  <table>
+    <% if @viewing_history %>
+        <%  @viewing_history.each do |items_viewed| %>
+
+            <td>
+
+              <dt><%= link_to image_tag(items_viewed.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: items_viewed.product_id)%></dt>
+              <dt><%= items_viewed.product_name %></dt>
+              <dt><%= number_to_currency(items_viewed.price) %></dt>
+
+            </td>
+
+        <%end%>
+
+    <% end %>
+
+  </table>
+
+  <br>
+  <hr>
+
+</div>
+
