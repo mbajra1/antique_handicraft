@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #get 'catalog/index'
+
+  get '/catalog' =>"catalog#index"
   resources :histories
 
   devise_for :users
