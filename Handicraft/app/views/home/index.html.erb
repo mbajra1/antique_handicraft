@@ -1,47 +1,57 @@
 <h1>Home</h1>
 
-<div class="section">
-  <div>
-    <h4>Welcome to AntiqueHandicraft </h4>
-    <p>
-      AntiqueHandicraft.com is an online portal developed with a mission to promote beautifully hand painted,crafted and antique handicrafts and artifacts. There is no debate over the fact that thankas are visual representations of the divine but these representations also portray a story which are not explained thoroughly by other websites or sources. As such, AntiqueHandicraft is committed to provide both visual representation as well as the story portrayed by them.
-    </p>
-    <p>
-      This website, is a vision of our chief-curator and proprietor, Mr.Dinesh Gurung, who is motivated to create a safe house for art lovers who want to buy, learn,or simply admire the beauty of the art and the skills of that of the artist.
-    </p>
-    <p>
-      Although, AntiqueHandicraft.com is well known for online bidding on "thankas", we offer various products and services to our valued customers.  Some these products and services are listed as follows:
-    </p>
-
-    <ul>
-      <li>
-        <a href="contact.html">Thankas Bidding</a>
-      </li>
-      <li>
-        <a href="contact.html">Thankas Sale</a>
-      </li>
-      <li>
-        <a href="contact.html">Thankas Curation</a>
-      </li>
-      <li>
-        <a href="contact.html">Digital Cataloguing</a>
-      </li>
-      <li>
-        <a href="contact.html">Portrait Painting</a>
-      </li>
-      <li>
-        <a href="contact.html">Custom Painting</a>
-      </li>
-
-      <li>
-        <a href="contact.html">Newsletter</a>
-      </li>
-      <li>
-        <a href="contact.html">Blog</a>
-      </li>
-      <li>
-        <a href="contact.html">Gift Vouchers</a>
-      </li>
-    </ul>
+<div id="top_ads">
+  <hr>
+  <h2> Special Items </h2>
+  <div class="scroll">
+    <table>
+      <% if @specialItems %>
+          <%  @specialItems.each do |special| %>
+              <td>
+                <dt><%= link_to image_tag(special.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: special.product_id)%></dt>
+              </td>
+          <%end%>
+      <% end %>
+    </table>
   </div>
+  <br>
+  <hr>
+
+</div>
+
+
+<div id="trending_items">
+
+  <h2> What Others are viewing </h2>
+  <div class="scroll">
+    <table>
+      <% if @trendingItems %>
+          <%  @trendingItems.each do |trending| %>
+              <td>
+                <dt><%= link_to image_tag(trending.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: trending.product_id)%></dt>
+              </td>
+          <%end%>
+      <% end %>
+    </table>
+  </div>
+  <br>
+  <hr>
+</div>
+
+<div id="best_sellers">
+  <h2> Best Selling Items </h2>
+  <div class="scroll">
+    <table>
+      <% if @bestSellers %>
+          <%  @bestSellers.each do |best| %>
+              <td>
+                <dt><%= link_to image_tag(best.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: best.product_id)%></dt>
+              </td>
+          <%end%>
+      <% end %>
+    </table>
+  </div>
+  <br>
+  <hr>
+
 </div>
