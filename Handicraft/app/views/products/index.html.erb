@@ -1,22 +1,25 @@
+<p id="notice"><%= notice %></p>
+
 <h1>Listing Products</h1>
 
 <table>
   <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= product.product_id %></td>
-
+        <td><%= product.seller_id %></td>
         <td class="list_description">
           <dl>
-            <dt><%= product.name %></dt>
+            <dt><%= product.product_name %></dt>
             <dd><%= product.description %></dd>
+            <td><%= product.technical_description %></td>
           </dl>
         </td>
         <td><%= image_tag(product.image_url, class: 'list_image') %></td>
         <td><%= product.category %></td>
-        <td><%= product.subcategory %></td>
+        <td><%= product.sub_category %></td>
         <td><%= product.product_condition %></td>
         <td><%= product.price %></td>
-
+        <td><%= product.quantity %></td>
         <td class="list_actions" >
           <%= link_to 'Show', product %><br/>
           <%= link_to 'Edit', edit_product_path(product) %><br/>
