@@ -1,47 +1,88 @@
-<h1>Home</h1>
 
-<div class="section">
-  <div>
-    <h4>Welcome to AntiqueHandicraft </h4>
-    <p>
-      AntiqueHandicraft.com is an online portal developed with a mission to promote beautifully hand painted,crafted and antique handicrafts and artifacts. There is no debate over the fact that thankas are visual representations of the divine but these representations also portray a story which are not explained thoroughly by other websites or sources. As such, AntiqueHandicraft is committed to provide both visual representation as well as the story portrayed by them.
-    </p>
-    <p>
-      This website, is a vision of our chief-curator and proprietor, Mr.Dinesh Gurung, who is motivated to create a safe house for art lovers who want to buy, learn,or simply admire the beauty of the art and the skills of that of the artist.
-    </p>
-    <p>
-      Although, AntiqueHandicraft.com is well known for online bidding on "thankas", we offer various products and services to our valued customers.  Some these products and services are listed as follows:
-    </p>
 
-    <ul>
-      <li>
-        <a href="contact.html">Thankas Bidding</a>
-      </li>
-      <li>
-        <a href="contact.html">Thankas Sale</a>
-      </li>
-      <li>
-        <a href="contact.html">Thankas Curation</a>
-      </li>
-      <li>
-        <a href="contact.html">Digital Cataloguing</a>
-      </li>
-      <li>
-        <a href="contact.html">Portrait Painting</a>
-      </li>
-      <li>
-        <a href="contact.html">Custom Painting</a>
-      </li>
+  <div class="row">
 
-      <li>
-        <a href="contact.html">Newsletter</a>
-      </li>
-      <li>
-        <a href="contact.html">Blog</a>
-      </li>
-      <li>
-        <a href="contact.html">Gift Vouchers</a>
-      </li>
-    </ul>
+    <div class="col-md-3">
+      <h2>HANDICRAFT</h2><br/>
+      <div class="list-group">
+        <p class="list-group-item active"><b>Category</b></p>
+        <a href="#" class="list-group-item">Thangka</a>
+        <a href="#" class="list-group-item">Artifact</a>
+        <a href="#" class="list-group-item">Jewellery</a>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+
+      <div class="row carousel-holder row-adjust">
+
+        <div class="col-md-12">
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="item active">
+                <%= image_tag("carousel/thangka1.jpeg", class: 'img-responsive')%>
+              </div>
+              <div class="item">
+                <%= image_tag("carousel/thangka2.jpeg", class: 'img-responsive')%>
+              </div>
+              <div class="item">
+                <%= image_tag("carousel/thangka3.jpeg", class: 'img-responsive')%>
+              </div>
+              <div class="item">
+                <%= image_tag("carousel/thangka4.jpeg", class: 'img-responsive')%>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row row-adjust"> <h3> RECENTLY ADDED ITEMS </h3> <hr></div>
+
+      <div class="row row-adjust">
+        <% @featured_products.each do |product| %>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+          <div class="thumbnail">
+            <%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+            <div class="caption">
+              <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
+              <h4><a href="#"><%= product.name %></a>
+              </h4>
+              <p><%= product.description[0..100] +"..." %></p>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+      <div class="row row-adjust"> <h3> FEATURED ITEMS </h3> <hr></div>
+
+      <div class="row row-adjust">
+        <% @recent_products.each do |product| %>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="thumbnail">
+                <%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+                <div class="caption">
+                  <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
+                  <h4><a href="#"><%= product.name %></a>
+                  </h4>
+                  <p><%= product.description[0..100] +"..." %></p>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-</div>

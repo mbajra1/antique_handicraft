@@ -5,25 +5,38 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= render 'shared/navigation' %>
-
-<div id="main-container" class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: "alert alert-#{name}" %>
-      <% end -%>
+<div id="wrapper">
+    <div id="header">
+        <%= render 'shared/header' %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= yield %>
+
+    <div id="main-container" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <% flash.each do |name, msg| -%>
+              <%= content_tag :div, msg, class: "alert alert-#{name}" %>
+          <% end -%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <%= yield %>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <div id="footer">
+        <%= render 'shared/footer' %>
+    </div>
 </div>
-
 </body>
 </html>

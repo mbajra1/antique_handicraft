@@ -1,0 +1,39 @@
+<!-- app/views/shared/_navigation.html.erb -->
+
+  <div class="toolbar-wrapper">
+    <div class="toolbar">
+      <ul class="unstyled">
+        <li class="search-field fr">
+          <form class="search" action="/search">
+            <button type="submit" alt="Go" class="go">
+              <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+            </button>
+            <input name="q" class="form-control" placeholder="Search" value="" type="text">
+          </form>
+        </li>
+        <li class="fr">
+          <a href="/cart" class="cart" title="Cart">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+            Cart: 0 Items </a>
+        </li>
+        <li class="fr">
+          <a href="#" class="My Account" title="Account">
+            My Account </a>
+        </li>
+        <li class="customer-links">
+          <a href="#" id="customer_login_link">Login</a>
+          <span class="or">&nbsp;or&nbsp;</span>
+          <a href="#" id="customer_register_link">Create an Account</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+ <div class="navigation">
+   <ul class="nav nav-tabs">
+     <li><%= link_to "THANGKA" %></li>
+     <li><%= link_to "ARTIFACT" %></li>
+     <li><%= link_to "JEWELLERY" %></li>
+   </ul>
+ </div>
+
+

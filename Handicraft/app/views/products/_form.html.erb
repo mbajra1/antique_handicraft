@@ -1,4 +1,8 @@
-<%= form_for(@product) do |f| %>
+<%# Conditionally set remote: true. Also, passing model name as data attribute %>
+<% modal ||= false %>
+<% remote = modal ? true : false %>
+<%= form_for(@product, remote: remote, html: {role: :form, 'data-model' => 'product'}) do |f| %>
+<%#= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -11,39 +15,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :product_id %><br>
-    <%= f.text_field :product_id %>
+  <div class="form-group">
+    <%= f.label :product_id, class: 'control-label'%><br>
+    <%= f.text_field :product_id, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, class: 'control-label' %><br>
+    <%= f.text_field :name, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description, class: 'control-label' %><br>
+    <%= f.text_area :description, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :image_url %><br>
+  <div class="form-group">
+    <%= f.label :image_url, class: 'control-label' %><br>
     <%= f.text_field :image_url %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :category %><br>
-    <%= f.text_field :category %>
+  <div class="form-group">
+    <%= f.label :category, class: 'control-label' %><br>
+    <%= f.text_field :category, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :subcategory %><br>
-    <%= f.text_field :subcategory %>
+  <div class="form-group">
+    <%= f.label :subcategory, class: 'control-label' %><br>
+    <%= f.text_field :subcategory, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :product_condition %><br>
-    <%= f.text_field :product_condition %>
+  <div class="form-group">
+    <%= f.label :product_condition, class: 'control-label' %><br>
+    <%= f.text_field :product_condition, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
+  <div class="form-group">
+    <%= f.label :price, class: 'control-label' %><br>
+    <%= f.text_field :price, class: 'form-control' %>
+    <span class="help-block"></span>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit%>
   </div>
 <% end %>
+
