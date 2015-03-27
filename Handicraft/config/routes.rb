@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  #get 'dashboard/index'
+
+  get '/dashboard' =>"dashboard#index"
+
   get 'product_details/index'
 
   #get 'catalog/index'
