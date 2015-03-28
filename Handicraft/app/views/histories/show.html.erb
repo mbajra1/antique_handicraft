@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @history.customer_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @history.product_id %>
+</p>
+
+<p>
+  <strong>Product name:</strong>
+  <%= @history.product_name %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @history.image_url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @history.price %>
+</p>
+
+<p>
+  <strong>Date visited:</strong>
+  <%= @history.date_visited %>
+</p>
+
+<%= link_to 'Edit', edit_history_path(@history) %> |
+<%= link_to 'Back', histories_path %>

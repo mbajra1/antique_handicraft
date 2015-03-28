@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  #get 'seller_dashboard/index'
+
+  get '/seller_dashboard' => "seller_dashboard#index"
+
+  #get 'dashboard/index'
+
+  get '/dashboard' =>"dashboard#index"
+
+  get 'product_details/index'
+
+  #get 'catalog/index'
+
+  get '/catalog' =>"catalog#index"
+  resources :histories
+
   devise_for :users
   resources :customers
 

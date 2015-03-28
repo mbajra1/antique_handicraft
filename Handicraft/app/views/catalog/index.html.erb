@@ -1,0 +1,70 @@
+<h1>Product Catalog</h1>
+
+<h2> Thangkas </h2>
+<div class="scroll">
+  <table>
+    <% if @thangkas %>
+        <%  @thangkas.each do |thangka| %>
+            <td>
+
+              <dt><%= link_to image_tag(thangka.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: thangka.product_id)%></dt>
+              <dt><%= thangka.product_name %></dt>
+              <dt><%= truncate thangka.description,lenght: 50 %></dt>
+              <dt><%= number_to_currency(thangka.price) %></dt>
+
+            </td>
+        <%end%>
+    <% end %>
+  </table>
+</div>
+<br>
+<hr>
+
+<h2> Artifacts </h2>
+<div class="scroll">
+  <table>
+    <% if @artifacts %>
+        <%  @artifacts.each do |artifact| %>
+            <td>
+
+              <dt><%= link_to image_tag(artifact.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: artifact.product_id)%></dt>
+              <dt><%= artifact.product_name %></dt>
+              <dt><%= truncate artifact.description,lenght: 50 %></dt>
+              <dt><%= number_to_currency(artifact.price) %></dt>
+
+            </td>
+        <%end%>
+    <% end %>
+  </table>
+</div>
+<br>
+<hr>
+
+<h2>Jewelleries </h2>
+
+
+<div class="scroll">
+  <table>
+    <% if @jewelleries %>
+        <%  @jewelleries.each do |jewellery| %>
+
+            <td>
+              <dt><%= link_to image_tag(jewellery.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: jewellery.product_id)%></dt>
+              <dt><%= jewellery.product_name %></dt>
+              <dt><%= truncate jewellery.description,lenght: 50 %></dt>
+              <dt><%= number_to_currency(jewellery.price) %></dt>
+            </td>
+
+        <%end%>
+
+    <% end %>
+
+  </table>
+
+  <br>
+  <hr>
+
+</div>
+
+
+
