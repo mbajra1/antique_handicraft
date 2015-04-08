@@ -11,8 +11,8 @@ class ProductDetailsController < ApplicationController
 
 
     for product in @product_details
-      prod_subcat=product.sub_category
-      prod_name=product.product_name
+      prod_subcat=product.subcategory
+      prod_name=product.name
       prod_price=product.price
       prod_image=product.image_url
     end
@@ -27,7 +27,7 @@ class ProductDetailsController < ApplicationController
     view_history.save
     History.rm_duplicate
 
-    @suggested_items = Product.where("sub_category= '#{prod_subcat}' AND product_id != '#{prod_id}' ")
+    @suggested_items = Product.where("subcategory= '#{prod_subcat}' AND product_id != '#{prod_id}' ")
 
     @viewing_history=History.where("customer_id= '#{cust_id}'")
 

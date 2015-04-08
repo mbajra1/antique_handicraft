@@ -9,7 +9,7 @@
 
         <td>
 
-          <dt><%=product.product_name%></dt>
+          <dt><%=product.name%></dt>
           <dt><%=product.description%></dt>
           <hr>
           <dt>Price:<%=number_to_currency(product.price)%></dt>
@@ -43,7 +43,7 @@
             <td>
 
               <dt><%= link_to image_tag(suggestion.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: suggestion.product_id)%></dt>
-              <dt><%= suggestion.product_name %></dt>
+              <dt><%= suggestion.name %></dt>
               <dt><%= truncate suggestion.description,lenght: 50 %></dt>
               <dt><%= number_to_currency(suggestion.price) %></dt>
 
