@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :state_taxes
+
   resources :sellers
 
   #get 'seller_dashboard/index'
