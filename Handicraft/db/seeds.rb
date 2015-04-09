@@ -34,3 +34,8 @@ StateTax.create(state_code:'MD',tax_rate: 0.06)
 
 Discount.delete_all
 Discount.create(discount_code:'SPND100GET5',discount_amount: 5.00)
+
+
+ShippingBook.delete_all
+ShippingBook.create(shipping_book_id:'SHB01',customer_id:'CUS01',shipping_name:'Jane Smith',shipping_address:'11235 York Rd', shipping_city:'HuntValley', shipping_state_province:'MD',shipping_zip_postal:'21030',shipping_country_region:'USA')
+ShippingBook.create(shipping_book_id:'SHB02',customer_id:'CUS01',shipping_name:'Jerry Smith',shipping_address:'10104 Woodlake Dr', shipping_city:'Cockeysville', shipping_state_province:'MD',shipping_zip_postal:'21030',shipping_country_region:'USA')

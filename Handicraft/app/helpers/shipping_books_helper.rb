@@ -1,0 +1,2 @@
+module ShippingBooksHelper
+end

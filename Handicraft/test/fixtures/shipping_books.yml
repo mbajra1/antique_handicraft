@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipping_book_id: MyString
+  customer_id: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  shipping_city: MyString
+  shipping_state_province: MyString
+  shipping_zip_postal: MyString
+  shipping_country_region: MyString
+
+two:
+  shipping_book_id: MyString
+  customer_id: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  shipping_city: MyString
+  shipping_state_province: MyString
+  shipping_zip_postal: MyString
+  shipping_country_region: MyString

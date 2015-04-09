@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shipping book:</strong>
+  <%= @shipping_book.shipping_book_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @shipping_book.customer_id %>
+</p>
+
+<p>
+  <strong>Shipping name:</strong>
+  <%= @shipping_book.shipping_name %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @shipping_book.shipping_address %>
+</p>
+
+<p>
+  <strong>Shipping city:</strong>
+  <%= @shipping_book.shipping_city %>
+</p>
+
+<p>
+  <strong>Shipping state province:</strong>
+  <%= @shipping_book.shipping_state_province %>
+</p>
+
+<p>
+  <strong>Shipping zip postal:</strong>
+  <%= @shipping_book.shipping_zip_postal %>
+</p>
+
+<p>
+  <strong>Shipping country region:</strong>
+  <%= @shipping_book.shipping_country_region %>
+</p>
+
+<%= link_to 'Edit', edit_shipping_book_path(@shipping_book) %> |
+<%= link_to 'Back', shipping_books_path %>

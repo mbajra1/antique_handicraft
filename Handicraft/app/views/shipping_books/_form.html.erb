@@ -1,0 +1,49 @@
+<%= form_for(@shipping_book) do |f| %>
+  <% if @shipping_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipping_book.errors.count, "error") %> prohibited this shipping_book from being saved:</h2>
+
+      <ul>
+      <% @shipping_book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shipping_book_id %><br>
+    <%= f.text_field :shipping_book_id %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_name %><br>
+    <%= f.text_field :shipping_name %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_address %><br>
+    <%= f.text_field :shipping_address %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_city %><br>
+    <%= f.text_field :shipping_city %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_state_province %><br>
+    <%= f.text_field :shipping_state_province %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_zip_postal %><br>
+    <%= f.text_field :shipping_zip_postal %>
+  </div>
+  <div class="field">
+    <%= f.label :shipping_country_region %><br>
+    <%= f.text_field :shipping_country_region %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
