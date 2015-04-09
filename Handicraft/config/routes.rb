@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :discounts
+
   resources :state_taxes
 
   resources :sellers

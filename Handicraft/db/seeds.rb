@@ -30,3 +30,7 @@ Seller.create(seller_id:'SEL01',company:'Antique Handicraft Company',last_name:'
 
 StateTax.delete_all
 StateTax.create(state_code:'MD',tax_rate: 0.06)
+
+
+Discount.delete_all
+Discount.create(discount_code:'SPND100GET5',discount_amount: 5.00)

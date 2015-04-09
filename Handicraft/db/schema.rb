@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409165856) do
+ActiveRecord::Schema.define(version: 20150409170524) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20150409165856) do
     t.string   "state_province"
     t.string   "zip_postal_code"
     t.string   "country_region"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "discounts", force: :cascade do |t|
+    t.string   "discount_code"
+    t.float    "discount_amount"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
