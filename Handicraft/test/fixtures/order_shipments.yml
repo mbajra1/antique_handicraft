@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipment_id: MyString
+  order_id: MyString
+  customer_id: MyString
+  shipper_name: MyString
+  shipping_type: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  shipping_city: MyString
+  shipping_state_province: MyString
+
+two:
+  shipment_id: MyString
+  order_id: MyString
+  customer_id: MyString
+  shipper_name: MyString
+  shipping_type: MyString
+  shipping_name: MyString
+  shipping_address: MyString
+  shipping_city: MyString
+  shipping_state_province: MyString

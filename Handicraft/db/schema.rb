@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150409171706) do
+ActiveRecord::Schema.define(version: 20150410023245) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
@@ -48,6 +48,24 @@ ActiveRecord::Schema.define(version: 20150409171706) do
     t.datetime "date_visited"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "order_shipments", force: :cascade do |t|
+    t.string   "shipment_id"
+    t.string   "order_id"
+    t.string   "customer_id"
+    t.string   "shipper_name"
+    t.string   "shipping_type"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.string   "shipping_city"
+    t.string   "shipping_state_province"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "shipping_zip_postal"
+    t.string   "shipping_country_region"
+    t.decimal  "shipping_cost"
+    t.datetime "shipped_date"
   end
 
 # Could not dump table "products" because of following NoMethodError

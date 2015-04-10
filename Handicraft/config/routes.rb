@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :order_shipments
+
   resources :shipping_books
 
   resources :discounts

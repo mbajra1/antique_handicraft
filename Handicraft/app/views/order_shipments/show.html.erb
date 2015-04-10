@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shipment:</strong>
+  <%= @order_shipment.shipment_id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_shipment.order_id %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order_shipment.customer_id %>
+</p>
+
+<p>
+  <strong>Shipper name:</strong>
+  <%= @order_shipment.shipper_name %>
+</p>
+
+<p>
+  <strong>Shipping type:</strong>
+  <%= @order_shipment.shipping_type %>
+</p>
+
+<p>
+  <strong>Shipping name:</strong>
+  <%= @order_shipment.shipping_name %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @order_shipment.shipping_address %>
+</p>
+
+<p>
+  <strong>Shipping city:</strong>
+  <%= @order_shipment.shipping_city %>
+</p>
+
+<p>
+  <strong>Shipping state province:</strong>
+  <%= @order_shipment.shipping_state_province %>
+</p>
+
+<%= link_to 'Edit', edit_order_shipment_path(@order_shipment) %> |
+<%= link_to 'Back', order_shipments_path %>
