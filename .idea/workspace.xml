@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f462ad83-d970-4f7c-baaa-652f08ccd1cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/db/migrate/20150409173035_create_order_shipments.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/db/migrate/20150410023245_add_columns_to_order_shipment.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/models/order_shipment.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/models/order_shipment_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/order_shipments.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/order_shipments.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/fixtures/order_shipments.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/controllers/order_shipments_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/controllers/order_shipments_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/helpers/order_shipments_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/order_shipments/show.json.jbuilder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/config/routes.rb" afterPath="$PROJECT_DIR$/Handicraft/config/routes.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/db/migrate/20150416041954_create_custom_auto_increments.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/Gemfile.lock" afterPath="$PROJECT_DIR$/Handicraft/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/Gemfile" afterPath="$PROJECT_DIR$/Handicraft/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/antique_handicraft.iml" afterPath="$PROJECT_DIR$/.idea/antique_handicraft.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/customer.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/customer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/order_shipment.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/order_shipment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/product.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/product.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/db/schema.rb" afterPath="$PROJECT_DIR$/Handicraft/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/db/seeds.rb" afterPath="$PROJECT_DIR$/Handicraft/db/seeds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/seller.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/seller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/shipping_book.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/shipping_book.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="antique_handicraft.iws" />
@@ -61,52 +51,13 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="SQLite -" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="order_shipments" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="antique_handicraft" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Handicraft/db/seeds.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7152104" vertical-offset="379" max-vertical-offset="690">
-              <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20150410023245_add_columns_to_order_shipment.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Handicraft/db/migrate/20150410023245_add_columns_to_order_shipment.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -129,7 +80,6 @@
         <option value="$PROJECT_DIR$/Handicraft/app/views/contact/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/Admin.html" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/Admin/Admin.html.erb" />
-        <option value="$PROJECT_DIR$/Handicraft/app/models/customer.rb" />
         <option value="$PROJECT_DIR$/Handicraft/config/environments/development.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/app/views/products/index.json.jbuilder" />
@@ -152,9 +102,14 @@
         <option value="$PROJECT_DIR$/Handicraft/app/views/product_details/index.html.erb" />
         <option value="$PROJECT_DIR$/Handicraft/db/migrate/20150408143357_drop_customer.rb" />
         <option value="$PROJECT_DIR$/Handicraft/db/migrate/20150408143624_drop_customer_table.rb" />
-        <option value="$PROJECT_DIR$/Handicraft/Gemfile" />
-        <option value="$PROJECT_DIR$/Handicraft/db/seeds.rb" />
         <option value="$PROJECT_DIR$/Handicraft/db/migrate/20150410023245_add_columns_to_order_shipment.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/Gemfile" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/order_shipment.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/customer.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/product.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/seller.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/shipping_book.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/db/seeds.rb" />
       </list>
     </option>
   </component>
@@ -162,10 +117,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-3" />
-    <option name="y" value="47" />
+    <option name="x" value="31" />
+    <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="672" />
+    <option name="height" value="651" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -237,7 +192,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -255,11 +210,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="migrate" />
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -346,13 +301,13 @@
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
@@ -574,7 +529,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428600306941</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="added shipping table&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;">
+      <created>1428635672942</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1428635672942</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TodoView">
@@ -598,16 +559,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="47" width="1280" height="672" extended-state="0" />
+    <frame x="31" y="22" width="1280" height="651" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36823106" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36772984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2180937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24232633" sideWeight="0.83255816" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25444266" sideWeight="0.83255816" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23947896" sideWeight="0.16744186" order="2" side_tool="true" content_ui="tabs" />
@@ -615,12 +576,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32659408" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32490975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281493" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -640,9 +601,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3367117" sideWeight="0.83255816" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -679,7 +640,8 @@
     <MESSAGE value="added discount table&#10;&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
     <MESSAGE value="&#10;&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
     <MESSAGE value="added shipping address book&#10;&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added shipping address book&#10;&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
+    <MESSAGE value="added shipping table&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added shipping table&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -688,41 +650,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.791667" vertical-offset="1847" max-vertical-offset="2265">
-          <caret line="142" column="26" selection-start-line="142" selection-start-column="26" selection-end-line="142" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/about_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/contact_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/customers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="413" max-vertical-offset="1200">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/controllers/home_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="270">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/config/environments/test.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="720">
@@ -737,30 +664,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="379">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/product.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/models/history.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="379">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/customer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -935,14 +841,14 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..histories">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -957,13 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.19521913" vertical-offset="98" max-vertical-offset="600">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/db/migrate/20150408143624_drop_customer_table.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0931677" vertical-offset="0" max-vertical-offset="322">
-          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -988,98 +887,184 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Handicraft/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66019416" vertical-offset="516" max-vertical-offset="825">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..state_taxes">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..discounts">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..products">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..customers">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..sellers">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/db/migrate/20150410023245_add_columns_to_order_shipment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+        <state vertical-scroll-proportion="0.28938907" vertical-offset="0" max-vertical-offset="311">
           <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40268457" vertical-offset="0" max-vertical-offset="960">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/db/migrate/20150408143624_drop_customer_table.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.096463025" vertical-offset="0" max-vertical-offset="311">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="311">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/shipping_book.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048231512" vertical-offset="0" max-vertical-offset="311">
+          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/seller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048231512" vertical-offset="0" max-vertical-offset="311">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/product.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048231512" vertical-offset="0" max-vertical-offset="311">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/customer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048231512" vertical-offset="0" max-vertical-offset="311">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/order_shipment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.048231512" vertical-offset="0" max-vertical-offset="311">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..order_shipments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..schema_migrations">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
         </state>
       </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..shipping_books">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..customers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7152104" vertical-offset="379" max-vertical-offset="690">
-          <caret line="40" column="71" selection-start-line="40" selection-start-column="71" selection-end-line="40" selection-end-column="71" />
+        <state vertical-scroll-proportion="1.5574324" vertical-offset="79" max-vertical-offset="690">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..products">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/ab77627c/7f8ffe67-7655-40f8-a7a9-9ee9f84507f6/..sellers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

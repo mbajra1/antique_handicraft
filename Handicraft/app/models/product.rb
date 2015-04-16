@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  protokoll :product_id, :pattern => "PRD%y###"
   validates :product_id, presence: true
   validates :name, presence: true
   validates :description, presence: true
