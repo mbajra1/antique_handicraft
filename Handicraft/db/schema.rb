@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416044012) do
+ActiveRecord::Schema.define(version: 20150416044416) do
 
   create_table "custom_auto_increments", force: :cascade do |t|
     t.string   "counter_model_name"
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 20150416044012) do
     t.datetime "date_visited"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.string   "order_detail_id"
+    t.string   "order_id"
+    t.string   "product_id"
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.decimal  "discount"
+    t.string   "tax_status"
+    t.string   "order_detail_status"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "order_shipments", force: :cascade do |t|
