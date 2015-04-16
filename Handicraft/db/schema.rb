@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150416041954) do
+ActiveRecord::Schema.define(version: 20150416044012) do
 
   create_table "custom_auto_increments", force: :cascade do |t|
     t.string   "counter_model_name"
@@ -75,6 +75,17 @@ ActiveRecord::Schema.define(version: 20150416041954) do
     t.string   "shipping_country_region"
     t.decimal  "shipping_cost"
     t.datetime "shipped_date"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "order_id"
+    t.string   "customer_id"
+    t.string   "shipping_id"
+    t.string   "order_status"
+    t.datetime "order_date"
+    t.integer  "shopping_cart_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 # Could not dump table "products" because of following NoMethodError
