@@ -2,24 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f462ad83-d970-4f7c-baaa-652f08ccd1cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/db/migrate/20150416044749_create_shopping_carts.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/models/shopping_cart_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/shopping_carts.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/shopping_carts.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/fixtures/shopping_carts.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/controllers/shopping_carts_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/controllers/shopping_carts_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/helpers/shopping_carts_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/shopping_carts/show.json.jbuilder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/db/migrate/20150416045130_create_cart_items.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/models/cart_item.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/models/cart_item_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/javascripts/cart_items.coffee" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/assets/stylesheets/cart_items.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/fixtures/cart_items.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/controllers/cart_items_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/test/controllers/cart_items_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/helpers/cart_items_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/edit.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/index.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/index.json.jbuilder" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/new.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/show.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Handicraft/app/views/cart_items/show.json.jbuilder" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/config/routes.rb" afterPath="$PROJECT_DIR$/Handicraft/config/routes.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/db/schema.rb" afterPath="$PROJECT_DIR$/Handicraft/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb" afterPath="$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="antique_handicraft.iws" />
@@ -65,11 +66,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="shopping_cart.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shopping_cart.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="309">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+              <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cart_item.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Handicraft/app/models/cart_item.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.097087376" vertical-offset="0" max-vertical-offset="309">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -130,6 +141,8 @@
         <option value="$PROJECT_DIR$/Handicraft/db/seeds.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/models/order_detail.rb" />
         <option value="$PROJECT_DIR$/Handicraft/app/models/order.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb" />
+        <option value="$PROJECT_DIR$/Handicraft/app/models/cart_item.rb" />
       </list>
     </option>
   </component>
@@ -137,8 +150,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
-    <option name="y" value="63" />
+    <option name="x" value="53" />
+    <option name="y" value="38" />
     <option name="width" value="1280" />
     <option name="height" value="651" />
   </component>
@@ -573,7 +586,13 @@
       <option name="project" value="LOCAL" />
       <updated>1429159568465</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added shopping_cart&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;">
+      <created>1429159752780</created>
+      <option name="number" value="00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1429159752780</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -597,7 +616,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="63" width="1280" height="651" extended-state="0" />
+    <frame x="53" y="38" width="1280" height="651" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -682,7 +701,8 @@
     <MESSAGE value="added protokoll gem and paypal sdk gem&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
     <MESSAGE value="added orders table &#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
     <MESSAGE value="added order_details table &#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="added order_details table &#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
+    <MESSAGE value="added shopping_cart&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added shopping_cart&#10;Conflicts:&#10;&#9;.idea/antique_handicraft.iml&#10;&#9;.idea/workspace.xml&#10;&#9;Handicraft/Gemfile.lock&#10;&#9;Handicraft/app/controllers/home_controller.rb&#10;&#9;Handicraft/app/views/home/index.html.erb&#10;&#9;Handicraft/app/views/layouts/application.html.erb&#10;&#9;Handicraft/app/views/products/_form.html.erb&#10;&#9;Handicraft/app/views/products/index.html.erb&#10;&#9;Handicraft/config/environments/development.rb&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -691,13 +711,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Handicraft/config/database.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1335">
@@ -1107,8 +1120,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Handicraft/app/models/shopping_cart.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="309">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Handicraft/app/models/cart_item.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.097087376" vertical-offset="0" max-vertical-offset="309">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
           <folding />
         </state>
       </provider>
