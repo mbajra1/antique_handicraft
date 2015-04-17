@@ -2,7 +2,7 @@ class CatalogController < ApplicationController
   def index
     #@catalogs = Product.order(:product_name)
 
-    if(params[:transaction]='Successful')
+    if(params[:transaction]=='successful')
 
       flash[:notice]="Thank you for your business. Your transaction has been successfully completed"
 

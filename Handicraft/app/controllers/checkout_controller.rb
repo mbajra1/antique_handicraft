@@ -122,7 +122,7 @@ class CheckoutController < ApplicationController
         :cmd => '_cart',
         :upload => 1,
         :return => checkout_index_url(transaction: 'successful'),
-        :invoice =>cart_id
+        :invoice =>current_cart.invoice_id
     }
     @check_cart_items.each_with_index do |item, index|
       last_index=last_index+index

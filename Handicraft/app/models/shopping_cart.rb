@@ -1,4 +1,6 @@
 class ShoppingCart < ActiveRecord::Base
+
+  protokoll :invoice_id, :pattern => "INV%y###"
   has_many :cart_items, dependent: :destroy
 
   def add_product(product_id)
