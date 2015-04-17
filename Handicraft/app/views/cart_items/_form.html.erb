@@ -11,21 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :shopping_cart_id %><br>
-    <%= f.number_field :shopping_cart_id %>
-  </div>
+
   <div class="field">
     <%= f.label :product_id %><br>
-    <%= f.text_field :product_id %>
+    <%= f.text_field :product_id, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :seller_id %><br>
-    <%= f.text_field :seller_id %>
+    <%= f.text_field :seller_id, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
-    <%= f.text_field :price %>
+    <%= f.text_field :price, readonly: true %>
   </div>
   <div class="field">
     <%= f.label :quantity %><br>

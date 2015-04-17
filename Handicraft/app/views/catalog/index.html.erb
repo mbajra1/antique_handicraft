@@ -1,3 +1,44 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<table border="0">
+  <% @added_item.each do |item| %>
+      <%='1 Item added to your Shopping Cart'%>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= link_to image_tag(item.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: item.product_id)%></td>
+
+        <td>
+          <dt><%= item.name %></dt>
+          <dt>In Stock:<%= item.quantity %></dt>
+          <dt><%= number_to_currency(item.price) %></dt>
+        </td>
+
+        <td></td>
+        <td></td>
+        <td></td>
+
+        <td class="list_actions" >
+          <dt>Order Subtotal:<%= number_to_currency(@cart_sub_total) %></dt>
+          <dt><%= @cart_item_count%> items in your Shopping Cart</dt>
+
+        </td>
+
+        <td class="list_actions" >
+          <dt><%=link_to'Edit cart',shopping_cart_path(id: @shopping_cart) %></dt>
+        </td>
+
+        <td class="list_actions" >
+          <dt> <%= link_to 'Proceed to Checkout',shipping_books_url %></dt>
+        </td>
+
+      </tr>
+
+  <% end %>
+
+</table>
+
+
 <h1>Product Catalog</h1>
 
 <h2> Thangkas </h2>

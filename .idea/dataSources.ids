@@ -4,6 +4,26 @@
     <database-info product="SQLite" version="3.7.6.3" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <schema name="" catalog=""/>
+    <table name="cart_items" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="shopping_cart_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="product_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="seller_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="price" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="quantity" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="custom_auto_increments" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="counter_model_name" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="counter" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="index_custom_auto_increments_on_counter_model_name" unique="true" columns="counter_model_name"/>
+    </table>
     <table name="customers" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="customer_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
@@ -44,6 +64,20 @@
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
+    <table name="order_details" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="order_detail_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="order_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="product_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="quantity" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="unit_price" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="discount" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="tax_status" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="order_detail_status" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
     <table name="order_shipments" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="shipment_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
@@ -63,20 +97,32 @@
       <column name="shipped_date" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
+    <table name="orders" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="order_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="customer_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="shipping_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="order_status" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="order_date" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="shopping_cart_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
     <table name="products" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
-      <column name="product_id" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="name" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="product_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="description" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="image_url" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="category" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="subcategory" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="product_condition" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="price" sqlType="REAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
-      <column name="created_at" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="updated_at" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="seller_id" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
-      <column name="technical_description" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="image_url" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="category" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="subcategory" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="product_condition" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="price" sqlType="DECIMAL(8,2)" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="seller_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="technical_description" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="quantity" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <primary-key columns="id"/>
     </table>
@@ -114,6 +160,12 @@
       <column name="shipping_state_province" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="shipping_zip_postal" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="shipping_country_region" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="shopping_carts" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>

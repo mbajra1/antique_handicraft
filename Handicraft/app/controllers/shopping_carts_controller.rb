@@ -1,5 +1,6 @@
 class ShoppingCartsController < ApplicationController
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /shopping_carts
   # GET /shopping_carts.json
@@ -55,8 +56,10 @@ class ShoppingCartsController < ApplicationController
   # DELETE /shopping_carts/1.json
   def destroy
     @shopping_cart.destroy
+    session[:cart_id]=nil
+
     respond_to do |format|
-      format.html { redirect_to shopping_carts_url, notice: 'Shopping cart was successfully destroyed.' }
+      format.html { redirect_to catalog_url, notice: 'Your Shopping Cart is currently empty.' }
       format.json { head :no_content }
     end
   end
@@ -71,4 +74,9 @@ class ShoppingCartsController < ApplicationController
     def shopping_cart_params
       params[:shopping_cart]
     end
+
+  def invalid_cart
+    logger.error "Attempt to access invalid cart #{params[:id]}"
+    redirect_to error_handler_index_url, notice: 'Invalid cart'
+  end
 end

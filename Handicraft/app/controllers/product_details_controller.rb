@@ -3,7 +3,16 @@ class ProductDetailsController < ApplicationController
   def index
 
     #TODO get customer_id from session or login information
-    cust_id='cid1'
+    cust_id=' '
+
+    @current_user=User.find(session[:user_id])
+
+     @current_user.each do |user|
+       @cust_id=Customer.where(email: user.email)
+       @cust_id.each do |customer|
+         cust_id=customer.customer_id
+       end
+     end
 
     prod_id=params[:product_id]
 

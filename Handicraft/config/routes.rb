@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'error_handler/index'
+
   resources :cart_items
 
   resources :shopping_carts
