@@ -13,7 +13,7 @@ Price Quantity Total Price
         <td><%= link_to image_tag(item.product.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: item.product.product_id)%></td>
 
         <td>
-          <dt><%= item.product.product_name %></dt>
+          <dt><%= item.product.name %></dt>
           <%@seller= Seller.where(seller_id: item.seller_id)%>
           <%@seller.each do |name|%>
               <dt>Sold by:<%=name.company %></dt>
@@ -48,5 +48,5 @@ Price Quantity Total Price
 
 
 <%= button_to 'Empty cart', @shopping_cart, method: :delete, confirm: 'Are you sure?' %>
-<%= link_to 'Continue Shopping', catalog_index_path %>
+<%= link_to 'Continue Shopping', catalog_path %>
 <%= link_to 'Proceed to Checkout', shipping_books_url %>

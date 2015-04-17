@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     session[:shipping_book_id]=nil
     session[:discount]=nil
-    session[:user_id]=user.id
+    #session[:user_id]=user.id
     cart
   end
 

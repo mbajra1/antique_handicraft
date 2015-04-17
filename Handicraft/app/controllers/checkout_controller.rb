@@ -2,17 +2,20 @@ class CheckoutController < ApplicationController
   def index
 
 
+    #TODO get emaIL_id from session or login information
     email_id=' '
 
+=begin
     @current_user=User.find(session[:user_id])
 
     @current_user.each do |user|
       email_id=user.email
     end
+=end
 
 
     # get user id in this case email from session
-    #email_id = 'janesmith@gmail.com'
+    email_id = 'janesmith@gmail.com'
 
     customer = Customer.find_by_email(email_id)
 
@@ -125,7 +128,7 @@ class CheckoutController < ApplicationController
       last_index=last_index+index
       values.merge!({
                         "amount_#{index+1}" => item.price,
-                        "item_name_#{index+1}" => item.product.product_name,
+                        "item_name_#{index+1}" => item.product.name,
                         "item_number_#{index+1}" => item.product.product_id,
 
                         "quantity_#{index+1}" => item.quantity
@@ -200,8 +203,8 @@ class CheckoutController < ApplicationController
         end
 
         #add sipment info
-        #shipment.shipping_id=to be handel by protokoll gem
-        shipment=Shipping.new
+        #order_shipment.shipment_id=to be handel by protokoll gem
+        shipment=OrderShipment.new
         shipment.order_id=@current_order_id
         shipment.customer_id=customer_id
         shipment.shipping_type='Domestic Standard'
@@ -220,10 +223,10 @@ class CheckoutController < ApplicationController
 
 
         current_shipping_id=''
-        @current_shipping=Shipping.where(order_id: @current_order_id)
+        @current_shipping=OrderShipment.where(order_id: @current_order_id)
 
         @current_shipping.each do |shipment|
-          current_shipping_id=shipment.shipping_id
+          current_shipping_id=shipment.shipment_id
         end
 
 

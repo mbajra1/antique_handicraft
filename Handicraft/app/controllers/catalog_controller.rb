@@ -2,7 +2,7 @@ class CatalogController < ApplicationController
   def index
     #@catalogs = Product.order(:product_name)
 
-    if(params[:notice]!=nil)
+    if(params[:transaction]='Successful')
 
       flash[:notice]="Thank you for your business. Your transaction has been successfully completed"
 
@@ -11,10 +11,12 @@ class CatalogController < ApplicationController
     prod_cat1='Artifact'
     prod_cat2='Jewellery'
     prod_cat3='Thangka'
+    prod_id =params[:id]
 
     @thangkas = Product.where("category= '#{prod_cat3}'")
     @artifacts = Product.where("category= '#{prod_cat1}'")
     @jewelleries = Product.where("category= '#{prod_cat2}'")
+    @added_item=Product.where("product_id='#{prod_id}'")
 
     #get the shopping cart for the user
     @shopping_cart= session[:cart_id]

@@ -3,8 +3,9 @@ class ProductDetailsController < ApplicationController
   def index
 
     #TODO get customer_id from session or login information
-    cust_id=' '
+    cust_id='CUS15002'
 
+=begin
     @current_user=User.find(session[:user_id])
 
      @current_user.each do |user|
@@ -13,6 +14,7 @@ class ProductDetailsController < ApplicationController
          cust_id=customer.customer_id
        end
      end
+=end
 
     prod_id=params[:product_id]
 

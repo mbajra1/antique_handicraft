@@ -1,4 +1,4 @@
 class OrderShipment < ActiveRecord::Base
 
-  protokoll :shipping_id, :pattern => "SHP%y###"
+  protokoll :shipment_id, :pattern => "SHP%y###"
 end
