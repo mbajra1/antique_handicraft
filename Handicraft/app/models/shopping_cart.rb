@@ -8,7 +8,13 @@ class ShoppingCart < ActiveRecord::Base
     product = Product.find(product_id)
 
     if current_item
-      current_item.quantity += 1
+
+      if current_item.quantity < product.quantity
+        current_item.quantity += 1
+      else
+
+      end
+
     else
       current_item = cart_items.build(product_id: product_id,seller_id: product.seller_id,price: product.price,quantity: 1)
     end

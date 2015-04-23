@@ -200,6 +200,17 @@ class CheckoutController < ApplicationController
           order_details.tax_status= "Taxed"
           #order_details.order_detail_status=to be checked with inventory and updated by seller
           order_details.save
+
+          #update stock after order is placed
+          @product=Product.where(id: items.product_id)
+
+          @product.each do |product|
+            @quantity_balance=product.quantity-items.quantity
+          end
+
+          Product.find_by_id(items.product_id).update_attribute(:quantity, @quantity_balance)
+
+
         end
 
         #add sipment info

@@ -1,7 +1,11 @@
 
 <table border="0">
   <% @added_item.each do |item| %>
-      <%='1 Item added to your Shopping Cart'%>
+      <%if (item.quantity==@cart_quantity)%>
+          <%='Sorry, all available stocks for this item are now on reserved status'%>
+      <%else%>
+          <%='1 Item added to your Shopping Cart'%>
+      <%end%>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= link_to image_tag(item.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: item.product_id)%></td>
 

@@ -13,8 +13,15 @@
           <dt><%=product.description%></dt>
           <hr>
           <dt>Price:<%=number_to_currency(product.price)%></dt>
-          <dt>Stocks left:<%=product.quantity%></dt>
+
+          <%if product.quantity!=0%>
+              <dt>Stocks left:<%=product.quantity%></dt>
+          <%else%>
+              <dt>Stocks left: <%='Temporarily Out of Stock'%></dt>
+          <%end%>
+
         </td>
+
 
         <td>
           <form>
@@ -23,7 +30,9 @@
 
 
           </form>
-          <%=button_to 'Add to Cart', cart_items_path(product_id: product.id,quantity: 1)%>
+          <%if product.quantity!=0%>
+              <%=button_to 'Add to Cart', cart_items_path(product_id: product.id,quantity: 1)%>
+          <%end%>
           <!--<%#=button_to 'Add to Cart', cart_items_path(product_id: product.id)%>-->
           <!--<%#=button_to 'Add to Cart',cart_items_path(product_id: product.product_id)%>-->
         </td>
