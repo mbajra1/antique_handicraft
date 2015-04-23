@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :bid_actions
+
+  resources :bid_carts
+
   get 'checkout/index'
 
   get 'error_handler/index'

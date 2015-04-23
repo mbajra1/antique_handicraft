@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417132639) do
+ActiveRecord::Schema.define(version: 20150422184440) do
+
+  create_table "bid_actions", force: :cascade do |t|
+    t.string   "bidder_id"
+    t.decimal  "bid_amount"
+    t.integer  "bid_cart_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "bid_actions", ["bid_cart_id"], name: "index_bid_actions_on_bid_cart_id"
+
+  create_table "bid_carts", force: :cascade do |t|
+    t.string   "bid_product_id"
+    t.datetime "bid_end_date"
+    t.decimal  "opening_price"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "shopping_cart_id"

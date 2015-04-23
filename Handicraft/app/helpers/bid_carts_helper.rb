@@ -1,0 +1,2 @@
+module BidCartsHelper
+end

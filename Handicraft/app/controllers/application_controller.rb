@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   #protect_from_forgery with: :exception
   protect_from_forgery unless: -> { request.format.json? }
 
-
   private
+
 
   def current_cart
     ShoppingCart.find(session[:cart_id])
@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     session[:shipping_book_id]=nil
     session[:discount]=nil
-    #session[:user_id]=user.id
+
+
     cart
   end
 
