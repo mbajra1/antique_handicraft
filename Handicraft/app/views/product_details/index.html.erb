@@ -1,4 +1,4 @@
-<div class ="content">
+<h1> Product Details </h1>
 
   <% for product in @product_details %>
       <div class = "row">
@@ -14,7 +14,7 @@
           <p class="description"><%=product.description%></p>
           <p class="description">Price: <span class="price"><%=number_to_currency(product.price)%></span></p>
           <p class="description" >Stocks left: &nbsp; <%=product.quantity%></p>
-
+          
           <form>
             <div class="form-group">
               <label for="quantity">Qty</label>

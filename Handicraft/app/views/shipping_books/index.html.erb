@@ -1,41 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Shipping Books</h1>
+<h1>Shipping Address Book</h1>
+<p>
+  Please select a desired shipping address from your address book. If the desired address is not present, you can enter new shipping address by clicking <%= link_to 'Add New Shipping Address', new_shipping_book_path %>.
+</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Shipping book</th>
-      <th>Customer</th>
-      <th>Shipping name</th>
-      <th>Shipping address</th>
-      <th>Shipping city</th>
-      <th>Shipping state province</th>
-      <th>Shipping zip postal</th>
-      <th>Shipping country region</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<% if @shipping_books %>
     <% @shipping_books.each do |shipping_book| %>
-      <tr>
-        <td><%= shipping_book.shipping_book_id %></td>
-        <td><%= shipping_book.customer_id %></td>
-        <td><%= shipping_book.shipping_name %></td>
-        <td><%= shipping_book.shipping_address %></td>
-        <td><%= shipping_book.shipping_city %></td>
-        <td><%= shipping_book.shipping_state_province %></td>
-        <td><%= shipping_book.shipping_zip_postal %></td>
-        <td><%= shipping_book.shipping_country_region %></td>
-        <td><%= link_to 'Show', shipping_book %></td>
-        <td><%= link_to 'Edit', edit_shipping_book_path(shipping_book) %></td>
-        <td><%= link_to 'Destroy', shipping_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <table border="1">
+          <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <td>
+              <dt><%=shipping_book.shipping_name  %></dt>
+              <dt><%=shipping_book.shipping_address %></dt>
+              <dt><%=shipping_book.shipping_city %>,<%=shipping_book.shipping_state_province %><%=shipping_book.shipping_zip_postal %></dt>
+              <dt><%=shipping_book.shipping_country_region %></dt>
+            </td>
+          </tr>
+          <tr>
+            <td><%= link_to 'Ship to this address',checkout_index_path,:onclick=>session[:shipping_book_id]=shipping_book.shipping_book_id %></td>
+          </tr>
+          <tr>
+            <td>
+              <%= link_to 'Edit', edit_shipping_book_path(shipping_book) %>
+            </td>
+            <td>
+              <%= link_to 'Destroy', shipping_book, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        </table>
+        <hr>
     <% end %>
-  </tbody>
-</table>
+<% end %>
 
 <br>
 
-<%= link_to 'New Shipping book', new_shipping_book_path %>
+<%= link_to 'Add New Shipping Address', new_shipping_book_path %>
+

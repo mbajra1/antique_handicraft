@@ -1,0 +1,200 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+
+<h1>Review and Checkout</h1>
+<hr>
+
+<table border="0">
+
+  <tr>
+
+    <td>
+      <p>Shipping Address <%=link_to'Change',shipping_books_url %></p>
+      <table border="0">
+        <% if @ship_address %>
+            <% @ship_address.each do |address| %>
+                <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+                  <td>
+                    <dt><%=address.shipping_name %></dt>
+                    <dt><%=address.shipping_address %></dt>
+                    <dt><%=address.shipping_city %>,<%=address.shipping_state_province %><%=address.shipping_zip_postal %></dt>
+                    <dt><%=address.shipping_country_region %></dt>
+                    <%@customer.each do |customer|%>
+                        <dt>Mobile:<%=customer.cell_phone %></dt>
+                        <dt>Home:<%=customer.home_phone %></dt>
+                    <%end%>
+                  </td>
+                </tr>
+            <% end %>
+        <% end %>
+      </table>
+    </td>
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+    <td>
+      <p>Billing Address <%=link_to'Change' %></p>
+      <table border="0">
+        <% if @customer %>
+            <% @customer.each do |address| %>
+                <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+                  <td>
+                    <dt><%=address.first_name %><%=address.last_name %></dt>
+                    <dt><%=address.address %></dt>
+                    <dt><%=address.city %>,<%=address.state_province %><%=address.zip_postal_code %></dt>
+                    <dt><%=address.country_region %></dt>
+                  </td>
+                </tr>
+            <% end %>
+        <% end %>
+      </table>
+    </td>
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+    <!--  <td>
+      <p>Payment Method <%=link_to'Change' %></p>
+      <table border="0">
+      </table>
+    </td>-->
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+    <td>
+      <form>
+        Promotional codes & Discounts<br>
+        <input type="text" name="promo"  placeholder="Enter code here.....">
+        <input type="submit" value="Apply">
+      </form>
+    </td>
+
+  </tr>
+
+</table>
+
+<hr>
+
+
+
+
+<table border="0">
+
+  <tr>
+
+    <td>
+      <table border="0">
+        <% @check_cart_items.each do |item| %>
+            <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+              <td>
+                <%= link_to image_tag(item.product.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: item.product.product_id)%>
+              </td>
+              <td>
+                <dt><%= item.product.name %></dt>
+                <%@seller= Seller.where(seller_id: item.seller_id)%>
+                <%@seller.each do |name|%>
+                    <dt>Sold by: <%=name.company %></dt>
+                    <dt>Ships from: <%=name.city %>,<%=name.state_province %></dt>
+                <%end%>
+                <dt>In Stock: <%= item.product.quantity %></dt>
+                <dt>List price: <%= number_to_currency(item.product.price) %></dt>
+                <dt>Quantity: <%= item.quantity %></dt>
+                <dt>Total price: <%= number_to_currency(item.total_price) %></dt>
+
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </td>
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+
+
+
+
+
+    <td>
+      <table border="0">
+        <th>Choose a delivery option:</th>
+        <tr>
+          <td>
+            <form>
+              <input type="radio" name="shipping_type" id="r1" value="Domestic Standard" checked="checked">Domestic Standard
+            </form>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+    <td>
+      <table border="1">
+        <th>Order Summary</th>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <td>
+            <dt>Total number of items:<%= @cart_item_count%></dt>
+            <dt>Cost of items:<%= number_to_currency(@item_sub_total) %></dt>
+            <dt>Shipping & Handling:<%= number_to_currency(@total_ship_cost) %></dt>
+            <dt>Discount:<%= number_to_currency(@discount_amount) %></dt>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <dt>Total before tax:<%= number_to_currency(@cart_sub_total) %></dt>
+            <dt>Estimated tax :<%= number_to_currency(@total_tax) %></dt>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <dt>Order Total:<%= number_to_currency(@total_due) %></dt>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="list_actions">
+            <dt> <%= link_to(image_tag("https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_cc_171x47.png"), checkout_index_url(transaction: 'successful'))%>
+            </dt>
+
+          </td>
+        </tr>
+
+      </table>
+    </td>
+
+  </tr>
+
+</table>
+
+<br>
+<hr>
+
+
+<%#=link_to 'Place Your Order', controller: 'checkout', action: 'confirmation'%>
+<%= link_to(image_tag("https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg"), @url)
+%>
+
+
+<%# link_to "Checkout",@url %>
+
+<br>
+<hr>

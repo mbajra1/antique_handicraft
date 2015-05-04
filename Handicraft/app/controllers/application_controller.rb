@@ -17,19 +17,34 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
-
+  
+  #required field for security
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email,:username, :password, :password_confirmation)}
     devise_parameter_sanitizer.for(:account_update) << :username
   end
-
+  
+  # for custom layput for devise login
   def layout_by_resource
     if devise_controller? && resource_name == :user && action_name == 'new'
       "custom"
     else
       "application"
     end
+  end
+
+  private
+
+  # for Cart
+  def current_cart
+    ShoppingCart.find(session[:cart_id])
+  rescue ActiveRecord::RecordNotFound
+    cart =  ShoppingCart.create
+    session[:cart_id] = cart.id
+    session[:shipping_book_id]=nil
+    session[:discount]=nil
+    cart
   end
 end

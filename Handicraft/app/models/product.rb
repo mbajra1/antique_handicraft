@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
+  # relationship
   belongs_to :user
+  # assign product id automatically
+  protokoll :product_id, :pattern => "PRD%y###"
   validates :product_id, presence: true
   validates :name, presence: true
   validates :description, presence: true
@@ -8,10 +11,6 @@ class Product < ActiveRecord::Base
   validates :product_condition, presence: true
   validates :price, presence:true
   validates :quantity, presence:true
-
-  def combined_value
-    "#{self}[#{self}]"
-  end
 
   # Search Function
   def self.search(search)

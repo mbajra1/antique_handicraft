@@ -12,6 +12,22 @@ Rails.application.routes.draw do
 
   resources :roles
 
+  resources :bid_actions
+
+  resources :bid_carts
+
+  get 'checkout/index'
+
+  get 'error_handler/index'
+
+  resources :cart_items
+
+  resources :shopping_carts
+
+  resources :order_details
+
+  resources :orders
+
   resources :order_shipments
 
   resources :shipping_books

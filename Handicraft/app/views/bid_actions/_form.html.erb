@@ -1,0 +1,29 @@
+<%= form_for(@bid_action) do |f| %>
+  <% if @bid_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bid_action.errors.count, "error") %> prohibited this bid_action from being saved:</h2>
+
+      <ul>
+      <% @bid_action.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bidder_id %><br>
+    <%= f.text_field :bidder_id %>
+  </div>
+  <div class="field">
+    <%= f.label :bid_amount %><br>
+    <%= f.text_field :bid_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :bid_cart_id %><br>
+    <%= f.text_field :bid_cart_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

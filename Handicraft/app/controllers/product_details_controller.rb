@@ -6,7 +6,7 @@ class ProductDetailsController < ApplicationController
 
     @product_details =Product.where("product_id= '#{prod_id}'")
 
-    for product in @product_details
+   for product in @product_details
       prod_subcat=product.subcategory
       prod_name=product.name
       prod_price=product.price

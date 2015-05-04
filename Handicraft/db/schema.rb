@@ -13,6 +13,43 @@
 
 ActiveRecord::Schema.define(version: 20150501040254) do
 
+  create_table "bid_actions", force: :cascade do |t|
+    t.string   "bidder_id"
+    t.decimal  "bid_amount"
+    t.integer  "bid_cart_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "bid_actions", ["bid_cart_id"], name: "index_bid_actions_on_bid_cart_id"
+
+  create_table "bid_carts", force: :cascade do |t|
+    t.string   "bid_product_id"
+    t.datetime "bid_end_date"
+    t.decimal  "opening_price"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "shopping_cart_id"
+    t.string   "product_id"
+    t.string   "seller_id"
+    t.decimal  "price"
+    t.integer  "quantity"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "custom_auto_increments", force: :cascade do |t|
+    t.string   "counter_model_name"
+    t.integer  "counter",            default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "custom_auto_increments", ["counter_model_name"], name: "index_custom_auto_increments_on_counter_model_name"
+
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
     t.string   "last_name"
@@ -48,6 +85,19 @@ ActiveRecord::Schema.define(version: 20150501040254) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "order_details", force: :cascade do |t|
+    t.string   "order_detail_id"
+    t.string   "order_id"
+    t.string   "product_id"
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.decimal  "discount"
+    t.string   "tax_status"
+    t.string   "order_detail_status"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "order_shipments", force: :cascade do |t|
     t.string   "shipment_id"
     t.string   "order_id"
@@ -66,6 +116,16 @@ ActiveRecord::Schema.define(version: 20150501040254) do
     t.datetime "shipped_date"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string   "order_id"
+    t.string   "customer_id"
+    t.string   "shipping_id"
+    t.string   "order_status"
+    t.datetime "order_date"
+    t.integer  "shopping_cart_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
   create_table "products", force: :cascade do |t|
     t.string   "product_id"
     t.string   "name"
@@ -135,6 +195,12 @@ ActiveRecord::Schema.define(version: 20150501040254) do
     t.string   "shipping_country_region"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "shopping_carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "invoice_id"
   end
 
   create_table "state_taxes", force: :cascade do |t|
