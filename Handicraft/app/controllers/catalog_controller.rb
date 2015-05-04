@@ -18,7 +18,7 @@ class CatalogController < ApplicationController
   
     # Cart transaction
     if(params[:transaction]=='successful')
-      flash[:notice]="Thank you for your business. Your transaction has been successfully completed"
+     # flash[:notice]="Thank you for your business. Your transaction has been successfully completed"
     end
 
     prod_id =params[:id]
@@ -49,5 +49,4 @@ class CatalogController < ApplicationController
       item_total=item.total_price
       @cart_sub_total=@check_cart_items.to_a.sum { |item| item.total_price }
     end
-  end
 end
