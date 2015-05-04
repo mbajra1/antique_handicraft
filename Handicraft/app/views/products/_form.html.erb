@@ -3,58 +3,58 @@
 <% remote = modal ? true : false %>
 <%= form_for(@product, remote: remote, html: {role: :form, 'data-model' => 'product'}) do |f| %>
 <%#= form_for(@product) do |f| %>
-  <% if @product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <% if @product.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% @product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @product.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :product_id, class: 'control-label'%><br>
+      <%= f.text_field :product_id, class: 'form-control' %>
+      <span class="help-block"></span>
     </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :product_id, class: 'control-label'%><br>
-    <%= f.text_field :product_id, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :name, class: 'control-label' %><br>
-    <%= f.text_field :name, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :description, class: 'control-label' %><br>
-    <%= f.text_area :description, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :image_url, class: 'control-label' %><br>
-    <%= f.text_field :image_url %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :category, class: 'control-label' %><br>
-    <%= f.text_field :category, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :subcategory, class: 'control-label' %><br>
-    <%= f.text_field :subcategory, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :product_condition, class: 'control-label' %><br>
-    <%= f.text_field :product_condition, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
-  <div class="form-group">
-    <%= f.label :price, class: 'control-label' %><br>
-    <%= f.text_field :price, class: 'form-control' %>
-    <span class="help-block"></span>
-  </div>
+    <div class="form-group">
+      <%= f.label :name, class: 'control-label' %><br>
+      <%= f.text_field :name, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :description, class: 'control-label' %><br>
+      <%= f.text_area :description, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :image_url, class: 'control-label' %><br>
+      <%= f.text_field :image_url %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :category, class: 'control-label' %><br>
+      <%= f.text_field :category, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :subcategory, class: 'control-label' %><br>
+      <%= f.text_field :subcategory, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :product_condition, class: 'control-label' %><br>
+      <%= f.text_field :product_condition, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
+    <div class="form-group">
+      <%= f.label :price, class: 'control-label' %><br>
+      <%= f.text_field :price, class: 'form-control' %>
+      <span class="help-block"></span>
+    </div>
     <div class="form-group">
       <%#= f.label :u_id, class: 'control-label' %><br>
       <%#= f.text_field :u_id, class: 'form-control' %>
@@ -69,9 +69,9 @@
       <%= f.label :quantity, class: 'control-label' %><br>
       <%= f.text_field :quantity, class: 'form-control' %>
       <span class="help-block"></span>
-  <div class="actions">
-    <%= f.submit :class=>"btn btn-large btn-info"%>
-  </div>
+      <div class="actions">
+        <%= f.submit :class=>"btn btn-large btn-info"%>
+      </div>
 <% end %>
 
 </div>

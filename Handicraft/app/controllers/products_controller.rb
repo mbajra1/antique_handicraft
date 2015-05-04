@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-   #@product = Product.new
+    #@product = Product.new
   end
 
   # GET /products/1/edit
@@ -34,12 +34,12 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-   #@product = Product.new(product_params)
-  if current_user
+    #@product = Product.new(product_params)
+    if current_user
       u = current_user.id
       @product.u_id = u
-      @product.save
-  end
+     # @product.save
+    end
 
     respond_to do |format|
       if @product.save
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-   # @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
@@ -84,7 +84,7 @@ class ProductsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-   @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

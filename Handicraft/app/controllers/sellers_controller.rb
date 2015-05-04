@@ -88,6 +88,7 @@ class SellersController < ApplicationController
       role = u.roles.find_by_name("seller")
 
       @products = Product.where("u_id=?", current_user.id)
+
       @products.delete(@products) # delete associate product
 
       if role

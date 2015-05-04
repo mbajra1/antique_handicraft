@@ -73,6 +73,7 @@
       <column name="price" sqlType="DECIMAL(8,2)" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
       <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="seller_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="technical_description" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="quantity" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
       <column name="u_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>

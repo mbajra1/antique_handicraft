@@ -52,9 +52,11 @@ ActiveRecord::Schema.define(version: 20150501040254) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
+    t.string   "company"
     t.string   "last_name"
     t.string   "first_name"
     t.string   "email"
+    t.string   "business_phone"
     t.string   "home_phone"
     t.string   "cell_phone"
     t.string   "fax"
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 20150501040254) do
     t.decimal  "price",                 precision: 8, scale: 2
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.string   "seller_id"
     t.string   "technical_description"
     t.integer  "quantity"
     t.integer  "u_id"
@@ -224,6 +227,7 @@ ActiveRecord::Schema.define(version: 20150501040254) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
     t.string   "username"
   end
 

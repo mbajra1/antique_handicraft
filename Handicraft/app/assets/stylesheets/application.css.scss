@@ -410,6 +410,7 @@ body#custom {
     .content {
       input.quantity {width: 60px;}
     }
+    input[type="number"]{ display:inline; width:50px}
     /* End of Product Detail css */
   }
   /* End of Page container css */
