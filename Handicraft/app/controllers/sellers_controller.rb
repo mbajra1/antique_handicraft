@@ -5,6 +5,7 @@ class SellersController < ApplicationController
   # GET /sellers.json
   def index
     @sellers = Seller.all
+
   end
 
   # GET /sellers/1
@@ -15,6 +16,7 @@ class SellersController < ApplicationController
   # GET /sellers/new
   def new
     @seller = Seller.new
+
   end
 
   # GET /sellers/1/edit
@@ -24,11 +26,36 @@ class SellersController < ApplicationController
   # POST /sellers
   # POST /sellers.json
   def create
+
     @seller = Seller.new(seller_params)
+    if current_user
+    u = User.find(current_user.id)
+    u.roles << Role.find_by_name("seller")
+    u.save
+
+    @customer =Customer.where("email=?",current_user.email)
+    @seller.email = current_user.email
+
+    for customer in @customer
+      @seller.first_name = customer.first_name
+      @seller.last_name = customer.last_name
+      @seller.home_phone = customer.home_phone
+      @seller.cell_phone = customer.cell_phone
+      @seller.fax= customer.fax
+      @seller.address = customer.address
+      @seller.city = customer.city
+      @seller.state_province = customer.state_province
+      @seller.zip_postal_code = customer.zip_postal_code
+      @seller.country_region = customer.country_region
+
+    end
+
+    @seller.save
+    end
 
     respond_to do |format|
       if @seller.save
-        format.html { redirect_to @seller, notice: 'Seller was successfully created.' }
+        format.html { redirect_to @seller, notice: 'Your Seller Account was successfully created.' }
         format.json { render :show, status: :created, location: @seller }
       else
         format.html { render :new }
@@ -42,7 +69,7 @@ class SellersController < ApplicationController
   def update
     respond_to do |format|
       if @seller.update(seller_params)
-        format.html { redirect_to @seller, notice: 'Seller was successfully updated.' }
+        format.html { redirect_to @seller, notice: 'Your Seller Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @seller }
       else
         format.html { render :edit }
@@ -54,9 +81,23 @@ class SellersController < ApplicationController
   # DELETE /sellers/1
   # DELETE /sellers/1.json
   def destroy
+
+    # delete the association from Roles_Users
+    if current_user
+      u = User.find(current_user.id)
+      role = u.roles.find_by_name("seller")
+
+      @products = Product.where("u_id=?", current_user.id)
+      @products.delete(@products) # delete associate product
+
+      if role
+        u.roles.delete(role) # delete role
+      end
+    end
+
     @seller.destroy
     respond_to do |format|
-      format.html { redirect_to sellers_url, notice: 'Seller was successfully destroyed.' }
+      format.html { redirect_to dashboard_path, notice: 'Your Sellers Account was successfully deleted.' }
       format.json { head :no_content }
     end
   end

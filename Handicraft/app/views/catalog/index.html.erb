@@ -1,70 +1,24 @@
-<h1>Product Catalog</h1>
+<div class="row">
 
-<h2> Thangkas </h2>
-<div class="scroll">
-  <table>
-    <% if @thangkas %>
-        <%  @thangkas.each do |thangka| %>
-            <td>
+  <div class="col-md-3">
 
-              <dt><%= link_to image_tag(thangka.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: thangka.product_id)%></dt>
-              <dt><%= thangka.name %></dt>
-              <dt><%= truncate thangka.description,lenght: 50 %></dt>
-              <dt><%= number_to_currency(thangka.price) %></dt>
+  </div>
 
-            </td>
-        <%end%>
-    <% end %>
-  </table>
-</div>
-<br>
-<hr>
-
-<h2> Artifacts </h2>
-<div class="scroll">
-  <table>
-    <% if @artifacts %>
-        <%  @artifacts.each do |artifact| %>
-            <td>
-
-              <dt><%= link_to image_tag(artifact.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: artifact.product_id)%></dt>
-              <dt><%= artifact.name %></dt>
-              <dt><%= truncate artifact.description,lenght: 50 %></dt>
-              <dt><%= number_to_currency(artifact.price) %></dt>
-
-            </td>
-        <%end%>
-    <% end %>
-  </table>
-</div>
-<br>
-<hr>
-
-<h2>Jewelleries </h2>
-
-
-<div class="scroll">
-  <table>
-    <% if @jewelleries %>
-        <%  @jewelleries.each do |jewellery| %>
-
-            <td>
-              <dt><%= link_to image_tag(jewellery.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: jewellery.product_id)%></dt>
-              <dt><%= jewellery.name %></dt>
-              <dt><%= truncate jewellery.description,lenght: 50 %></dt>
-              <dt><%= number_to_currency(jewellery.price) %></dt>
-            </td>
-
-        <%end%>
-
-    <% end %>
-
-  </table>
-
-  <br>
-  <hr>
+  <div class="col-md-9">
+    <ul class="c-result-list">
+      <% if @product %>
+          <%  @product.each do |product| %>
+              <li class="col-sm-4 c-result-item list-unstyled">
+                <div class ="s-item-container">
+                  <div class="spacing-mini"><%= link_to image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail'),product_details_path(product_id: product.product_id)%></div>
+                  <div class="spacing-mini"><h4><%= link_to product.name, product_details_path(product_id: product.product_id) %></a></h4></div>
+                  <div class="spacing-mini"><p><%= product.description[0..50] +"..." %></p></div>
+                  <div class="spacing-mini"><h4><%= number_to_currency(product.price) %></h4></div>
+                </div>
+              </li>
+          <%end%>
+      <% end %>
+    </ul>
+  </div>
 
 </div>
-
-
-

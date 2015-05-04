@@ -1,10 +1,18 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  #before_action :set_product, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorize_resource :only => [:index, :show, :create]
+  skip_before_filter :verify_authenticity_token
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    #@products = Product.all
+    if current_user
+      @products = Product.where("u_id=?", current_user.id)
+    else
+      @products = Product.all
+    end
     # added:
     @product = Product.new
   end
@@ -16,7 +24,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
-    @product = Product.new
+   #@product = Product.new
   end
 
   # GET /products/1/edit
@@ -26,7 +34,12 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(product_params)
+   #@product = Product.new(product_params)
+  if current_user
+      u = current_user.id
+      @product.u_id = u
+      @product.save
+  end
 
     respond_to do |format|
       if @product.save
@@ -60,6 +73,7 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+   # @product = Product.find(params[:id])
     @product.destroy
     respond_to do |format|
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
@@ -70,11 +84,11 @@ class ProductsController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_product
-    @product = Product.find(params[:id])
+   @product = Product.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:product_id, :seller_id, :name, :image_url, :category, :subcategory, :product_condition, :description, :technical_description, :price, :quantity)
+    params.require(:product).permit(:product_id, :name, :image_url, :category, :subcategory, :product_condition, :description, :technical_description, :price, :quantity, :u_id)
   end
 end

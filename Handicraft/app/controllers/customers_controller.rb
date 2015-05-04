@@ -25,10 +25,13 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
-
+    if current_user
+      @customer.email = current_user.email
+      @customer.save
+    end
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
+        format.html { redirect_to @customer, notice: 'Your Customer Account was successfully created.' }
         format.json { render :show, status: :created, location: @customer }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
+        format.html { redirect_to @customer, notice: 'Your Sellers Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit }
@@ -54,9 +57,25 @@ class CustomersController < ApplicationController
   # DELETE /customers/1
   # DELETE /customers/1.json
   def destroy
+
+    # delete the association from Roles_Users
+    if current_user
+      u = User.find(current_user.id)
+      role = u.roles.find_by_name("customer")
+
+      # delete associate role
+      if role
+        u.roles.delete(role)
+      end
+
+      # delete associate user account
+      # u.delete
+
+    end
+
     @customer.destroy
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
+      format.html { redirect_to dashboard_path, notice: 'Your Sellers Account was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +88,6 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:customer_id, :company, :last_name, :first_name, :email, :business_phone, :home_phone, :cell_phone, :fax, :address, :city, :state_province, :zip_postal_code, :country_region)
+      params.require(:customer).permit(:customer_id, :last_name, :first_name, :email, :home_phone, :cell_phone, :fax, :address, :city, :state_province, :zip_postal_code, :country_region)
     end
 end

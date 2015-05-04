@@ -1,32 +1,33 @@
 
-  <div class="row">
-    <div class="col-md-3">
 
-    </div>
-    <div class="col-md-3">
-      <h4>ABOUT STORE</h4>
-      <ul>
-        <li><%= link_to "Home", home_index_path %></li>
-       <!-- <li><#%= link_to "About Us", about_index_path %></li>-->
-        <li><%= link_to "Contact", contact_index_path %></li>
-      </ul>
-    </div>
-    <div class="col-md-3">
-      <h4>MY ACCOUNT</h4>
-      <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">Create Account</a></li>
-        <li><a href="#">Delete Account</a></li>
-      </ul>
-    </div>
-    <div class="col-md-3">
-      <h4>SHOPPING</h4>
-      <ul>
-        <li><a href="#">Product Catalog</a></li>
-        <li><a href="#">Thangka</a></li>
-        <li><a href="#">Artifacts</a></li>
-        <li><a href="#">Jewellery</a></li>
-      </ul>
-    </div>
-  </div>
-  <br/>
+<table class="footer_links">
+     <tr>
+       <td></td>
+        <td>
+            <h4>ABOUT STORE</h4>
+            <ul class="list-unstyled">
+              <li><%= link_to "Home", home_path %></li>
+              <li><%= link_to "About Us", about_path %></li>
+              <li><%= link_to "Contact", contact_path %></li>
+            </ul>
+        </td>
+        <td>
+            <h4>MY ACCOUNT</h4>
+            <ul class="list-unstyled">
+              <li><%= link_to "Dashboard", dashboard_path %></a></li>
+              <li><%= link_to "Create an Account", users_sign_up_path %></li>
+              <li><a href="#">Delete Account</a></li>
+            </ul>
+        </td>
+        <td>
+            <h4>SHOPPING</h4>
+            <ul class="list-unstyled">
+              <li><%= link_to "Catalog", catalog_path(:category => "All")%></li>
+              <li><%= link_to "Thangka", catalog_path(:category => "Thangka")%></li>
+              <li><%= link_to "Artifact", catalog_path(:category => "Artifact") %></li>
+              <li><%= link_to "Jewellary", catalog_path(:category => "Jewellery") %></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+

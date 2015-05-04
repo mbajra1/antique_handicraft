@@ -8,5 +8,8 @@ class History < ActiveRecord::Base
     end
   end
 
+  #Featured Items
+  scope :date_visited, ->(time) { where("date_visited > ?", time).limit(3) }
+
 end
 History.rm_duplicate

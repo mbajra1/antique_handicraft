@@ -6,11 +6,9 @@
   <thead>
     <tr>
       <th>Customer</th>
-      <th>Company</th>
       <th>Last name</th>
       <th>First name</th>
       <th>Email</th>
-      <th>Business phone</th>
       <th>Home phone</th>
       <th>Cell phone</th>
       <th>Fax</th>
@@ -27,11 +25,9 @@
     <% @customers.each do |customer| %>
       <tr>
         <td><%= customer.customer_id %></td>
-        <td><%= customer.company %></td>
         <td><%= customer.last_name %></td>
         <td><%= customer.first_name %></td>
         <td><%= customer.email %></td>
-        <td><%= customer.business_phone %></td>
         <td><%= customer.home_phone %></td>
         <td><%= customer.cell_phone %></td>
         <td><%= customer.fax %></td>
@@ -40,9 +36,9 @@
         <td><%= customer.state_province %></td>
         <td><%= customer.zip_postal_code %></td>
         <td><%= customer.country_region %></td>
-        <td><%= link_to 'Show', customer %></td>
-        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%#= link_to 'Show', customer %></td>-->
+        <td><%= link_to 'Edit', edit_customer_path(customer.id), :class => "btn btn-small btn-success" %></td>
+        <td><%= button_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -50,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to 'New Customer', new_customer_path, :class => "btn btn-small btn-info"%>

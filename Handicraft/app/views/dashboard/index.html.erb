@@ -1,52 +1,132 @@
-<h1>Your Dashboard</h1>
 
+<!--<script type="application/javascript">
+    jQuery(function($) {
+        var panelList = $('#draggablePanelList');
 
-<table>
-  <tr>
-    <td>History</td>
-    <td>
-      <ul>
-        <li><%=link_to "Purchase History"%></li>
-        <li><%=link_to "Browsing History"%></li>
-        <li><%=link_to "Bidding History"%></li>
+        panelList.sortable({
+            // Only make the .panel-heading child elements support dragging.
+            // Omit this to make then entire <li>...</li> draggable.
+            handle: '.panel-heading',
+            update: function() {
+                $('.panel', panelList).each(function(index, elem) {
+                    var $listItem = $(elem),
+                            newIndex = $listItem.index();
+
+                    // Persist the new indices.
+                });
+            }
+        });
+    });
+
+</script>-->
+
+<div class="col-xs-1"></div>
+<div class="col-xs-11">
+  <h3>Your Dashboard</h3>
+
+  <ul id="draggablePanelList" class="list-unstyled">
+    <li class="panel panel-info">
+      <ul class="nav nav-tabs panel-heading" role="tablist">
+        <li class="active"><a href="#Purchase_history" role="tab" data-toggle="tab">Purchase History</a></li>
+        <li><a href="#Browsing_history" role="tab" data-toggle="tab">Browsing History</a></li>
+        <li><a href="#Bidding_history" role="tab" data-toggle="tab">Bidding History</a></li>
       </ul>
-    </td>
-    <td></td>
-  </tr>
 
-
-  <tr>
-    <td>Bidding</td>
-    <td>
-      <ul>
-        <li><%=link_to "Current Bids / Offers"%></li>
-        <li><%=link_to "Wins"%></li>
-        <li><%=link_to "Losses"%></li>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="Purchase_history"> <h4>This is your Purchase_history</h4></div>
+        <div class="tab-pane" id="Browsing_history">
+          <ul class="c-result-list">
+          <% if !@history.nil?%>
+              <%  @history.each do |history| %>
+                  <li class="c-result-item pd-rt">
+                    <%= link_to history.product_name, product_details_path(product_id: history.product_id)%></a>
+                  </li><br />
+              <% end %>
+            <% else %>
+                <li class="c-result-item pd-rt">You don't have a history</li><br />
+          <% end %>
+          </ul>
+        </div>
+        <div class="tab-pane" id="Bidding_history">This is your Bidding history</div>
+      </div>
+    </li>
+    <li class="panel panel-info">
+      <ul class="nav nav-tabs panel-heading" role="tablist">
+        <li class="active"><a href="#current_bid" role="tab" data-toggle="tab">Current Bids / Offers"</a></li>
+        <li><a href="#win" role="tab" data-toggle="tab">Win</a></li>
+        <li><a href="#loss" role="tab" data-toggle="tab">Loss</a></li>
       </ul>
-    </td>
-    <td></td>
-  </tr>
 
-  <tr>
-    <td>Account Maintenance</td>
-    <td>
-      <ul>
-        <li><%=link_to "Personal Information"%></li>
-        <li><%=link_to "Shipping"%></li>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="current_bid">Current Bids / Offers</div>
+        <div class="tab-pane" id="win">You won the bid</div>
+        <div class="tab-pane" id="loss">You loss the bid</div>
+      </div>
+    </li>
+    <li class="panel panel-info">
+      <ul class="nav nav-tabs panel-heading" role="tablist">
+        <li class="active"><a href="#personal_info" role="tab" data-toggle="tab">Personal Information</a></li>
+        <li><a href="#shipping" role="tab" data-toggle="tab">Shipping</a></li>
       </ul>
-    </td>
-    <td></td>
-  </tr>
 
-  <tr>
-    <td>Seller Dashboard</td>
-    <td>
-      <ul>
-        <li><%=link_to "Seller Dashboard"%></li>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="personal_info">
+          <ul class="c-result-list">
+            <% if @customer %>
+                <%  @customer.each do |customer| %>
+                    <li class="c-result-item pd-rt list-unstyled ">First Name:&nbsp;<%= customer.first_name %></li>
+                    <li class="c-result-item pd-rt list-unstyled ">Last Name:&nbsp;<%= customer.last_name %></li>
+                    <li class="c-result-item pd-rt list-unstyled block">Home Phone:&nbsp;<%= customer.home_phone %></li>
+                    <li class="c-result-item pd-rt list-unstyled ">Cell Phone:&nbsp; <%= customer.cell_phone %></li>
+                    <li class="c-result-item pd-rt list-unstyled ">Fax:&nbsp; <%= customer.fax%></li>
+                    <li class="c-result-item pd-rt list-unstyled block">Address:&nbsp; <%= customer.address %></li>
+                    <li class="c-result-item pd-rt list-unstyled ">City:&nbsp; <%= customer.city %></li>
+                    <li class="c-result-item pd-rt list-unstyled ">State:&nbsp; <%= customer.state_province%></li>
+                    <li class="c-result-item pd-rt list-unstyled ">Zip-Code:&nbsp; <%= customer.zip_postal_code %></li>
+                    <li class="c-result-item pd-rt list-unstyled block">Country:&nbsp; <%= customer.country_region%></li>
+                    <li class="list-unstyled inline-block"><%= link_to 'Edit Profile', edit_customer_path(customer.id), :class => "btn btn-small btn-success" %></li>
+                    <li class="list-unstyled inline-block"><%= button_to 'Delete Profile', customer, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></li>
+          <%end%>
+            <% end %>
+          </ul>
+        </div>
+        <div class="tab-pane" id="shipping"> Your Shipping history</div>
+      </div>
+    </li>
+    <li class="panel panel-info">
+      <ul class="nav nav-tabs panel-heading" role="tablist">
+        <li class="active"><a href="#seller_dashboard" role="tab" data-toggle="tab">Seller Dashboard</a></li>
+            <li><a href="#manage_products" role="tab" data-toggle="tab">Manage Products</a></li>
       </ul>
-    </td>
-    <td></td>
-  </tr>
 
-</table>
-
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="seller_dashboard">
+          <% if current_user.present? && !current_user.role_ids.include?(2) && current_user.role_ids.include?(3)%>
+             <%= link_to "Sign up for Seller's Account", sellers_new_path%>
+          <% else %>
+              <ul class="c-result-list">
+                <% if @seller %>
+                    <%  @seller.each do |seller| %>
+                        <li class="c-result-item pd-rt list-unstyled block">Company:&nbsp;<%= seller.company %></li>
+                        <li class="c-result-item pd-rt list-unstyled block">Business Phone:&nbsp;<%= seller.business_phone %></li>
+                        <li class="list-unstyled inline-block"><%= link_to 'Edit Profile', edit_seller_path(seller.id), :class => "btn btn-small btn-success" %></li>
+                        <li class="list-unstyled inline-block"><%= button_to 'Delete Profile', seller, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></li>
+                    <%end%>
+                <% end %>
+              </ul>
+          <%end%>
+        </div>
+        <div class="tab-pane" id="manage_products">
+            <ul class="c-result-list">
+                <li class="list-unstyled block"><%= link_to 'Manage Products', products_path, :class => "btn btn-small btn-success" %></li>
+                <li class="list-unstyled"><%= link_to 'Add New Products', products_path, :class => "btn btn-small btn-info" %></li>
+            </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

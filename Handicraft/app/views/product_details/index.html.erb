@@ -1,84 +1,73 @@
-<h1> Product Details </h1>
-
-<table border="0">
+<div class ="content">
 
   <% for product in @product_details %>
+      <div class = "row">
+        <div class = "col-md-12">
+          <h3><%=product.name%></h3>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-md-4">
+          <%= image_tag(product.image_url, class: 'img-responsive img-thumbnail') %>
+        </div>
+        <div class = "col-md-4">
+          <p class="description"><%=product.description%></p>
+          <p class="description">Price: <span class="price"><%=number_to_currency(product.price)%></span></p>
+          <p class="description" >Stocks left: &nbsp; <%=product.quantity%></p>
 
-      <tr>
-        <td><%= image_tag(product.image_url, class: 'list_detail_image') %></td>
-
-        <td>
-
-          <dt><%=product.name%></dt>
-          <dt><%=product.description%></dt>
-          <hr>
-          <dt>Price:<%=number_to_currency(product.price)%></dt>
-          <dt>Stocks left:<%=product.quantity%></dt>
-        </td>
-
-        <td>
           <form>
-            Qty <input type="number" name="quantity" min="1" max="5"><br>
-            <!-- <input type="button" onClick="" value="Add to Cart"><br>-->
-
-
+            <div class="form-group">
+              <label for="quantity">Qty</label>
+              <input type="number" name="quantity" id="quantity" class="form-control quantity" min="1" max="5" size="2">
+            </div>
+            <div class="form-group">
+              <%= button_to('Add to Cart', product_details_path, :class => 'btn btn-large btn-primary') %>
+            </div>
           </form>
-          <!--<%#=button_to 'Add to Cart', cart_items_path(product_id: product.id)%>-->
-          <!--<%#=button_to 'Add to Cart',cart_items_path(product_id: product.product_id)%>-->
-        </td>
-      </tr>
-
+        </div>
+        <div class = "col-md-4">
+        </div>
   <%end%>
-
-</table>
+  </div>
+</div>
 
 <br>
 <hr>
-
-<h1> Suggested Products </h1>
-<div class="scroll">
-  <table>
-    <% if @suggested_items %>
-        <%  @suggested_items.each do |suggestion| %>
-            <td>
-
-              <dt><%= link_to image_tag(suggestion.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: suggestion.product_id)%></dt>
-              <dt><%= suggestion.name %></dt>
-              <dt><%= truncate suggestion.description,lenght: 50 %></dt>
-              <dt><%= number_to_currency(suggestion.price) %></dt>
-
-            </td>
-        <%end%>
-    <% end %>
-  </table>
-</div>
-<br>
-<hr>
-
-<h1>Your viewing history</h1><%=link_to "See more...", histories_path%>
-
-
-<div class="scroll">
-  <table>
-    <% if @viewing_history %>
-        <%  @viewing_history.each do |items_viewed| %>
-
-            <td>
-
-              <dt><%= link_to image_tag(items_viewed.image_url,class: 'list_suggested_image',:border =>0),product_details_index_path(product_id: items_viewed.product_id)%></dt>
-              <dt><%= items_viewed.product_name %></dt>
-              <dt><%= number_to_currency(items_viewed.price) %></dt>
-
-            </td>
-
-        <%end%>
-
-    <% end %>
-
-  </table>
-
-  <br>
-  <hr>
-
-</div>
+<% if current_user.present? %>
+    <div class="suggested-content">
+      <h3> Suggested Products </h3><br/>
+      <div class="row">
+        <% if @suggested_items %>
+            <%  @suggested_items.each do |suggestion| %>
+                <div class="col-sm-3">
+                  <div><%= link_to image_tag("thumbnails/" + suggestion.image_url, class: 'img-responsive img-thumbnail'),product_details_path(product_id: suggestion.product_id)%></div>
+                  <h3><%= suggestion.name %></h3>
+                  <p class="description"><%= truncate suggestion.description,lenght: 50 %></p>
+                  <p class="price"><%= number_to_currency(suggestion.price) %></p>
+                </div>
+            <%end%>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="history-content">
+      <h3>Your viewing history</h3>
+        <div class="row">
+          <table>
+            <%if @viewing_history %>
+                <% @viewing_history.each do |items_viewed| %>
+                    <td>
+                      <dt><%= link_to image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail'),product_details_path(product_id: items_viewed.product_id)%></dt>
+                      <dt><%= items_viewed.product_name %></dt>
+                      <dt><%= number_to_currency(items_viewed.price) %></dt>
+                    </td>
+                <%end%>
+            <% end %>
+          </table>
+          <%=link_to "See more...", histories_path%>
+          <br>
+          <hr>
+        </div>
+    </div>
+<%end%>
 

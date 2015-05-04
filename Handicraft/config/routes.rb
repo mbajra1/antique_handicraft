@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  resources :searches
+
+  #devise_for :users do
+    # replace devise_for :users with:
+  # get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session_path
+
+  #end
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
+
+  resources :roles
+
   resources :order_shipments
 
   resources :shipping_books
@@ -9,31 +22,30 @@ Rails.application.routes.draw do
 
   resources :sellers
 
-  #get 'seller_dashboard/index'
-
-  get '/seller_dashboard' => "seller_dashboard#index"
-
-  #get 'dashboard/index'
-
-  get '/dashboard' =>"dashboard#index"
-
-  get 'product_details/index'
-
-  #get 'catalog/index'
-
-  get '/catalog' =>"catalog#index"
   resources :histories
 
-  devise_for :users
   resources :customers
 
   resources :products
 
-  get 'contact/index'
+  get '/sellers' => "sellers#index"
+  get '/sellers/new' => "sellers#new"
 
-  get 'home/index'
+  get '/dashboard' =>"dashboard#index"
 
-  #get 'about/index'
+  get '/product_details'=>"product_details#index"
+
+  get '/catalog' =>"catalog#index"
+
+  get '/contact' =>"contact#index"
+
+  get '/home' =>"home#index"
+
+  get '/about' =>"about#index"
+
+  get 'users/sign_in' =>"devise/sessions#new"
+
+  get 'users/sign_up' =>"devise/registrations#new"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

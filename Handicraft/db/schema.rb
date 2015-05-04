@@ -11,15 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410023245) do
+ActiveRecord::Schema.define(version: 20150501040254) do
 
   create_table "customers", force: :cascade do |t|
     t.string   "customer_id"
-    t.string   "company"
     t.string   "last_name"
     t.string   "first_name"
     t.string   "email"
-    t.string   "business_phone"
     t.string   "home_phone"
     t.string   "cell_phone"
     t.string   "fax"
@@ -68,8 +66,44 @@ ActiveRecord::Schema.define(version: 20150410023245) do
     t.datetime "shipped_date"
   end
 
-# Could not dump table "products" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "products", force: :cascade do |t|
+    t.string   "product_id"
+    t.string   "name"
+    t.text     "description"
+    t.string   "image_url"
+    t.string   "category"
+    t.string   "subcategory"
+    t.string   "product_condition"
+    t.decimal  "price",                 precision: 8, scale: 2
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "technical_description"
+    t.integer  "quantity"
+    t.integer  "u_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "role_id"
+  end
+
+  add_index "roles_users", ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "keywords"
+    t.string   "category_id"
+    t.float    "minimum_price"
+    t.float    "maximum_price"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "sellers", force: :cascade do |t|
     t.string   "seller_id"
@@ -123,6 +157,7 @@ ActiveRecord::Schema.define(version: 20150410023245) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

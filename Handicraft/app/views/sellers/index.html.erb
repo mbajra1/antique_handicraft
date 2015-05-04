@@ -40,9 +40,9 @@
         <td><%= seller.state_province %></td>
         <td><%= seller.zip_postal_code %></td>
         <td><%= seller.country_region %></td>
-        <td><%= link_to 'Show', seller %></td>
-        <td><%= link_to 'Edit', edit_seller_path(seller) %></td>
-        <td><%= link_to 'Destroy', seller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%#= link_to 'Show', seller %></td>-->
+        <td><%= link_to 'Edit', edit_seller_path(seller.id), :class => "btn btn-small btn-success" %></td>
+        <td><%= button_to  'Destroy', seller, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,29 +1,31 @@
-<h3>LISTING PRODUCTS</h3><br/>
+<h3>YOUR PRODUCTS</h3><br/>
 <table class="table table-striped">
 
   <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
         <td class="col-md-2"><%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail') %></td>
-        <td class="col-md-1">
+        <td class="col-md-2">
           <p class="lead"><%= product.name %></p>
-          <p class="lead"><%= number_to_currency(product.price)%></p>
+          <p class="lead orange"><%= number_to_currency(product.price)%></p>
+          <p class="small">Quantity: &nbsp;<%= product.quantity%></p>
+          <p class="small">Technical Description: <br ><%= product.technical_description%></p>
         </td>
         <td class="col-md-4">
           <dl>
-            <dd><%= product.description[1..200]+"..." %></dd>
+            <dd class="md"><%= product.description[0..200]+"..." %></dd>
           </dl>
         </td>
         <td class="col-md-2">
           <dl>
-            <dd>Category: <%= product.category %></dd><br/>
-            <dd>Subcategory: <%= product.subcategory %></dd><br/>
-            <dd>Condition: <%= product.product_condition %></dd><br/>
+            <dd class="small">Category: <%= product.category %></dd><br/>
+            <dd class="small">Subcategory: <%= product.subcategory %></dd><br/>
+            <dd class="small">Condition: <%= product.product_condition %></dd><br/>
           </dl>
         </td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+       <!-- <td><%= link_to 'Show', product %></td> -->
+        <td><% if can? :update, product %><%= link_to 'Edit', edit_product_path(product), :class =>"btn btn-small btn-success"%><% end %></td>
+        <td><% if can? :destroy, product %><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %><% end %></td>
       </tr>
   <% end %>
 </table>
@@ -33,7 +35,9 @@
 <%#= link_to 'New Product', new_product_path %>
 
 <%# Added Bootstrap data modal attribute %>
-<%= link_to 'New Product', '#new_product_modal', 'data-toggle' => 'modal' %>
+<% if can? :new, @product %>
+    <%= link_to 'New Product', '#new_product_modal', 'data-toggle' => 'modal', :class => 'btn btn-large btn-info' %>
+<%end%>
 
 
 <%# Bootstrap modal markup. @see: http://getbootstrap.com/javascript/#modals %>
@@ -49,7 +53,7 @@
         <%= render 'form', modal: true %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-small btn-danger" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

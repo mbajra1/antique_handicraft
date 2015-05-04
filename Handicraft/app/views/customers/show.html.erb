@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <strong>Company:</strong>
-  <%= @customer.company %>
-</p>
-
-<p>
   <strong>Last name:</strong>
   <%= @customer.last_name %>
 </p>
@@ -23,11 +18,6 @@
 <p>
   <strong>Email:</strong>
   <%= @customer.email %>
-</p>
-
-<p>
-  <strong>Business phone:</strong>
-  <%= @customer.business_phone %>
 </p>
 
 <p>
@@ -71,4 +61,4 @@
 </p>
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<%= link_to 'My Account', dashboard_path %>

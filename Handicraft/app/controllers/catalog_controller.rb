@@ -1,16 +1,17 @@
 class CatalogController < ApplicationController
   def index
-    #@catalogs = Product.order(:product_name)
+    @product = Product.all
 
+    category=params[:category]
+    search=params[:search]
+    if category == "All"
+      @product = Product.all
 
-    prod_cat1='Artifact'
-    prod_cat2='Jewellery'
-    prod_cat3='Thangka'
+    elsif search
+      @product = Product.search(search)   # For search result
 
-    @thangkas = Product.where("category= '#{prod_cat3}'")
-    @artifacts = Product.where("category= '#{prod_cat1}'")
-    @jewelleries = Product.where("category= '#{prod_cat2}'")
-
-
+    else
+      @product = Product.where("category= '#{category}'") # For search category
+    end
   end
 end

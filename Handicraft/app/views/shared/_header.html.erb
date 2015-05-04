@@ -1,39 +1,48 @@
 <!-- app/views/shared/_navigation.html.erb -->
 
-  <div class="toolbar-wrapper">
-    <div class="toolbar">
-      <ul class="unstyled">
-        <li class="search-field fr">
-          <form class="search" action="/search">
-            <button type="submit" alt="Go" class="go">
-              <i class="glyphicon glyphicon-search" aria-hidden="true"></i>
-            </button>
-            <input name="q" class="form-control" placeholder="Search" value="" type="text">
-          </form>
-        </li>
-        <li class="fr">
-          <a href="/cart" class="cart" title="Cart">
-            <i class="glyphicon glyphicon-shopping-cart"></i>
-            Cart: 0 Items </a>
-        </li>
-        <li class="fr">
-          <a href="#" class="My Account" title="Account">
-            My Account </a>
-        </li>
-        <li class="customer-links">
-          <a href="#" id="customer_login_link">Login</a>
-          <span class="or">&nbsp;or&nbsp;</span>
-          <a href="#" id="customer_register_link">Create an Account</a>
-        </li>
-      </ul>
+<div class="toolbar-wrapper">
+  <div class="toolbar">
+    <div class="logo-wrapper">
+      <%= link_to image_tag("ui/logo.png", class: 'img-responsive img-thumbnail logo'), home_path %>
     </div>
+
+    <div class="search-field">
+        <%= form_tag catalog_path, :class=>"search", :method => 'get' do %>
+          <%= text_field_tag :search, params[:search], :class=>"form-control",:placeholder=>"Name, Category or Keywords"  %>
+          <%= submit_tag "", :name => nil, :alt=>"Go", :class=>"go btn btn-warning" %>
+        <% end %>
+    </div>
+
+    <div class="account">
+      <% if user_signed_in? %>
+          <span class="orange greet">Hello <%= current_user.username %></span>
+          <%= link_to "My Account", dashboard_path %></a>
+          Not You? <%= link_to 'Logout', destroy_user_session_path %>
+      <% else %>
+          <%= link_to('Login', new_user_session_path) %> or <%= link_to('Register', new_user_registration_path)  %>
+      <% end %>
+    </div>
+
+    <div class="cart-wrapper">
+      <a href="/cart" class="cart" title="Cart">
+        <i class="cart-icon"></i>
+        Cart </a>
+      <span class="cart-count">0</span>
+    </div>
+
   </div>
- <div class="navigation">
-   <ul class="nav nav-tabs">
-     <li><%= link_to "THANGKA" %></li>
-     <li><%= link_to "ARTIFACT" %></li>
-     <li><%= link_to "JEWELLERY" %></li>
-   </ul>
- </div>
+</div>
+
+<div class="navigation">
+
+  <ul class="nav nav-tabs">
+    <li><%= link_to "CATALOG", catalog_path(:category => "All")%></li>
+    <li><%= link_to "THANGKA", catalog_path(:category => "Thangka")%></li>
+    <li><%= link_to "ARTIFACT", catalog_path(:category => "Artifact") %></li>
+    <li><%= link_to "JEWELLERY", catalog_path(:category => "Jewellery") %></li>
+  </ul>
+
+</div>
+
 
 
