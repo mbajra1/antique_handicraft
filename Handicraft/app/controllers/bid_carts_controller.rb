@@ -13,8 +13,20 @@ class BidCartsController < ApplicationController
 
 
     #session[:user_id]=user.id
-    #TODO set correct user from login
-    session[:user_id]='CUS15002'+'***'
+
+    customer_id=''
+    if current_user
+      email=current_user.email
+      @customer=Customer.where(email: email)
+      @customer.each do |customer|
+        customer_id=customer.customer_id
+      end
+
+    end
+
+
+
+    session[:user_id]=customer_id+'***'
 
 
     @bid_product=Product.where(product_id: @bid_cart.bid_product_id)

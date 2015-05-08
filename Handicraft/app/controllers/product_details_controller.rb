@@ -16,9 +16,8 @@ class ProductDetailsController < ApplicationController
       end
 
 
-      #TODO make sure if it is refresh do not add to histroy only click or post  can make add
-      customer_id=''
 
+      customer_id=''
 
       if current_user
         email=current_user.email
