@@ -32,6 +32,13 @@
             <%if product.quantity!=0%>
                 <%=button_to 'Add to Cart', cart_items_path(product_id: product.id,quantity: 1), :class => 'btn btn-large btn-primary' %>
             <%end%>
+
+            <%if product.seller_id=='SEL15002'%>
+
+                <%=link_to 'Add to Bid Cart', new_bid_cart_path(bid_product_id: product.product_id)%>
+            <%end%>
+
+
           </div>
         </div>
         <div class="col-md-4">
