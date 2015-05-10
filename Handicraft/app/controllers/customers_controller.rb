@@ -45,7 +45,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
-        format.html { redirect_to @customer, notice: 'Your Sellers Account was successfully updated.' }
+        format.html { redirect_to @customer, notice: 'Your Customer Account was successfully updated.' }
         format.json { render :show, status: :ok, location: @customer }
       else
         format.html { render :edit }
@@ -60,22 +60,32 @@ class CustomersController < ApplicationController
 
     # delete the association from Roles_Users
     if current_user
-      u = User.find(current_user.id)
-      role = u.roles.find_by_name("customer")
+      @user = User.find(current_user.id)
 
-      # delete associate role
-      if role
-        u.roles.delete(role)
+      if @user.role? ("customer")
+      customer = @user.roles.find_by_name("customer")
+      @user.roles.delete(customer)
+      @user.roles.save
       end
 
+      if @user.role? ("seller")
+        seller = @user.roles.find_by_name("seller")
+        @user.roles.delete(seller)
+        @seller= Seller.find_by_email(current_user.email)
+        @seller.delete
+        @seller.save
+      end
+
+      # delete associate role
+
       # delete associate user account
-      # u.delete
+      @user.delete
 
     end
 
     @customer.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: 'Your Sellers Account was successfully deleted.' }
+      format.html { redirect_to home_path, notice: 'Your Customer Account was successfully deleted.' }
       format.json { head :no_content }
     end
   end

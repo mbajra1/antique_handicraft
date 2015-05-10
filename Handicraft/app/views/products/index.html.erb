@@ -32,10 +32,9 @@
 
 <br>
 
-<%#= link_to 'New Product', new_product_path %>
-
 <%# Added Bootstrap data modal attribute %>
 <% if can? :new, @product %>
+    <%#= link_to 'New Product', new_product_path %>
     <%= link_to 'New Product', '#new_product_modal', 'data-toggle' => 'modal', :class => 'btn btn-large btn-info' %>
 <%end%>
 

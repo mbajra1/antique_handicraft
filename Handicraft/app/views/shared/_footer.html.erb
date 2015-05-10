@@ -16,7 +16,6 @@
             <ul class="list-unstyled">
               <% if user_signed_in? %>
                   <li><%= link_to "Dashboard", dashboard_path %></a></li>
-                  <li><a href="#">Delete Account</a></li>
               <% else %>
                   <li><%= link_to "Create an Account", users_sign_up_path %></li>
               <% end %>

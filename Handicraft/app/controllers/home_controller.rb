@@ -18,7 +18,7 @@ class HomeController < ApplicationController
       @product_name=product.name
     end
 
-    @featured_products = History.date_visited(5.days.ago)
-    @recent_products = Product.created_after(2.days.ago)
+    @featured_products = History.date_visited(10.days.ago)
+    @recent_products = Product.created_after(15.days.ago)
   end
 end

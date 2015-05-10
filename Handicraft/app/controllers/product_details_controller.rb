@@ -10,6 +10,7 @@ class ProductDetailsController < ApplicationController
       prod_subcat=product.subcategory
       prod_name=product.name
       prod_price=product.price
+      prod_description=product.description
       prod_image=product.image_url
     end
 
@@ -19,6 +20,7 @@ class ProductDetailsController < ApplicationController
     end
     view_history.product_id=prod_id
     view_history.product_name=prod_name
+    view_history.description=prod_description
     view_history.price=prod_price
     view_history.image_url=prod_image
     view_history.date_visited=Time.now

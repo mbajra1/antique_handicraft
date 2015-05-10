@@ -4,6 +4,7 @@ class CatalogController < ApplicationController
 
     category=params[:category]
     search=params[:search]
+
     if category == "All"
       @product = Product.all
 

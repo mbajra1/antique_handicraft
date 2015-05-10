@@ -15,11 +15,11 @@
         </div>
     <% end %>
 
-    <div class="form-group">
+   <!--<div class="form-group">
       <%= f.label :product_id, class: 'control-label'%><br>
       <%= f.text_field :product_id, class: 'form-control' %>
       <span class="help-block"></span>
-    </div>
+    </div>-->
     <div class="form-group">
       <%= f.label :name, class: 'control-label' %><br>
       <%= f.text_field :name, class: 'form-control' %>
@@ -55,11 +55,11 @@
       <%= f.text_field :price, class: 'form-control' %>
       <span class="help-block"></span>
     </div>
-    <div class="form-group">
+    <!--<div class="form-group">
       <%#= f.label :u_id, class: 'control-label' %><br>
       <%#= f.text_field :u_id, class: 'form-control' %>
       <span class="help-block"></span>
-    </div>
+    </div>-->
     <div class="form-group">
       <%= f.label :technical_description, class: 'control-label' %><br>
       <%= f.text_field :technical_description, class: 'form-control' %>
@@ -69,9 +69,13 @@
       <%= f.label :quantity, class: 'control-label' %><br>
       <%= f.text_field :quantity, class: 'form-control' %>
       <span class="help-block"></span>
-      <div class="actions">
-        <%= f.submit :class=>"btn btn-large btn-info"%>
-      </div>
-<% end %>
+    </div>
 
-</div>
+    <div class="form-group">
+      <div class="action">
+        <%= f.submit  :class=>"btn btn-large btn-info"%>
+      </div>
+    </div>
+
+
+<% end %>

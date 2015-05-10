@@ -38,20 +38,22 @@ class ProductsController < ApplicationController
     if current_user
       u = current_user.id
       @product.u_id = u
-     # @product.save
+      @product.save
     end
 
     respond_to do |format|
       if @product.save
+        # added:
+        format.js { render action: 'show', status: :created, location: @product }
+
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
-        # added:
-        format.js   { render action: 'show', status: :created, location: @product }
+
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
         # added:
-        format.js   { render json: @product.errors, status: :unprocessable_entity }
+        format.js{ render json: @product.errors, status: :unprocessable_entity }
       end
     end
   end
