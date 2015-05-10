@@ -49,7 +49,8 @@ Rails.application.routes.draw do
 
   get '/dashboard' =>"dashboard#index"
 
-  get '/product_details'=>"product_details#index"
+  #get '/product_details'=>"product_details#index"
+  get 'product_details/index'
 
   get '/catalog' =>"catalog#index"
 

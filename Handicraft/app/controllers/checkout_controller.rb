@@ -2,8 +2,13 @@ class CheckoutController < ApplicationController
   def index
 
 
-    #TODO get emaIL_id from session or login information
     email_id=' '
+
+
+    if current_user
+      email_id=current_user.email
+      end
+
 
 =begin
     @current_user=User.find(session[:user_id])
@@ -15,7 +20,7 @@ class CheckoutController < ApplicationController
 
 
     # get user id in this case email from session
-    email_id = 'janesmith@gmail.com'
+   # email_id = 'janesmith@gmail.com'
 
     customer = Customer.find_by_email(email_id)
 

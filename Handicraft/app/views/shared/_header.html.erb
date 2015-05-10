@@ -24,10 +24,13 @@
     </div>
 
     <div class="cart-wrapper">
-      <a href="/cart" class="cart" title="Cart">
+      <%cart_id=session[:cart_id]%>
+      <%cart='/shopping_carts/'+cart_id.to_s%>
+      <a href='<%=cart%>' class="cart" title="Cart">
         <i class="cart-icon"></i>
         Cart </a>
-      <span class="cart-count">0</span>
+      <%count=CartItem.distinct.count('product_id')%>
+      <span class="cart-count"><%=count%></span>
     </div>
 
   </div>

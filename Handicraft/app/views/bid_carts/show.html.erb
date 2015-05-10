@@ -60,6 +60,7 @@
             <%= f.label :Enter_higher_bid_amount %><br>
             <%= f.text_field :bid_amount %><br>
             <%= f.hidden_field :bidder_id ,value:@session_user %><br>
+            <%= f.hidden_field :bid_cart_id ,value:@bid_cart_id %><br>
             <%= f.submit "Place Your Bid" %>
         <% end %>
       </dt>

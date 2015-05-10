@@ -27,17 +27,20 @@ class BidActionsController < ApplicationController
   # POST /bid_actions.json
   def create
 
+    bid_amount=params[:bid_action][:bid_amount].to_f
+    bid_cart_id=params[:bid_action][:bid_cart_id].to_f
 
-
-    @bid_cart=BidCart.all
+    @bid_cart=BidCart.where(bid_cart_id: bid_cart_id)
 
     @bid_cart.each do |bid_cart|
       @opening_price=bid_cart.opening_price
     end
 
-    bid_amount=params[:bid_action][:bid_amount].to_f
 
-    highest_bid_amount=BidAction.maximum(:bid_amount)
+    highest_bid_amount=@bid_cart.BidAction.maximum(:bid_amount)
+
+    #highest_bid_amount=BidAction.where(bid_cart_id: bid_cart_id).maximum(:bid_amount)
+    #highest_bid_amount=BidAction.maximum(:bid_amount)
 
     if(highest_bid_amount==nil)
       highest_bid_amount=0.00
@@ -49,7 +52,8 @@ class BidActionsController < ApplicationController
     if((bid_amount>highest_bid_amount)&&(bid_amount>@opening_price))
       #if(bid_end_time !=@time_out)
       if((time_diff/60)<=1)
-        @bid_action = BidAction.new(bid_action_params)
+        #@bid_action = BidAction.new(bid_action_params)
+        @bid_action = @bid_cart.BidAction.new(bid_action_params)
 
         respond_to do |format|
         if @bid_action.save
@@ -108,13 +112,16 @@ class BidActionsController < ApplicationController
 
 
   def decide_winner
-    max_amount=BidAction.maximum(:bid_amount)
+
+    #max_amount=BidAction.maximum(:bid_amount)
+    max_amount=@bid_cart.BidAction.maximum(:bid_amount)
     #aution_winner=Message.where(bid_amount: max_amount)
 
     #@aution_winner=Message.where("bid_amount= '#{max_amount}'")
 
     # @aution_winner=Message.all
-    @all_bid_actions=BidAction.all
+    #@all_bid_actions=BidAction.all
+    @all_bid_actions=@bid_cart.BidAction.all
     @winner=''
     @all_bid_actions.each do |winner|
       if(winner.bid_amount==max_amount)

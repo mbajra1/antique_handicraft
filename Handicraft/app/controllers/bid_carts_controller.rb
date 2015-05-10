@@ -11,10 +11,23 @@ class BidCartsController < ApplicationController
   # GET /bid_carts/1.json
   def show
 
+    @bid_cart_id=params[:id]
 
     #session[:user_id]=user.id
-    #TODO set correct user from login
-    session[:user_id]='CUS15002'+'***'
+
+    customer_id=''
+    if current_user
+      email=current_user.email
+      @customer=Customer.where(email: email)
+      @customer.each do |customer|
+        customer_id=customer.customer_id
+      end
+
+    end
+
+
+
+    session[:user_id]=customer_id+'***'
 
 
     @bid_product=Product.where(product_id: @bid_cart.bid_product_id)
@@ -26,7 +39,7 @@ class BidCartsController < ApplicationController
 
     session[:bid_product_id]=@product_id
 
-    @bid_actions=BidAction.all
+    @bid_actions=BidAction.where(bid_cart_id: @bid_cart_id)
 
 
 
@@ -38,7 +51,9 @@ class BidCartsController < ApplicationController
 
   # GET /bid_carts/new
   def new
+    @product_for_bid=params[:bid_product_id]
     @bid_cart = BidCart.new
+
   end
 
   # GET /bid_carts/1/edit
