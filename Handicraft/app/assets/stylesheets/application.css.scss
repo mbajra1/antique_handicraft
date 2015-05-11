@@ -15,6 +15,7 @@ $table-border-color:#CEE1F4 !default;
 $list-group-hover-bg:#EFF5FC !default;
 
 /* button css */
+
 .btn-success, .btn-info { word-spacing: normal; letter-spacing: normal;}
 
 html,body{height: 100%;}
@@ -27,7 +28,7 @@ body#custom {
       height: 100%;
       background-color: #5498DA;
       width: auto;
-      padding-bottom:60px;
+      margin-bottom: 100px;
       overflow:auto;
       margin: 0px 10px 30px 10px;
       .login {
@@ -115,7 +116,7 @@ body#custom {
   /* header and nav css */
   $nav-link-hover-bg: #9FC820;
   #header {
-    padding-bottom: 55px;
+    margin-bottom: 100px;
     li >a {font-weight: 400;}
     .navigation {
       z-index:1;
@@ -226,6 +227,20 @@ body#custom {
     width: auto;
     padding-bottom:60px;
 
+    .alert{ background-color:#9FC820; color: #fff; text-align: center; }
+    .highlight {
+      background-color:#EB9316;
+      color: #fff;
+      padding: 15px;
+      margin-bottom: 17px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      border-radius: 4px;
+      width: 90%;
+      margin-left: 20px;
+    }
+    .left{float:left;}
     /* global css */
     .margin {
       margin-bottom: 80px;
@@ -236,6 +251,8 @@ body#custom {
     p.lead {
       color: #416793;
       font-weight: 400;
+      word-spacing: normal;
+      letter-spacing: normal;
     }
     .form-group {
       width: 500px !important;
@@ -269,6 +286,7 @@ body#custom {
     .orange {color: #F0AD4E !important;}
     .small {font-size: 13px }
     .md {font-size: 15px }
+    .lf-bdr {border-left: 1px solid #eee;}
 
     /* End of global css */
 
@@ -359,6 +377,8 @@ body#custom {
       float: left;
       margin: 20px;
 
+      .btn {margin: 8px !important;}
+
       li.c-result-item {
         margin-bottom: 10px !important;}
 
@@ -391,7 +411,7 @@ body#custom {
         overflow: hidden;
         word-spacing: normal;
         letter-spacing: normal;
-        padding: 0px;
+        //padding: 0px;
         margin-bottom: 25px;
         border-bottom: 1px solid #eee;
         .s-item-container {
@@ -406,7 +426,28 @@ body#custom {
 
     /* Product Detail css */
 
-    .suggested-content, .history-content, .content {padding: 12px;}
+    .suggested-content {text-align:center; padding: 12px; border-left: 1px solid #F0AD4E; }
+
+    #history-content{
+      overflow: scroll; width: auto; height: 300px;
+      border-top: 1px solid #F0AD4E;
+      border-bottom: 1px solid #F0AD4E;
+      margin: 20px 0px 10px 0px;
+      div#insideDiv {
+        width: 1500px;
+        span {
+          display: inline-block;
+          float: left;
+          margin:10px 0px 10px 10px;
+          padding:10px;
+          border-right:1px solid #eee;
+          height:275px;
+
+          p{width: 150px;}
+          img {width:100px;}
+        }
+      }
+    }
     .content {
       input.quantity {width: 60px;}
     }
@@ -426,7 +467,10 @@ body#custom {
 
     .footer_links{
       width: 100%;
-      td{font-size: 12px; width:25%}
+      td{
+        font-size: 12px;
+        width:25%;
+        vertical-align: top;}
       ul > li {
         a {color: #ffffff;}
       }

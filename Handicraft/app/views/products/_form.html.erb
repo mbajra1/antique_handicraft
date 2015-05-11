@@ -1,7 +1,7 @@
 <%# Conditionally set remote: true. Also, passing model name as data attribute %>
 <% modal ||= false %>
 <% remote = modal ? true : false %>
-<%= form_for(@product, remote: remote, html: {role: :form, 'data-model' => 'product'}) do |f| %>
+<%= form_for(@product, remote: remote, html: {:multipart => true, role: :form, 'data-model' => 'product'}) do |f| %>
 <%#= form_for(@product) do |f| %>
     <% if @product.errors.any? %>
         <div id="error_explanation">
@@ -15,11 +15,11 @@
         </div>
     <% end %>
 
-    <div class="form-group">
+   <!--<div class="form-group">
       <%= f.label :product_id, class: 'control-label'%><br>
       <%= f.text_field :product_id, class: 'form-control' %>
       <span class="help-block"></span>
-    </div>
+    </div>-->
     <div class="form-group">
       <%= f.label :name, class: 'control-label' %><br>
       <%= f.text_field :name, class: 'form-control' %>
@@ -30,9 +30,14 @@
       <%= f.text_area :description, class: 'form-control' %>
       <span class="help-block"></span>
     </div>
+    <!--<div class="form-group">
+      <%#= f.label :image_url, class: 'control-label' %><br>
+      <%#= f.text_field :image_url %>
+      <span class="help-block"></span>
+    </div>-->
     <div class="form-group">
-      <%= f.label :image_url, class: 'control-label' %><br>
-      <%= f.text_field :image_url %>
+      <%= f.label :image, class: 'control-label' %>
+      <%= f.file_field :image %>
       <span class="help-block"></span>
     </div>
     <div class="form-group">
@@ -55,11 +60,11 @@
       <%= f.text_field :price, class: 'form-control' %>
       <span class="help-block"></span>
     </div>
-    <div class="form-group">
+    <!--<div class="form-group">
       <%#= f.label :u_id, class: 'control-label' %><br>
       <%#= f.text_field :u_id, class: 'form-control' %>
       <span class="help-block"></span>
-    </div>
+    </div>-->
     <div class="form-group">
       <%= f.label :technical_description, class: 'control-label' %><br>
       <%= f.text_field :technical_description, class: 'form-control' %>
@@ -69,9 +74,13 @@
       <%= f.label :quantity, class: 'control-label' %><br>
       <%= f.text_field :quantity, class: 'form-control' %>
       <span class="help-block"></span>
-      <div class="actions">
-        <%= f.submit :class=>"btn btn-large btn-info"%>
-      </div>
-<% end %>
+    </div>
 
-</div>
+    <div class="form-group">
+      <div class="action">
+        <%= f.submit  :class=>"btn btn-large btn-info"%>
+      </div>
+    </div>
+
+
+<% end %>

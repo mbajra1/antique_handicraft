@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 
+#gem for uploading the image
+gem 'paperclip'
+
 #gem for manging custom auto increment field
 gem 'protokoll'
 
-
 #gem for manging getting payments using paypal integration
 gem 'paypal-sdk-merchant'
-
 
 # Use Bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'

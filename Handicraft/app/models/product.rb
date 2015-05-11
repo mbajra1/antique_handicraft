@@ -1,9 +1,10 @@
 class Product < ActiveRecord::Base
-  # relationship
+
+  # Relationship
   belongs_to :user
-  # assign product id automatically
+
+  # Assign product id automatically
   protokoll :product_id, :pattern => "PRD%y###"
-  #validates :product_id, presence: true
   validates :name, presence: true
   validates :description, presence: true
   validates :category, presence: true
@@ -11,6 +12,10 @@ class Product < ActiveRecord::Base
   validates :product_condition, presence: true
   validates :price, presence:true
   validates :quantity, presence:true
+
+  # For image upload
+  has_attached_file :image, :styles => { :large => "600x600>", :medium => "200x200>", :thumb => "150x150>" }
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   # Search Function
   def self.search(search)

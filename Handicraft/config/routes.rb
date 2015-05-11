@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'bid_history/index'
+
   get 'purchase_history/index'
 
   resources :bid_winners
@@ -48,13 +50,15 @@ Rails.application.routes.draw do
 
   resources :products
 
+  resources :product_details
+
   get '/sellers' => "sellers#index"
   get '/sellers/new' => "sellers#new"
 
   get '/dashboard' =>"dashboard#index"
 
   #get '/product_details'=>"product_details#index"
-  get 'product_details/index'
+ # get 'product_details/index'
 
   get '/catalog' =>"catalog#index"
 

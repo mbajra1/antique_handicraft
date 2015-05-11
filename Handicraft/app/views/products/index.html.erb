@@ -4,7 +4,9 @@
   <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
-        <td class="col-md-2"><%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail') %></td>
+        <td class="col-md-2">
+          <%= image_tag product.image.url(:thumb), class: 'img-responsive img-thumbnail' %>
+        </td>
         <td class="col-md-2">
           <p class="lead"><%= product.name %></p>
           <p class="lead orange"><%= number_to_currency(product.price)%></p>
@@ -35,10 +37,9 @@
 
 <br>
 
-<%#= link_to 'New Product', new_product_path %>
-
 <%# Added Bootstrap data modal attribute %>
 <% if can? :new, @product %>
+    <%#= link_to 'New Product', new_product_path %>
     <%= link_to 'New Product', '#new_product_modal', 'data-toggle' => 'modal', :class => 'btn btn-large btn-info' %>
 <%end%>
 

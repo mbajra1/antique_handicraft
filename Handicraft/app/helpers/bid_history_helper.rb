@@ -1,0 +1,2 @@
+module BidHistoryHelper
+end
