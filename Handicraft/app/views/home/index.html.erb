@@ -38,7 +38,7 @@
             </ol>
             <div class="carousel-inner">
               <div class="item active">
-                <%= image_tag("carousel/thangka1.jpeg", class: 'img-responsive')%>
+                <%= image_tag("carousel/thangka1.jpeg", class: 'img-responsive size')%>
               </div>
               <div class="item">
                 <%= image_tag("carousel/thangka2.jpeg", class: 'img-responsive')%>
@@ -68,10 +68,10 @@
         <% @featured_products.each do |product| %>
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="thumbnail">
-            <%= image_tag('thumbnails/' + product.image_url, class: 'img-responsive img-thumbnail')%>
+            <%= image_tag(product.image_url, class: 'img-responsive img-thumbnail')%>
             <div class="caption">
               <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-              <h4><%= link_to product.product_name, product_details_index_path(product_id: product.product_id)%></a>
+              <h4><%= link_to product.product_name, product_details_path(product_id: product.product_id)%></a>
               </h4>
              <p><%= product.description[0..100] +"..." %></p>
             </div>
@@ -81,16 +81,16 @@
         <%end%>
       </div>
 
-      <div class="row row-adjust"> <h3> RECENTLY ADDED ITEMS</h3> <hr></div>
+      <div class="row row-adjust"> <h3> NEW ITEMS</h3> <hr></div>
 
       <div class="row row-adjust">
         <% @recent_products.each do |product| %>
             <div class="col-sm-4 col-lg-4 col-md-4">
               <div class="thumbnail">
-                <%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+                <%= image_tag(product.image.url(:medium), class: 'img-responsive img-thumbnail')%>
                 <div class="caption">
                   <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-                  <h4><%= link_to product.name, product_details_index_path(product_id: product.product_id)%></a>
+                  <h4><%= link_to product.name, product_details_path(product_id: product.product_id)%></a>
                   </h4>
                  <p><%= product.description[0..100] +"..." %></p>
                 </div>

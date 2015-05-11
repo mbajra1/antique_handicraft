@@ -411,7 +411,7 @@ body#custom {
         overflow: hidden;
         word-spacing: normal;
         letter-spacing: normal;
-        padding: 0px;
+        //padding: 0px;
         margin-bottom: 25px;
         border-bottom: 1px solid #eee;
         .s-item-container {
@@ -426,7 +426,28 @@ body#custom {
 
     /* Product Detail css */
 
-    .suggested-content, .history-content, .content {padding: 12px;}
+    .suggested-content {text-align:center; padding: 12px; border-left: 1px solid #F0AD4E; }
+
+    #history-content{
+      overflow: scroll; width: auto; height: 300px;
+      border-top: 1px solid #F0AD4E;
+      border-bottom: 1px solid #F0AD4E;
+      margin: 20px 0px 10px 0px;
+      div#insideDiv {
+        width: 1500px;
+        span {
+          display: inline-block;
+          float: left;
+          margin:10px 0px 10px 10px;
+          padding:10px;
+          border-right:1px solid #eee;
+          height:275px;
+
+          p{width: 150px;}
+          img {width:100px;}
+        }
+      }
+    }
     .content {
       input.quantity {width: 60px;}
     }
@@ -446,7 +467,10 @@ body#custom {
 
     .footer_links{
       width: 100%;
-      td{font-size: 12px; width:25%}
+      td{
+        font-size: 12px;
+        width:25%;
+        vertical-align: top;}
       ul > li {
         a {color: #ffffff;}
       }
