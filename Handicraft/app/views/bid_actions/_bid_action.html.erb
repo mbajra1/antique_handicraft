@@ -1,4 +1,4 @@
-
+<!--
 <table border="0">
 
   <tr>
@@ -17,4 +17,45 @@
     </td>
   </tr>
 
+</table>-->
+
+
+<!--<table border="1" style="border-spacing: 10px; border-collapse: separate;">
+
+  <tr>
+    <td>
+     <%= bid_action.bidder_id %>
+    </td>
+    <td>
+     <%= bid_action.bid_amount %>
+    </td>
+    <td>
+      <span class="created_at"><%= bid_action.created_at.strftime("%H:%M") %></span>
+      <%=@bid_action%>
+    </td>
+  </tr>
+
+</table>-->
+
+<table style="border-spacing: 10px; border-collapse: separate;">
+  <tr>
+
+
+        <td><%= bid_action.bidder_id %></td>
+        <td></td>
+        <td></td>
+        <td><%= bid_action.bid_amount %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= bid_action.created_at.strftime("%H:%M:%S") %></td>
+
+
+
+  </tr>
 </table>
+
+
+

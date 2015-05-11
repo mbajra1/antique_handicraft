@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Winner:</strong>
+  <%= @bid_winner.winner_id %>
+</p>
+
+<p>
+  <strong>Bid product:</strong>
+  <%= @bid_winner.bid_product %>
+</p>
+
+<p>
+  <strong>Winning amount:</strong>
+  <%= @bid_winner.winning_amount %>
+</p>
+
+<p>
+  <strong>Bid cart:</strong>
+  <%= @bid_winner.bid_cart %>
+</p>
+
+<%= link_to 'Edit', edit_bid_winner_path(@bid_winner) %> |
+<%= link_to 'Back', bid_winners_path %>

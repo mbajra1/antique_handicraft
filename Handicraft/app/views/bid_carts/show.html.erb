@@ -1,53 +1,36 @@
-<!--
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Bid product:</strong>
-  <%= @bid_cart.bid_product_id %>
-</p>
-
-<p>
-  <strong>Bid end date:</strong>
-  <%= @bid_cart.bid_end_date %>
-</p>
-
-<p>
-  <strong>Opening price:</strong>
-  <%= @bid_cart.opening_price %>
-</p>
-
-<%= link_to 'Edit', edit_bid_cart_path(@bid_cart) %> |
-<%= link_to 'Back', bid_carts_path %>
--->
 
 <p id="notice"><%= notice %></p>
 
-<table border="1">
+
+<table border="1" style="border-spacing: 1px; border-collapse: separate;">
+
   <tr>
-    <td>
 
-    </td>
     <td>
-      <table border="1">
+      <table border="0" style="border-spacing: 10px; border-collapse: separate;">
+        <tr>
+          <th colspan="2">Bidder </th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
 
-        <tr>
-          <th>Bidder</th>
-          <th>Bid Amount</th>
-          <th>Bid Time</th>
+          <th>Bid Amount </th>
+          <th>Bid Time </th>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+            <%= render @bid_actions %>
+          <%#= render @bid_actions %>
         </tr>
-        <tr>
-          <%= render @bid_actions %>
-        </tr>
+
       </table>
     </td>
     <td>
       <% @bid_product.each do |item| %>
-          <dt><%= image_tag(item.image_url,class: 'list_image',:border =>0)%></dt>
+          <dt><%= image_tag("thumbnails/" +item.image_url,class: 'img-responsive img-thumbnail',:border =>0)%></dt>
           <dt>Item on auction: <%= item.name %></dt>
           <dt>Technical description: <%= item.technical_description %></dt>
           <dt>Opening price: <%= number_to_currency(@bid_cart.opening_price) %></dt>
@@ -61,7 +44,7 @@
             <%= f.text_field :bid_amount %><br>
             <%= f.hidden_field :bidder_id ,value:@session_user %><br>
             <%= f.hidden_field :bid_cart_id ,value:@bid_cart_id %><br>
-            <%= f.submit "Place Your Bid" %>
+            <%= f.submit "Place Your Bid" , remote: true, method: :get%>
         <% end %>
       </dt>
     </td>
@@ -73,3 +56,4 @@
   </tr>
 </table>
 
+<%= link_to 'Back to Auction List', bid_carts_path %>

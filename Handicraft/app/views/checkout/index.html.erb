@@ -6,7 +6,7 @@
 <h1>Review and Checkout</h1>
 <hr>
 
-<table border="0">
+<table  border="0" style="border-spacing: 20px; border-collapse: separate;">
 
   <tr>
 
@@ -15,7 +15,7 @@
       <table border="0">
         <% if @ship_address %>
             <% @ship_address.each do |address| %>
-                <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+                <tr>
                   <td>
                     <dt><%=address.shipping_name %></dt>
                     <dt><%=address.shipping_address %></dt>
@@ -32,17 +32,12 @@
       </table>
     </td>
 
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
     <td>
       <p>Billing Address <%=link_to'Change' %></p>
       <table border="0">
         <% if @customer %>
             <% @customer.each do |address| %>
-                <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+                <tr>
                   <td>
                     <dt><%=address.first_name %><%=address.last_name %></dt>
                     <dt><%=address.address %></dt>
@@ -54,22 +49,6 @@
         <% end %>
       </table>
     </td>
-
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-    <!--  <td>
-      <p>Payment Method <%=link_to'Change' %></p>
-      <table border="0">
-      </table>
-    </td>-->
-
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
 
     <td>
       <form>
@@ -86,18 +65,16 @@
 <hr>
 
 
-
-
-<table border="0">
+<table border="0" style="border-spacing: 30px; border-collapse: separate;">
 
   <tr>
 
     <td>
-      <table border="0">
+      <table border="0" style="border-spacing: 20px; border-collapse: separate;">
         <% @check_cart_items.each do |item| %>
-            <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <tr>
               <td>
-                <%= link_to image_tag(item.product.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: item.product.product_id)%>
+                <%= link_to image_tag("thumbnails/" +item.product.image_url,class: 'img-responsive img-thumbnail',:border =>0),product_details_index_path(product_id: item.product.product_id)%>
               </td>
               <td>
                 <dt><%= item.product.name %></dt>
@@ -117,15 +94,6 @@
       </table>
     </td>
 
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
-
-
-
-
 
     <td>
       <table border="0">
@@ -140,15 +108,10 @@
       </table>
     </td>
 
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-
     <td>
-      <table border="1">
+      <table border="1" class="table">
         <th>Order Summary</th>
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <tr class="info">
           <td>
             <dt>Total number of items:<%= @cart_item_count%></dt>
             <dt>Cost of items:<%= number_to_currency(@item_sub_total) %></dt>
@@ -157,14 +120,14 @@
           </td>
         </tr>
 
-        <tr>
+        <tr class="danger">
           <td>
             <dt>Total before tax:<%= number_to_currency(@cart_sub_total) %></dt>
             <dt>Estimated tax :<%= number_to_currency(@total_tax) %></dt>
           </td>
         </tr>
 
-        <tr>
+        <tr class="success">
           <td>
             <dt>Order Total:<%= number_to_currency(@total_due) %></dt>
           </td>

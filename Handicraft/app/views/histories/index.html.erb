@@ -2,23 +2,20 @@
 
 <h1>Your Browsing History</h1>
 
-<table border="0">
+<table border="0" style="border-spacing: 10px; border-collapse: separate;">
   <% @histories.each do |history| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td><%= link_to image_tag(history.image_url,class: 'list_image',:border =>0),product_details_index_path(product_id: history.product_id)%></td>
+      <tr>
+        <td><%= link_to image_tag("thumbnails/" + history.image_url,class: 'img-responsive img-thumbnail',:border =>0),product_details_index_path(product_id: history.product_id)%></td>
 
         <td>
 
           <dt><%= history.product_name %></dt>
-          <dt>Price:<%= number_to_currency(history.price) %></dt>
+          <dt>Price: <%= number_to_currency(history.price) %></dt>
 
         </td>
 
-        <td class="list_actions" >
+        <td><%= link_to '[Remove from history]', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
-        <td><%= link_to '[Delete this item]', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-        </td>
 
       </tr>
 
