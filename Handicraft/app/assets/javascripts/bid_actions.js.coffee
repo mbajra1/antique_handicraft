@@ -4,14 +4,14 @@
 
 update = ->
   $.get '/bid_actions.json', null, (data, status, jqXHR) ->
-    msgsSorted = _.sortBy data, (bid_action) ->
+    bidsSorted = _.sortBy data, (bid_action) ->
       new Date(bid_action.created_at).getTime() # get messages sorted by creation time ascending
 
     # refreshing messages list
-    $('#chat').empty()
-    for m in msgsSorted
+    $('#bids').empty()
+    for m in bidsSorted
       d = moment(m.created_at)
-      $('#chat').append('<li>' +
+      $('#bids').append('<li>' +
         '<span class="created_at">' + d.format('hh:mm') + '</span>' +
         m.bidder_id +
         m.bid_amount +

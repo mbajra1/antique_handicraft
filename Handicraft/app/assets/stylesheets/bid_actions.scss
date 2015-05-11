@@ -1,3 +1,32 @@
 // Place all the styles related to the BidActions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul#bids {
+  list-style: none;
+  padding: 0;
+  width: 300px;
+  height: 150px;
+  border: solid 1px #777;
+  margin: 5px 0;
+  overflow: auto;
+  li {
+    margin: 2px 5px;
+    padding: 0;
+    .created_at {
+      float: right;
+      color: #777;
+      font-size: 11px;
+      padding-left: 4px;
+      padding-top: 2px;
+    }
+  }
+}
+
+input#bid_content {
+  width: 240px;
+}
+
+.bid-container {
+  width: 302px;
+  margin: 0 auto;
+}

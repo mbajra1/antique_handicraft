@@ -3,28 +3,15 @@
   <div class="row">
 
    <div class="col-md-4">
-     <div class="row row-adjust" style="text-align: center;"> <p class="highlight"> Items on Auction </p></div>
-
-     <div class="row row-adjust">
-
-       <ul class="c-result-list">
-         <% if @bid_cart %>
-             <%  @bid_cart.each do |auction| %>
-                 <li class="col-sm-4 c-result-item list-unstyled">
-                   <div class ="s-item-container">
-                     <!--<div class="spacing-mini"><%#= link_to image_tag("thumbnails/" + auction.image_url, class: 'img-responsive img-thumbnail'),product_details_path(product_id: product.product_id)%></div>-->
-                     <div class="spacing-mini"><h4><%= link_to @product_name, bid_cart_path(@bid_cart_id)%></a></h4></div>
-                     <div class="spacing-mini"><h4><%= number_to_currency(auction.opening_price) %></h4></div>
-                     <div class="spacing-mini"><p><%= auction.bid_end_date%></p></div>
-                   </div>
-                 </li>
-             <%end%>
-         <% end %>
-       </ul>
-     </div>
+     <!---- <div class="list-group">
+       <p class="list-group-item active"><b>Category</b></p>
+       <a href="#" class="list-group-item">Thangka</a>
+       <a href="#" class="list-group-item">Artifact</a>
+       <a href="#" class="list-group-item">Jewellery</a>
+     </div>-->
     </div>
 
-    <div class="col-md-8 lf-bdr">
+    <div class="col-md-8">
 
       <div class="row carousel-holder row-adjust">
 
@@ -38,7 +25,7 @@
             </ol>
             <div class="carousel-inner">
               <div class="item active">
-                <%= image_tag("carousel/thangka1.jpeg", class: 'img-responsive size')%>
+                <%= image_tag("carousel/thangka1.jpeg", class: 'img-responsive')%>
               </div>
               <div class="item">
                 <%= image_tag("carousel/thangka2.jpeg", class: 'img-responsive')%>
@@ -68,12 +55,12 @@
         <% @featured_products.each do |product| %>
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="thumbnail">
-            <%= image_tag(product.image_url, class: 'img-responsive img-thumbnail')%>
+            <%= image_tag('thumbnails/' + product.image_url, class: 'img-responsive img-thumbnail')%>
             <div class="caption">
               <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-              <h4><%= link_to product.product_name, product_details_path(product_id: product.product_id)%></a>
+              <h4><%= link_to product.product_name, product_details_index_path(product_id: product.product_id)%></a>
               </h4>
-             <p><%= product.description[0..100] +"..." %></p>
+             <!-- <p><%#= product.description[0..100] +"..." %></p>-->
             </div>
           </div>
         </div>
@@ -81,22 +68,43 @@
         <%end%>
       </div>
 
-      <div class="row row-adjust"> <h3> NEW ITEMS</h3> <hr></div>
+      <div class="row row-adjust"> <h3> RECENTLY ADDED ITEMS</h3> <hr></div>
 
       <div class="row row-adjust">
         <% @recent_products.each do |product| %>
             <div class="col-sm-4 col-lg-4 col-md-4">
               <div class="thumbnail">
-                <%= image_tag(product.image.url(:medium), class: 'img-responsive img-thumbnail')%>
+                <%= image_tag("thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
                 <div class="caption">
                   <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-                  <h4><%= link_to product.name, product_details_path(product_id: product.product_id)%></a>
+                  <h4><%= link_to product.name, product_details_index_path(product_id: product.product_id)%></a>
                   </h4>
-                 <p><%= product.description[0..100] +"..." %></p>
+                  <p><%= product.description[0..100] +"..." %></p>
                 </div>
               </div>
             </div>
         <% end %>
       </div>
+
+
+      <div class="row row-adjust"> <h3> Items on Auction </h3> <hr></div>
+
+      <div class="row row-adjust">
+        <% @bid_cart.each do |auction| %>
+            <div class="col-sm-4 col-lg-4 col-md-4">
+              <div class="thumbnail">
+                 <%= link_to image_tag("thumbnails/" + @product_image_url, class: 'img-responsive img-thumbnail'),bid_cart_path(@bid_cart_id)%>
+                <div class="caption">
+                  <h4 class="pull-right"><%= number_to_currency(auction.opening_price) %></h4>
+                  <h4><a href="#"><%= @product_name %></a>
+                  </h4>
+                  <p><%= auction.bid_end_date%></p>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
+
+
     </div>
   </div>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'bid_history/index'
+
+  get 'purchase_history/index'
+
+  resources :bid_winners
+
   resources :searches
 
   #devise_for :users do
