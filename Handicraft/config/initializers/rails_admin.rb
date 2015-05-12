@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
 
+  # check if the current user is admin
   config.authorize_with do
     redirect_to main_app.root_path unless warden.user.role?("admin")
   end
