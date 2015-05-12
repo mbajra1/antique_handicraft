@@ -18,6 +18,13 @@ $list-group-hover-bg:#EFF5FC !default;
 
 .btn-success, .btn-info { word-spacing: normal; letter-spacing: normal;}
 
+/*Admin dashboard */
+
+.rails_admin.navbar-default {
+  background-color: #5498DA !important;
+  border-color: #E7E7E7;
+
+}
 html,body{height: 100%;}
 /*custom-layout*/
 body#custom {
