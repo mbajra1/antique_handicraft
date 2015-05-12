@@ -16,8 +16,9 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <strong>Image:</strong><br/>
+  <%#= image_tag product.image.url(:thumb) %>
+  <%= image_tag @product.image.url(:medium), class: 'img-responsive img-thumbnail'%>
 </p>
 
 <p>
@@ -56,4 +57,4 @@
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'My Products', products_path %>

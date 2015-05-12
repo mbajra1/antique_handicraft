@@ -11,7 +11,7 @@ class ProductDetailsController < ApplicationController
       prod_name=product.name
       prod_price=product.price
       prod_description=product.description
-      prod_image=product.image_url
+      prod_image=product.image.url(:medium)
     end
 
     view_history=History.new
@@ -27,10 +27,10 @@ class ProductDetailsController < ApplicationController
     view_history.save
     History.rm_duplicate
 
-    @suggested_items = Product.where("subcategory= '#{prod_subcat}' AND product_id != '#{prod_id}' ")
+    @suggested_items = Product.where("subcategory= '#{prod_subcat}' AND product_id != '#{prod_id}' ").limit(1)
 
     if current_user
-    @viewing_history = History.where("customer_id=?", current_user.id)
+    @viewing_history = History.where("customer_id=?", current_user.id).limit(8)
     end
 
   end

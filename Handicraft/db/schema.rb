@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509182857) do
+ActiveRecord::Schema.define(version: 20150510201325) do
 
   create_table "bid_actions", force: :cascade do |t|
     t.string   "bidder_id"
@@ -145,6 +145,10 @@ ActiveRecord::Schema.define(version: 20150509182857) do
     t.string   "technical_description"
     t.integer  "quantity"
     t.integer  "u_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "roles", force: :cascade do |t|
