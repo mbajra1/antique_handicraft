@@ -12,7 +12,45 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div class="tab-pane active" id="Purchase_history"><p class="lead">Purchasing History</p> </div>
+        <div class="tab-pane active" id="Purchase_history"><p class="lead">
+
+          <ul class="c-result-list">
+            <% if !@purchase_history.nil?%>
+                <% @purchase_history.each do |order|%>
+
+                    <%@purchase_details_history=OrderDetail.where(order_id: order.order_id).limit(1)%>
+                    <%@purchase_shipping_history=OrderShipment.where(shipment_id: order.shipping_id).limit(1)%>
+
+                        <li class="c-result-item pd-rt list-unstyled "><%=order.order_date.inspect%></li>
+
+                <%end%>
+                    <%@purchase_details_history.each  do |detail|%>
+                    <%@product=Product.where(product_id: detail.product_id)%>
+                    <%@product.each do |product|%>
+
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%= product.name%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=detail.quantity%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=number_to_currency(detail.unit_price)%>
+                    <%end%>
+                    <%end%>
+
+                <%@purchase_shipping_history.each do |ship|%>
+                    <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_name%></li>
+                    <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_address%></li>
+                    <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_city%>, <%=ship.shipping_state_province%> <%=ship.shipping_zip_postal%>
+                    <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_country_region%>
+                <%end%>
+
+            <% else %>
+                <li class="c-result-item pd-rt">Currently there are no purchases in your history</li><br />
+            <% end %>
+          </ul>
+
+          <h4><%=link_to "More purchase history...", purchase_history_index_path%></h4>
+
+        </div>
+
+
         <div class="tab-pane" id="Browsing_history">
           <ul class="c-result-list">
           <% if !@history.nil?%>
@@ -22,12 +60,34 @@
                   </li><br />
               <% end %>
             <% else %>
-                <li class="c-result-item pd-rt">You don't have a history</li><br />
+                <li class="c-result-item pd-rt">Currently there are no browsing activities in your history</li><br />
           <% end %>
           </ul>
           <h4><%=link_to "Detailed Browsing History...", histories_path%></h4>
         </div>
-        <div class="tab-pane" id="Bidding_history">This is your Bidding history</div>
+        <div class="tab-pane" id="Bidding_history">
+
+
+          <ul class="c-result-list">
+
+            <% if !@bid_history.nil?%>
+                <% @bid_history.each do |auction| %>
+                    <%@product=Product.where(product_id: auction.bid_cart.bid_product_id)%>
+                    <%@product.each do |product|%>
+                        <!--<li class="c-result-item pd-rt list-unstyled "><%= image_tag ("thumbnails/" + product.image_url)%></li>-->
+                        <li class="c-result-item pd-rt list-unstyled ">Item on Auction:&nbsp;<%= product.name%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">Opening Price:&nbsp;<%= number_to_currency(auction.bid_cart.opening_price) %>
+                    <%end%>
+                    <li class="c-result-item pd-rt list-unstyled ">Auction Ends on:&nbsp;<%= auction.bid_cart.bid_end_date%>
+                <% end %>
+            <% else %>
+                <li class="c-result-item pd-rt">Currently there are no auctions in your history</li><br />
+            <% end %>
+          </ul>
+
+          <h4><%=link_to "More bid history...", bid_history_index_path%></h4>
+
+        </div>
       </div>
     </li>
     <li class="panel panel-info">
@@ -63,8 +123,62 @@
         </div>
 
 
-        <div class="tab-pane" id="win">You won the bid</div>
-        <div class="tab-pane" id="loss">You loss the bid</div>
+        <div class="tab-pane" id="win">
+
+
+          <ul class="c-result-list">
+
+            <% if !@bids_won.nil?%>
+                <% @bids_won.each do |won| %>
+                    <%@product=Product.where(product_id: won.bid_product)%>
+                    <%@product.each do |product|%>
+                        <!--<li class="c-result-item pd-rt list-unstyled "><%= image_tag ("thumbnails/" + product.image_url)%></li>-->
+                        <li class="c-result-item pd-rt list-unstyled ">Item on Auction:&nbsp;<%=  product.name%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">Opening Price:&nbsp;<%= number_to_currency(won.bid_cart.opening_price) %>
+                    <%end%>
+                    <li class="c-result-item pd-rt list-unstyled ">Closing Price:&nbsp;<%= number_to_currency(won.winning_amount)%>
+                    <li class="c-result-item pd-rt list-unstyled ">Auction Ended on:&nbsp;<%= won.bid_cart.bid_end_date%>
+                <% end %>
+            <% else %>
+                <li class="c-result-item pd-rt">Currently there are no auctions in your history</li><br />
+            <% end %>
+          </ul>
+
+          <h4><%=link_to "More auctions...", bid_history_index_path%></h4>
+
+
+        </div>
+
+        <div class="tab-pane" id="loss">
+
+          <ul class="c-result-list">
+
+            <% if !@bid_actions_history.nil?%>
+
+                <% @bid_actions_history.each do |loss| %>
+                    <%@bids_won.each do |won|%>
+                    <%if((loss.bid_cart_id!=won.bid_cart_id))%>
+                    <%@product=Product.where(product_id: loss.bid_cart.bid_product_id)%>
+                    <%@product.each do |product|%>
+                        <!--<li class="c-result-item pd-rt list-unstyled "><%= image_tag ("thumbnails/" + product.image_url)%></li>-->
+                        <li class="c-result-item pd-rt list-unstyled ">Item on Auction:&nbsp;<%=  product.name%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">Opening Price:&nbsp;<%= number_to_currency(loss.bid_cart.opening_price) %>
+                    <%end%>
+                    <li class="c-result-item pd-rt list-unstyled ">Auction Ended on:&nbsp;<%= loss.bid_cart.bid_end_date%>
+                <% end %>
+                <%end%>
+                <%end%>
+            <% else %>
+                <li class="c-result-item pd-rt">Currently there are no auctions in your history</li><br />
+            <% end %>
+          </ul>
+
+          <h4><%=link_to "More auctions...", bid_history_index_path%></h4>
+
+        </div>
+
+
+
       </div>
     </li>
     <li class="panel panel-info">
@@ -95,25 +209,25 @@
             <% end %>
           </ul>
         </div>
-        <div class="tab-pane" id="shipping"> Your Shipping Book</div>
-        <ul class="c-result-list">
-          <% if !@shipping_book.nil?%>
-              <%  @shipping_book.each do |ship| %>
-              <li class="c-result-item pd-rt list-unstyled ">Shipping Name:&nbsp;<%= ship.shipping_name %></li>
-              <li class="c-result-item pd-rt list-unstyled ">Shipping City:&nbsp; <%= ship.shipping_city %></li>
-              <li class="c-result-item pd-rt list-unstyled ">Shipping State:&nbsp; <%= ship.shipping_state_province%></li>
-              <li class="c-result-item pd-rt list-unstyled ">Shipping Zip/Postal Code:&nbsp; <%= ship.shipping_zip_postal %></li>
-              <li class="c-result-item pd-rt list-unstyled block">Shipping Country/Region:&nbsp; <%= ship.shipping_country_region%></li>
-              <li class="list-unstyled inline-block"><%= link_to 'Edit Shipping', edit_shipping_book_path(ship.id), :class => "btn btn-small btn-success" %></li>
-              <li class="list-unstyled inline-block"><%= button_to 'Delete Shipping', ship, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></li>
+        <div class="tab-pane" id="shipping">
+            <ul class="c-result-list">
+              <% if !@shipping_book.nil?%>
+                  <%  @shipping_book.each do |ship| %>
+                      <li class="c-result-item pd-rt list-unstyled ">Shipping Name:&nbsp;<%= ship.shipping_name %></li>
+                      <li class="c-result-item pd-rt list-unstyled ">Shipping City:&nbsp; <%= ship.shipping_city %></li>
+                      <li class="c-result-item pd-rt list-unstyled ">Shipping State:&nbsp; <%= ship.shipping_state_province%></li>
+                      <li class="c-result-item pd-rt list-unstyled ">Shipping Zip/Postal Code:&nbsp; <%= ship.shipping_zip_postal %></li>
+                      <li class="c-result-item pd-rt list-unstyled block">Shipping Country/Region:&nbsp; <%= ship.shipping_country_region%></li>
+                      <li class="list-unstyled inline-block"><%= link_to 'Edit Shipping', edit_shipping_book_path(ship.id), :class => "btn btn-small btn-success" %></li>
+                      <li class="list-unstyled inline-block"><%= button_to 'Delete Shipping', ship, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %></li>
+                   <%end%>
 
-            <%end%>
-
-          <% else %>
-              <li class="c-result-item pd-rt">You don't have any shipping information yet</li><br />
-          <% end %>
-        </ul>
-        <h4><%=link_to "More..", shipping_books_path%></h4>
+              <% else %>
+                  <li class="c-result-item pd-rt">You don't have any shipping information yet</li><br />
+              <% end %>
+            </ul>
+        <h4><%=link_to "More shipping...", shipping_books_path%></h4>
+        </div>
 
       </div>
     </li>

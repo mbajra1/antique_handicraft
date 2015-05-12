@@ -14,8 +14,8 @@ class Product < ActiveRecord::Base
   validates :quantity, presence:true
 
   # For image upload
-  has_attached_file :image, :styles => { :large => "600x600>", :medium => "200x200>", :thumb => "150x150>" }
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  #has_attached_file :image, :styles => { :large => "600x600>", :medium => "200x200>", :thumb => "150x150>" }
+  #validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   # Search Function
   def self.search(search)

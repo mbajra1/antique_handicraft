@@ -23,6 +23,17 @@
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
+    <table name="bid_winners" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="winner_id" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="bid_product" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="winning_amount" sqlType="DECIMAL" precision="2000000000" scale="10" nullable="true" jdbcType="6"/>
+      <column name="bid_cart_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <index name="index_bid_winners_on_bid_cart_id" unique="true" columns="bid_cart_id"/>
+    </table>
     <table name="cart_items" schema="" catalog="" type="TABLE">
       <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
       <column name="shopping_cart_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
@@ -81,7 +92,6 @@
       <column name="date_visited" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
       <column name="updated_at" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
-      <column name="description" sqlType="VARCHAR" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
     </table>
     <table name="order_details" schema="" catalog="" type="TABLE">

@@ -12,6 +12,14 @@ class BidCartsController < ApplicationController
   def show
 
     @bid_cart_id=params[:id]
+    @bid_product=Product.where(product_id: @bid_cart.bid_product_id)
+
+    @bid_actions=BidAction.where(bid_cart_id: @bid_cart_id)
+
+    respond_to do|format|
+      format.html
+      format.js
+    end
 
     #session[:user_id]=user.id
 
@@ -30,7 +38,7 @@ class BidCartsController < ApplicationController
     session[:user_id]=customer_id+'***'
 
 
-    @bid_product=Product.where(product_id: @bid_cart.bid_product_id)
+
     #@product_id=0
 
     @bid_product.each do |product|
@@ -41,7 +49,7 @@ class BidCartsController < ApplicationController
 
     session[:bid_product_id]=@product_id
 
-    @bid_actions=BidAction.where(bid_cart_id: @bid_cart_id)
+
 
 
 

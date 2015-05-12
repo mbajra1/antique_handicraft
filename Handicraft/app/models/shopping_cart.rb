@@ -16,7 +16,7 @@ class ShoppingCart < ActiveRecord::Base
       end
 
     else
-      current_item = cart_items.build(product_id: product_id,seller_id: product.seller_id,price: product.price,quantity: 1)
+      current_item = cart_items.build(product_id: product.product_id,seller_id: product.seller_id,price: product.price,quantity: 1)
     end
     current_item
   end

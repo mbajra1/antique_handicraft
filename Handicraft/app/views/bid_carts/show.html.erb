@@ -21,7 +21,7 @@
           <th>Bid Amount </th>
           <th>Bid Time </th>
         </tr>
-        <tr>
+        <tr id="bid_time">
             <%= render @bid_actions %>
           <%#= render @bid_actions %>
         </tr>
@@ -39,12 +39,12 @@
       <br>
       <hr>
       <dt>
-        <%= form_for BidAction.new, remote: true do |f| %>
+        <%= form_for BidAction.new, :html =>{remote: true, method: :get} do |f| %>
             <%= f.label :Enter_higher_bid_amount %><br>
             <%= f.text_field :bid_amount %><br>
             <%= f.hidden_field :bidder_id ,value:@session_user %><br>
             <%= f.hidden_field :bid_cart_id ,value:@bid_cart_id %><br>
-            <%= f.submit "Place Your Bid" , remote: true, method: :get%>
+            <%= f.submit "Place Your Bid" %>
         <% end %>
       </dt>
     </td>

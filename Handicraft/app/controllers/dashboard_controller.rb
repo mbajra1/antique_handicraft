@@ -24,8 +24,20 @@ class DashboardController < ApplicationController
     #For current bid
     @current_auction=BidCart.all.limit(2)
 
-    #For bidding history
-    @bid_history=BidAction.where('bidder_id=?',customer_id).limit(1)
+    #For all bidding history
+    @bid_history=BidAction.where('bidder_id=?',customer_id+'***').limit(2)
+    @bid_history=@bid_history.select(:bid_cart_id).distinct
+
+    #For bid winnings history
+    @bids_won=BidWinner.where(winner_id: customer_id).limit(2)
+
+    #For bid loss history
+    @bid_actions_history=BidAction.where(bidder_id: customer_id+'***').limit(2)
+    @bid_actions_history=@bid_actions_history.select(:bid_cart_id).distinct
+
+    #For purchase history
+    @purchase_history=Order.where(customer_id: customer_id).limit(1)
+
 
   end
 end

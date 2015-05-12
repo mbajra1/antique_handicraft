@@ -1,2 +1,48 @@
-<h1>PurchaseHistory#index</h1>
-<p>Find me in app/views/purchase_history/index.html.erb</p>
+<h1>PurchaseHistory</h1>
+
+
+<table border="1">
+  <tr>
+    <th></th>
+    <th>Order</th>
+    <th>Order Details</th>
+    <th>Shipping</th>
+  </tr>
+      <% @purchase_history.each do |order|%>
+  <tr>
+    <%@purchase_details_history=OrderDetail.where(order_id: order.order_id)%>
+    <%@purchase_shipping_history=OrderShipment.where(shipment_id: order.shipping_id)%>
+    <td>
+      <dt><%=order.order_date.inspect%></dt>
+    </td>
+  <%end%>
+        <%@purchase_details_history.each  do |detail|%>
+
+        <%@product=Product.where(product_id: detail.product_id)%>
+    <td>
+
+      <%@product.each do |product|%>
+      <dt><%=image_tag (product.image_url)%></dt>
+
+      <dt>Quantity Ordered: <%=detail.quantity%></dt>
+
+      <dt> Price: <%=number_to_currency(detail.unit_price)%></dt>
+
+    </td>
+
+      <%end%>
+    <%end%>
+    <%@purchase_shipping_history.each do |ship|%>
+    <td>
+      <dt> Shipped to <%=ship.shipping_name%> </dt>
+      <dt> <%=ship.shipping_address%> </dt>
+      <dt><%=ship.shipping_city%>, <%=ship.shipping_state_province%> <%=ship.shipping_zip_postal%></dt>
+      <dt><%=ship.shipping_country_region%></dt>
+
+    </td>
+
+
+    <%end%>
+
+
+</table>

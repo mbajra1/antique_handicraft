@@ -1,2 +1,79 @@
-<h1>BidHistory#index</h1>
-<p>Find me in app/views/bid_history/index.html.erb</p>
+<h1>BidHistory</h1>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Auctions Won</h1>
+
+<table border="0" style="border-spacing: 20px; border-collapse: separate;">
+
+
+  <% @bids_won.each do |winnings| %>
+
+      <tr>
+
+        <%@product=Product.where(product_id: winnings.bid_product)%>
+
+        <%@product.each do |product|%>
+            <td>
+              <%= image_tag( "thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+            </td>
+            <td>
+              <h4>Item Auctioned:<%=product.name %></a></h4>
+              <h4>Opening price: <%= number_to_currency(winnings.bid_cart.opening_price) %></h4>
+              <h4>Closing price: <%= number_to_currency(winnings.winning_amount) %></h4>
+
+        <%end%>
+
+        <%#@bid_cart.each do |bid_cart|%>
+
+        <h4>Auction Ended: <%= winnings.bid_cart.bid_end_date%></h4>
+        </td>
+        <%#end%>
+
+      </tr>
+
+
+  <% end %>
+</table>
+
+
+<hr>
+
+<h1>Auctions Lost</h1>
+
+<table border="0" style="border-spacing: 20px; border-collapse: separate;">
+
+
+  <% @bid_actions_history.each do |loss| %>
+
+
+      <%@bids_won.each do |won|%>
+
+      <%if((loss.bid_cart_id!=won.bid_cart_id))%>
+
+      <tr>
+
+        <%@product=Product.where(product_id: loss.bid_cart.bid_product_id)%>
+
+        <%@product.each do |product|%>
+            <td>
+              <%= image_tag( "thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+            </td>
+            <td>
+              <h4>Item Auctioned:<%=product.name %></a></h4>
+              <h4>Opening price: <%= number_to_currency(loss.bid_cart.opening_price) %></h4>
+        <%end%>
+
+        <%#@bid_cart.each do |bid_cart|%>
+
+        <h4>Auction Ended: <%= loss.bid_cart.bid_end_date%></h4>
+        </td>
+        <%#end%>
+
+      </tr>
+          <%end%>
+
+      <% end %>
+  <% end %>
+</table>
+

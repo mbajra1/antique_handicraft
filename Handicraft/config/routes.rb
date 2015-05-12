@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :bid_carts
 
   get 'checkout/index'
+  get 'checkout/confirmation'
 
   get 'error_handler/index'
 
@@ -62,7 +63,14 @@ Rails.application.routes.draw do
 
   get '/catalog' =>"catalog#index"
 
+  get 'catalog/index'
+
   get '/contact' =>"contact#index"
+
+
+  get 'home/index'
+
+  get 'product_details/index'
 
   get '/home' =>"home#index"
 

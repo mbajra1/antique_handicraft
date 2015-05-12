@@ -28,3 +28,7 @@ Discount.create(discount_code:'SPND100GET5',discount_amount: 5.00)
 ShippingBook.delete_all
 ShippingBook.create(shipping_name:'Jane Smith',shipping_address:'11235 York Rd', shipping_city:'HuntValley', shipping_state_province:'MD',shipping_zip_postal:'21030',shipping_country_region:'USA')
 ShippingBook.create(shipping_name:'Jerry Smith',shipping_address:'10104 Woodlake Dr', shipping_city:'Cockeysville', shipping_state_province:'MD',shipping_zip_postal:'21030',shipping_country_region:'USA')
+
+
+BidWinner.delete_all
+BidWinner.create(winner_id:'CUS15001',bid_product:'PRD15001',winning_amount:300.00,bid_cart_id:1)
