@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510201325) do
+ActiveRecord::Schema.define(version: 20150512062917) do
 
   create_table "bid_actions", force: :cascade do |t|
     t.string   "bidder_id"
