@@ -35,6 +35,8 @@ class BidCartsController < ApplicationController
 
     @bid_product.each do |product|
       @product_id=product.id
+      @product_image_url=product.image_url
+      @product_name=product.name
     end
 
     session[:bid_product_id]=@product_id

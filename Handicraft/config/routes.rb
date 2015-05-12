@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  get 'bid_history/index'
+
+  get 'purchase_history/index'
+
+  resources :bid_winners
+
   resources :searches
 
   #devise_for :users do
@@ -53,7 +59,7 @@ Rails.application.routes.draw do
   get '/dashboard' =>"dashboard#index"
 
   #get '/product_details'=>"product_details#index"
- # get 'product_details/index'
+  get 'product_details/index'
 
   get '/catalog' =>"catalog#index"
 

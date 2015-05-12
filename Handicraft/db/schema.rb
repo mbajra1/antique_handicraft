@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150510201325) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "bid_winners", force: :cascade do |t|
+    t.string   "winner_id"
+    t.string   "bid_product"
+    t.decimal  "winning_amount"
+    t.integer  "bid_cart_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "bid_winners", ["bid_cart_id"], name: "index_bid_winners_on_bid_cart_id"
+
   create_table "cart_items", force: :cascade do |t|
     t.integer  "shopping_cart_id"
     t.string   "product_id"
