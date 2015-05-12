@@ -10,15 +10,15 @@ class HomeController < ApplicationController
 
     #@auction_item = BidCart.all
 
-    @bid_product=Product.where(product_id: @bid_product_id)
-
+    @bid_product=Product.where("product_id=?", @bid_product_id)
 
     @bid_product.each do |product|
-      @product_image_url=product.image_url
+      @product_image_url=product.image.url(:thumb)
       @product_name=product.name
     end
 
     @featured_products = History.date_visited(10.days.ago)
+    @featured_products.select(:product_id).distinct
     @recent_products = Product.created_after(15.days.ago)
   end
 end

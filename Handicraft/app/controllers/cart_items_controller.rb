@@ -26,9 +26,14 @@ class CartItemsController < ApplicationController
   def create
 
     @cart=current_cart
-    product = Product.find(params[:product_id])
+    @product = Product.where(product_id: params[:product_id])
 
-    @cart_item = @cart.add_product(product.id)
+    product_id=''
+    @product.each do |product|
+      product_id=product.product_id
+    end
+
+    @cart_item = @cart.add_product(product_id)
 
     #@cart_item = CartItem.new(cart_item_params)
 
@@ -38,8 +43,8 @@ class CartItemsController < ApplicationController
         format.html { redirect_to @cart_item, notice: 'Cart item was successfully created.' }
         format.json { render :show, status: :created, location: @cart_item }
 =end
-        format.html { redirect_to :controller => 'catalog',:id => product.product_id }
-        format.json { render jason: @cart_item, status: :created, location: @cart_item }
+        format.html { redirect_to :controller => 'catalog',:id => product.product_id, notice: 'Cart item was successfully created.' }
+        format.json { render jason: @cart_item, status: :created, location: @cart_item, notice: 'Cart item was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @cart_item.errors, status: :unprocessable_entity }

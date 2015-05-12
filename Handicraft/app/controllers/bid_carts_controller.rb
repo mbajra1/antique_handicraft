@@ -10,36 +10,28 @@ class BidCartsController < ApplicationController
   # GET /bid_carts/1
   # GET /bid_carts/1.json
   def show
-
     @bid_cart_id=params[:id]
-
-
 =begin
     respond_to do|format|
       format.html
       format.js
     end
 =end
-
     #session[:user_id]=user.id
 
     customer_id=''
     if current_user
       email=current_user.email
       @customer=Customer.where(email: email)
+
       @customer.each do |customer|
         customer_id=customer.customer_id
       end
 
     end
-
-
-
     session[:user_id]=customer_id+'***'
 
-
     @bid_product=Product.where(product_id: @bid_cart.bid_product_id)
-
 
     @bid_product.each do |product|
       @product_id=product.id
@@ -48,9 +40,6 @@ class BidCartsController < ApplicationController
     end
 
     session[:bid_product_id]=@product_id
-
-
-
     @bid_actions=BidAction.where(bid_cart_id: @bid_cart_id)
 
     #@session_user=session[:user_id]
@@ -61,7 +50,8 @@ class BidCartsController < ApplicationController
 
   # GET /bid_carts/new
   def new
-    @product_for_bid=params[:bid_product_id]
+    @product_for_bid = params[:bid_product_id]
+
     @bid_cart = BidCart.new
 
   end
@@ -74,7 +64,6 @@ class BidCartsController < ApplicationController
   # POST /bid_carts.json
   def create
     @bid_cart = BidCart.new(bid_cart_params)
-
     respond_to do |format|
       if @bid_cart.save
         format.html { redirect_to @bid_cart, notice: 'Bid cart was successfully created.' }

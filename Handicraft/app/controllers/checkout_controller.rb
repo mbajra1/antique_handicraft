@@ -1,26 +1,12 @@
 class CheckoutController < ApplicationController
   def index
 
-
     email_id=' '
-
 
     if current_user
       email_id=current_user.email
-      end
-
-
-=begin
-    @current_user=User.find(session[:user_id])
-
-    @current_user.each do |user|
-      email_id=user.email
     end
-=end
 
-
-    # get user id in this case email from session
-   # email_id = 'janesmith@gmail.com'
 
     customer = Customer.find_by_email(email_id)
 

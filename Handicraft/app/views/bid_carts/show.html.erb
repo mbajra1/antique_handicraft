@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<table border="1" style="border-spacing: 1px; border-collapse: separate;">
+<table border="1" class="table table-striped">
 
   <tr>
 
@@ -30,7 +30,7 @@
     </td>
     <td>
       <% @bid_product.each do |item| %>
-          <dt><%= image_tag("thumbnails/" +item.image_url,class: 'img-responsive img-thumbnail',:border =>0)%></dt>
+          <dt><%= image_tag(item.image.url(:thumb), class: 'img-responsive img-thumbnail',:border =>0)%></dt>
           <dt>Item on auction: <%= item.name %></dt>
           <dt>Technical description: <%= item.technical_description %></dt>
           <dt>Opening price: <%= number_to_currency(@bid_cart.opening_price) %></dt>

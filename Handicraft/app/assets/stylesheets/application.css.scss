@@ -16,15 +16,8 @@ $list-group-hover-bg:#EFF5FC !default;
 
 /* button css */
 
-.btn-success, .btn-info { word-spacing: normal; letter-spacing: normal;}
-
-/*Admin dashboard */
-
-.rails_admin.navbar-default {
-  background-color: #5498DA !important;
-  border-color: #E7E7E7;
-
-}
+.btn-success, .btn-info, .spacing { word-spacing: normal; letter-spacing: normal;}
+.bdr-left {border-left: 1px solid #F0AD4E;}
 html,body{height: 100%;}
 /*custom-layout*/
 body#custom {
@@ -433,7 +426,7 @@ body#custom {
 
     /* Product Detail css */
 
-    .suggested-content {text-align:center; padding: 12px; border-left: 1px solid #F0AD4E; }
+    .suggested-content {text-align:center; padding: 12px; }
 
     #history-content{
       overflow: scroll; width: auto; height: 300px;

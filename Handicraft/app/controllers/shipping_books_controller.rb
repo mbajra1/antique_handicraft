@@ -5,6 +5,7 @@ class ShippingBooksController < ApplicationController
   # GET /shipping_books.json
   def index
     @shipping_books = ShippingBook.all
+
   end
 
   # GET /shipping_books/1

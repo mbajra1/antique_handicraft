@@ -1,65 +1,51 @@
-
-
-<table border="0">
-  <% @added_item.each do |item| %>
-      <%if (item.quantity==@cart_quantity)%>
-          <%='Sorry, all available stocks for this item are now on reserved status'%>
-      <%else%>
-          <%='1 Item added to your Shopping Cart'%>
-      <%end%>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td><%#= link_to image_tag(item.image_url,class:'list_image',:border =>0 ),product_details_index_path(product_id: item.product_id)%>
-          <%= link_to image_tag(item.image.url(:medium), class:'img-responsive img-thumbnail list_image',:border =>0), product_details_path(product_id: item.product_id) %></td>
-
-        <td>
-          <dt><%= item.name %></dt>
-          <dt>In Stock:<%= item.quantity %></dt>
-          <dt><%= number_to_currency(item.price) %></dt>
-        </td>
-
-        <td></td>
-        <td></td>
-        <td></td>
-
-        <td class="list_actions" >
-          <dt>Order Subtotal:<%= number_to_currency(@cart_sub_total) %></dt>
-          <dt><%= @cart_item_count%> items in your Shopping Cart</dt>
-
-        </td>
-
-        <td class="list_actions" >
-          <dt><%=link_to'Edit cart',shopping_cart_path(id: @shopping_cart) %></dt>
-        </td>
-
-        <td class="list_actions" >
-          <dt> <%= link_to 'Proceed to Checkout',shipping_books_url %></dt>
-        </td>
-
-      </tr>
-
-  <% end %>
-
-</table>
-
 <div class="row">
 
-  <div class="col-md-3">
-
-  </div>
-
-  <div class="col-md-9">
+  <div class="col-md-8">
     <ul class="c-result-list">
       <% if @product %>
           <%  @product.each do |product| %>
               <li class="col-sm-4 c-result-item list-unstyled">
                 <div class ="s-item-container">
                   <div class="spacing-mini"><%= link_to image_tag(product.image.url(:medium), class: 'img-responsive img-thumbnail'),product_details_path(product_id: product.product_id)%></div>
-                  <div class="spacing-mini"><h4><%= link_to product.name, product_details_path(product_id: product.product_id) %></a></h4></div>
+                  <div class="spacing-mini"><h4><%= link_to product.name, product_details_path(product_id: product.product_id) %></h4></div>
                   <div class="spacing-mini"><p><%= product.description[0..50] +"..." %></p></div>
                   <div class="spacing-mini"><h4><%= number_to_currency(product.price) %></h4></div>
                 </div>
               </li>
           <%end%>
+      <% end %>
+    </ul>
+  </div>
+
+
+  <div class="col-md-4 bdr-left">
+    <ul class="c-result-list">
+      <% if !@added_item.nil? %>
+          <% @added_item.each do |item| %>
+
+                  <%if (item.quantity==@cart_quantity)%>
+                      <h3 class=" spacing"><%='Sorry, all available stocks for this item are now on reserved status'%></h3>
+                  <%else%>
+                      <h3 class="spacing-mini spacing"> <%='1 Item added to your Shopping Cart'%></h3>
+                  <%end%>
+
+              <li class="c-result-item list-unstyled">
+
+                <div class ="s-item-container">
+
+                  <div class="spacing-mini"><%= link_to image_tag(item.image.url(:medium), class: 'img-responsive img-thumbnail'),product_details_path(product_id: item.product_id)%></div>
+                  <div class="spacing-mini"><h4><%=link_to item.name%></h4></div>
+                  <div class="spacing-mini"><p>In Stock:<%= item.quantity %><p></div>
+                  <div class="spacing-mini"><h4><%= number_to_currency(item.price) %></h4> </div>
+                  <div class="spacing-mini"><p class="small">Order Subtotal:<%= number_to_currency(@cart_sub_total)%></p></div>
+                  <div class="spacing-mini"><p class="small"><%= @cart_item_count%> items in your Shopping Cart </p></div>
+                  <div class="spacing-mini"><%=link_to'Edit cart',shopping_cart_path(id: @shopping_cart), :class => 'btn btn-large btn-success'%>
+                  <%= link_to 'Proceed to Checkout',shipping_books_url, :class => 'btn btn-large btn-info'%></div>
+
+                </div>
+
+              </li>
+          <% end %>
       <% end %>
     </ul>
   </div>

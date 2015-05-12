@@ -1,39 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<h1>List of current Auctions</h1>
+<h3>List of current Auctions</h3>
 
-<table border="0" style="border-spacing: 20px; border-collapse: separate;">
+<table class="table table-striped">
 
-
-
-
-        <% @bid_carts.each do |bid_cart| %>
+  <% @bid_carts.each do |bid_cart| %>
 
       <tr>
-
-                <%@product=Product.where(product_id: bid_cart.bid_product_id)%>
-                <%@product.each do |product|%>
-            <td>
-              <%= image_tag( "thumbnails/" + product.image_url, class: 'img-responsive img-thumbnail')%>
+        <%@product=Product.where(product_id: bid_cart.bid_product_id)%>
+        <%@product.each do |product|%>
+            <td class="col-md-2">
+              <%= image_tag(product.image.url(:thumb), class: 'img-responsive img-thumbnail')%>
             </td>
-            <td>
-              <h4>Opening price: <%= number_to_currency(bid_cart.opening_price) %></h4>
-              <h4>Item on auction:<%=product.name %></a></h4>
-                <%end%>
-
-                <h4>Auction Ends: <%= bid_cart.bid_end_date%></h4>
+            <td class="col-md-3">
+              <p class="lead">Item on auction:<%=product.name %></a></p>
+              <p class="lead orange">Opening price: <%= number_to_currency(bid_cart.opening_price) %></p>
+        <%end%>
+            <p class="small">Auction Ends: <%= bid_cart.bid_end_date%></p>
             </td>
-
-          <td><%= link_to 'Start Bidding', bid_cart %></td>
-          <td><%= link_to 'Edit Auction', edit_bid_cart_path(bid_cart) %></td>
-          <td><%= link_to 'Delete Auction', bid_cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+          <td class="col-md-4"></td>
+          <td class="col-md-1"><%= link_to 'Start Bidding', bid_cart, :class => 'btn btn-large btn-info' %></td>
+          <td class="col-md-1"><%= link_to 'Edit Auction', edit_bid_cart_path(bid_cart), :class => 'btn btn-large btn-success' %></td>
+          <td class="col-md-1"><%= link_to 'Delete Auction', bid_cart, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-large btn-warning' %></td>
 
       </tr>
-
-
   <% end %>
 </table>
 
-
-<%= link_to 'New Bid cart', new_bid_cart_path %>
+<%#= link_to 'New Bid cart', new_bid_cart_path %>

@@ -25,9 +25,25 @@ class CustomersController < ApplicationController
   # POST /customers.json
   def create
     @customer = Customer.new(customer_params)
+
     if current_user
       @customer.email = current_user.email
       @customer.save
+
+      @cust =Customer.where("email=?",current_user.email)
+      shipping_book = ShippingBook.new
+
+       for customer in @cust
+          shipping_book.customer_id = customer.customer_id
+          shipping_book.shipping_name = customer.first_name
+          shipping_book.shipping_address = customer.address
+          shipping_book.shipping_city = customer.city
+          shipping_book.shipping_state_province = customer.state_province
+          shipping_book.shipping_zip_postal= customer.zip_postal_code
+          shipping_book.shipping_country_region = customer.country_region
+
+       end
+      shipping_book.save
     end
     respond_to do |format|
       if @customer.save

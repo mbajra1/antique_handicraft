@@ -13,11 +13,7 @@
 
   <div class="field">
     <%= f.label :bid_product_id %><br>
-    <%if @product_for_bid%>
-        <%= f.text_field :bid_product_id, :value =>@product_for_bid %>
-    <%else%>
-        <%= f.text_field :bid_product_id %>
-    <%end%>
+    <%= f.text_field :bid_product_id, :value =>@product_for_bid %>
   </div>
   <div class="field">
     <%= f.label :bid_end_date %><br>
