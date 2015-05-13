@@ -1,12 +1,12 @@
 class CheckoutController < ApplicationController
   def index
 
-    email_id=' '
+    # get user id in this case email from session
+    email_id = ''
 
     if current_user
       email_id=current_user.email
     end
-
 
     customer = Customer.find_by_email(email_id)
 
@@ -113,13 +113,13 @@ class CheckoutController < ApplicationController
         :cmd => '_cart',
         :upload => 1,
         :return => checkout_index_url(transaction: 'successful'),
-        :invoice =>current_cart.invoice_id
+        :invoice =>cart_id
     }
-    @check_cart_items.each_with_index do |item,index|
+    @check_cart_items.each_with_index do |item, index|
       last_index=last_index+index
       values.merge!({
                         "amount_#{index+1}" => item.price.round(2),
-                        "item_name_#{index+1}" => item.product.name,
+                        "item_name_#{index+1}" => item.product.product_name,
                         "item_number_#{index+1}" => item.product.product_id,
                         "quantity_#{index+1}" => item.quantity
 
@@ -132,7 +132,6 @@ class CheckoutController < ApplicationController
                       "amount_#{last_index}" => @total_tax.round(2),
                       "item_name_#{last_index}" => 'TAX',
                       "item_number_#{last_index}" => 'TAX01',
-
                       "quantity_#{last_index}" => 1
                   })
 
@@ -151,6 +150,7 @@ class CheckoutController < ApplicationController
 
     if(params[:transaction]=='successful')
 
+      #flash[:notice]='Thank you for your business'
       response='success'
 
       if(response=='success')
@@ -160,6 +160,8 @@ class CheckoutController < ApplicationController
         @customer.each do |customer|
           customer_id=customer.customer_id
         end
+
+        #@shipping_type=10.00
 
         #add order
         order=Order.new
@@ -171,12 +173,15 @@ class CheckoutController < ApplicationController
         order.shopping_cart_id=cart_id
         order.save
 
+
+
         @current_order_id=''
         @current_order=Order.where(shopping_cart_id: cart_id)
 
         @current_order.each do |order|
           @current_order_id=order.order_id
         end
+
 
         #add order items to the order
         @check_cart_items.each do |items|
@@ -191,7 +196,6 @@ class CheckoutController < ApplicationController
           #order_details.order_detail_status=to be checked with inventory and updated by seller
           order_details.save
 
-          #update stock after order is placed
           @product=Product.where(id: items.product_id)
 
           @product.each do |product|
@@ -204,8 +208,8 @@ class CheckoutController < ApplicationController
         end
 
         #add sipment info
-        #order_shipment.shipment_id=to be handel by protokoll gem
-        shipment=OrderShipment.new
+        #shipment.shipping_id=to be handel by protokoll gem
+        shipment=Shipping.new
         shipment.order_id=@current_order_id
         shipment.customer_id=customer_id
         shipment.shipping_type='Domestic Standard'
@@ -224,14 +228,17 @@ class CheckoutController < ApplicationController
 
 
         current_shipping_id=''
-        @current_shipping=OrderShipment.where(order_id: @current_order_id)
+        @current_shipping=Shipping.where(order_id: @current_order_id)
 
         @current_shipping.each do |shipment|
-          current_shipping_id=shipment.shipment_id
+          current_shipping_id=shipment.shipping_id
         end
 
 
         Order.find_by_order_id(@current_order_id).update_attribute(:shipping_id, current_shipping_id)
+
+        #OrderNotifier.deliver_received(order)
+        OrderNotifier.received(order).deliver_now
 
         cart=current_cart
         cart.destroy
@@ -239,10 +246,16 @@ class CheckoutController < ApplicationController
         session[:shipping_book_id]=nil
         session[:discount]=nil
 
-
         redirect_to :controller => 'catalog', :action => 'index', :transaction => 'successful'
 
       end
     end
   end
+end
+
+
+def confirmation
+end
+
+def place_order
 end

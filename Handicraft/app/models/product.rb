@@ -2,8 +2,20 @@ class Product < ActiveRecord::Base
   has_many :cart_items
   has_many :order_details
 
+  before_destroy :ensure_not_referenced_by_any_cart_item
+
   # Relationship
   belongs_to :user
+
+  def ensure_not_referenced_by_any_cart_item
+    if cart_items.empty?
+      return true
+    else
+      errors.add(:base, 'Cart Items present')
+      return false
+    end
+  end
+
 
 
   # Assign product id automatically
