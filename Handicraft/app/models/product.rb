@@ -1,7 +1,10 @@
 class Product < ActiveRecord::Base
+  has_many :cart_items
+  has_many :order_details
 
   # Relationship
   belongs_to :user
+
 
   # Assign product id automatically
   protokoll :product_id, :pattern => "PRD%y###"

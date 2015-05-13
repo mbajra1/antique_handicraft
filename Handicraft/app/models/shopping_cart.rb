@@ -5,8 +5,9 @@ class ShoppingCart < ActiveRecord::Base
 
   def add_product(product_id)
 
-    current_item = cart_items.find_by_product_id(product_id)
     product = Product.find(product_id)
+    current_item = cart_items.find_by_product_id(product_id)
+
 
     if current_item
 

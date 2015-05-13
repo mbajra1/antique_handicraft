@@ -115,13 +115,12 @@ class CheckoutController < ApplicationController
         :return => checkout_index_url(transaction: 'successful'),
         :invoice =>current_cart.invoice_id
     }
-    @check_cart_items.each_with_index do |item, index|
+    @check_cart_items.each_with_index do |item,index|
       last_index=last_index+index
       values.merge!({
-                        "amount_#{index+1}" => item.price,
+                        "amount_#{index+1}" => item.price.round(2),
                         "item_name_#{index+1}" => item.product.name,
                         "item_number_#{index+1}" => item.product.product_id,
-
                         "quantity_#{index+1}" => item.quantity
 
                     })
@@ -130,7 +129,7 @@ class CheckoutController < ApplicationController
     @last_index=last_index
     last_index=last_index+1
     values.merge!({
-                      "amount_#{last_index}" => @total_tax,
+                      "amount_#{last_index}" => @total_tax.round(2),
                       "item_name_#{last_index}" => 'TAX',
                       "item_number_#{last_index}" => 'TAX01',
 
@@ -139,7 +138,7 @@ class CheckoutController < ApplicationController
 
     last_index=last_index+1
     values.merge!({
-                      "amount_#{last_index}" => @discount_ship_cost,
+                      "amount_#{last_index}" => @discount_ship_cost.round(2),
                       "item_name_#{last_index}" => 'SHP&HDLG',
                       "item_number_#{last_index}" => 'SHP&HDLG01',
 
