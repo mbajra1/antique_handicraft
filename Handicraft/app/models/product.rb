@@ -2,10 +2,10 @@ class Product < ActiveRecord::Base
   has_many :cart_items
   has_many :order_details
 
-  before_destroy :ensure_not_referenced_by_any_cart_item
-
   # Relationship
   belongs_to :user
+
+  before_destroy :ensure_not_referenced_by_any_cart_item
 
   def ensure_not_referenced_by_any_cart_item
     if cart_items.empty?
@@ -16,20 +16,18 @@ class Product < ActiveRecord::Base
     end
   end
 
-
-
   # Assign product id automatically
   protokoll :product_id, :pattern => "PRD%y###"
-  validates :name, presence: true
-  validates :description, presence: true
-  validates :category, presence: true
-  validates :subcategory, presence: true
-  validates :product_condition, presence: true
-  validates :price, presence:true
-  validates :quantity, presence:true
+  validates :name,:description,:category,:subcategory,:product_condition,:price,:quantity, presence: true
+  # validates :name, uniqueness: true
+  validates_length_of :name, :minimum => 2
+  validates_length_of :name, :maximum => 25
+  validates_length_of :description, :maximum => 1000
+  validates :price,:quantity, :numericality => { :greater_than_or_equal_to => 0 }
+
 
   # For image upload
-  has_attached_file :image, :styles => { :large => "600x600>", :medium => "200x200>", :thumb => "150x150>" }
+  has_attached_file :image, :styles => { :large => "600x600>", :medium => "200x200>", :thumb => "150x150>", :small => "100x100"}
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   # Search Function

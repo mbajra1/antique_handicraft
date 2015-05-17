@@ -4,7 +4,16 @@ class ShippingBooksController < ApplicationController
   # GET /shipping_books
   # GET /shipping_books.json
   def index
-    @shipping_books = ShippingBook.all
+
+     #session.delete(:shipping_book_id)
+
+     session[:shipping_book_id]= nil
+    #@shipping_books = ShippingBook.all
+    email_id=current_user.email
+    customer = Customer.find_by_email(email_id)
+
+    @customer_id=customer.customer_id
+    @shipping_books = ShippingBook.where(customer_id: @customer_id)
 
   end
 
@@ -15,6 +24,7 @@ class ShippingBooksController < ApplicationController
 
   # GET /shipping_books/new
   def new
+    @customer_id=@customer_id
     @shipping_book = ShippingBook.new
   end
 
@@ -29,7 +39,7 @@ class ShippingBooksController < ApplicationController
 
     respond_to do |format|
       if @shipping_book.save
-        format.html { redirect_to @shipping_book, notice: 'Shipping book was successfully created.' }
+        format.html { redirect_to @shipping_book, notice: 'Shipping address in Shipping book was successfully created.' }
         format.json { render :show, status: :created, location: @shipping_book }
       else
         format.html { render :new }
@@ -43,7 +53,7 @@ class ShippingBooksController < ApplicationController
   def update
     respond_to do |format|
       if @shipping_book.update(shipping_book_params)
-        format.html { redirect_to @shipping_book, notice: 'Shipping book was successfully updated.' }
+        format.html { redirect_to @shipping_book, notice: 'Shipping address in Shipping book was successfully updated.' }
         format.json { render :show, status: :ok, location: @shipping_book }
       else
         format.html { render :edit }
@@ -57,7 +67,7 @@ class ShippingBooksController < ApplicationController
   def destroy
     @shipping_book.destroy
     respond_to do |format|
-      format.html { redirect_to shipping_books_url, notice: 'Shipping book was successfully destroyed.' }
+      format.html { redirect_to shipping_books_url, notice: 'Shipping address inShipping book was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

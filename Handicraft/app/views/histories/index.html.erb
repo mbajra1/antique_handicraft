@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Your Browsing History</h1>
 
-<table border="0">
+<table border="0" style="border-spacing: 20px; border-collapse: separate;" >
   <% @histories.each do |history| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <tr>
         <td><%= link_to image_tag(history.image_url,class: 'list_image',:border =>0),product_details_path(product_id: history.product_id)%></td>
 
         <td>
@@ -16,7 +15,7 @@
 
         <td class="list_actions" >
 
-        <td><%= link_to '[Delete this item]', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to '[Delete this item]', history, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-large btn-danger' %></td>
 
         </td>
 

@@ -1,48 +1,46 @@
 <h1>PurchaseHistory</h1>
 
-
-<table border="1">
+<table class="table table-striped">
   <tr>
-    <th></th>
-    <th>Order</th>
-    <th>Order Details</th>
-    <th>Shipping</th>
+    <th width="33%">Order</th>
+    <th width="50%">Order Details</th>
+    <th width="17%"></th>
   </tr>
-      <% @purchase_history.each do |order|%>
+  <% @purchase_history.each do |order|%>
   <tr>
     <%@purchase_details_history=OrderDetail.where(order_id: order.order_id)%>
     <%@purchase_shipping_history=OrderShipment.where(shipment_id: order.shipping_id)%>
     <td>
-      <dt><%=order.order_date.inspect%></dt>
-    </td>
-  <%end%>
+        <%=order.order_date.inspect%>
+        <%end%>
+  </td>
+  <td>
         <%@purchase_details_history.each  do |detail|%>
 
         <%@product=Product.where(product_id: detail.product_id)%>
-    <td>
 
-      <%@product.each do |product|%>
-      <dt><%=image_tag (product.image_url)%></dt>
+         <%@product.each do |product|%>
+          <span><%=image_tag (product.image.url(:thumb)), class:"resize"%></span>
 
-      <dt>Quantity Ordered: <%=detail.quantity%></dt>
+          <span>Quantity Ordered: <%=detail.quantity%></span>
 
-      <dt> Price: <%=number_to_currency(detail.unit_price)%></dt>
-
-    </td>
+          <span> Price: <%=number_to_currency(detail.unit_price)%></span>
+          <br/>
 
       <%end%>
     <%end%>
+  </td>
     <%@purchase_shipping_history.each do |ship|%>
-    <td>
+   <!-- <td>
       <dt> Shipped to <%=ship.shipping_name%> </dt>
-      <dt> <%=ship.shipping_address%> </dt>
-      <dt><%=ship.shipping_city%>, <%=ship.shipping_state_province%> <%=ship.shipping_zip_postal%></dt>
-      <dt><%=ship.shipping_country_region%></dt>
+      <dt> <%#=ship.shipping_address%> </dt>
+      <dt><%#=ship.shipping_city%><%#=ship.shipping_state_province%> <%=ship.shipping_zip_postal%></dt>
+      <dt><%#=ship.shipping_country_region%></dt>
 
-    </td>
+    </td>-->
 
 
     <%end%>
-
+  </tr>
 
 </table>

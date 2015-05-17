@@ -4,7 +4,15 @@ class HistoriesController < ApplicationController
   # GET /histories
   # GET /histories.json
   def index
-      @histories = History.all
+    customer_id=''
+    if current_user
+      email=current_user.email
+      @customer=Customer.where(email: email)
+      @customer.each do |customer|
+        customer_id=customer.customer_id
+      end
+    end
+      @histories = History.where(customer_id: customer_id)
   end
 
   # GET /histories/1
@@ -28,7 +36,7 @@ class HistoriesController < ApplicationController
 
     respond_to do |format|
       if @history.save
-        format.html { redirect_to @history, notice: 'History was successfully created.' }
+        format.html { redirect_to @history}
         format.json { render :show, status: :created, location: @history }
       else
         format.html { render :new }
@@ -42,7 +50,7 @@ class HistoriesController < ApplicationController
   def update
     respond_to do |format|
       if @history.update(history_params)
-        format.html { redirect_to @history, notice: 'History was successfully updated.' }
+        format.html { redirect_to @history }
         format.json { render :show, status: :ok, location: @history }
       else
         format.html { render :edit }
@@ -56,7 +64,7 @@ class HistoriesController < ApplicationController
   def destroy
     @history.destroy
     respond_to do |format|
-      format.html { redirect_to histories_url, notice: 'History was successfully destroyed.' }
+      format.html { redirect_to histories_url, notice: 'Item was deleted from browsing history' }
       format.json { head :no_content }
     end
   end

@@ -81,10 +81,12 @@ class CustomersController < ApplicationController
       if @user.role? ("customer")
       customer = @user.roles.find_by_name("customer")
       @user.roles.delete(customer)
-      @user.roles.save
+     # @user.roles.save
       end
 
       if @user.role? ("seller")
+        @products = Product.where("u_id=?", current_user.id)
+        @products.delete(@products) # delete associate product
         seller = @user.roles.find_by_name("seller")
         @user.roles.delete(seller)
         @seller= Seller.find_by_email(current_user.email)

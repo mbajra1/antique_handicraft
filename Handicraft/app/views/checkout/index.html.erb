@@ -11,7 +11,7 @@
   <tr>
 
     <td>
-      <p>Shipping Address <%=link_to'Change',shipping_books_url %></p>
+      <p>Shipping Address <%=link_to'Change',shipping_books_path%></p>
       <table border="0">
         <% if @ship_address %>
             <% @ship_address.each do |address| %>
@@ -70,29 +70,35 @@
   <tr>
 
     <td>
+    <td>
       <table border="0" style="border-spacing: 20px; border-collapse: separate;">
         <% @check_cart_items.each do |item| %>
-            <tr>
-              <td>
-                <%= link_to image_tag("thumbnails/" +item.product.image_url,class: 'img-responsive img-thumbnail',:border =>0),product_details_index_path(product_id: item.product.product_id)%>
-              </td>
-              <td>
-                <dt><%= item.product.name %></dt>
-                <%@seller= Seller.where(seller_id: item.seller_id)%>
-                <%@seller.each do |name|%>
-                    <dt>Sold by: <%=name.company %></dt>
-                    <dt>Ships from: <%=name.city %>,<%=name.state_province %></dt>
-                <%end%>
-                <dt>In Stock: <%= item.product.quantity %></dt>
-                <dt>List price: <%= number_to_currency(item.product.price) %></dt>
-                <dt>Quantity: <%= item.quantity %></dt>
-                <dt>Total price: <%= number_to_currency(item.total_price) %></dt>
+            <%@product=Product.where(product_id: item.product_id)%>
+            <%@product.each do |product|%>
+                <tr>
+                  <td>
+                    <%= link_to image_tag(product.image.url(:thumb),class: 'img-responsive img-thumbnail'),product_details_index_path(product_id: product.product_id)%>
+                  </td>
+                  <td>
+                    <dt><%= product.name %></dt>
+                    <%user=User.find(item.seller_id)%>
+                    <%@seller= Seller.where(email: user.email)%>
+                    <%@seller.each do |name|%>
+                        <dt>Sold by: <%=name.company %></dt>
+                        <dt>Ships from: <%=name.city %>,<%=name.state_province %></dt>
+                    <%end%>
+                    <dt>In Stock: <%= product.quantity %></dt>
+                    <dt>List price: <%= number_to_currency(product.price) %></dt>
+                    <dt>Quantity: <%= item.quantity %></dt>
+                    <dt>Total price: <%= number_to_currency(item.total_price) %></dt>
 
-              </td>
-            </tr>
+                  </td>
+                </tr>
+            <% end %>
         <% end %>
       </table>
     </td>
+
 
 
     <td>
@@ -113,29 +119,32 @@
         <th>Order Summary</th>
         <tr class="info">
           <td>
-            <dt>Total number of items:<%= @cart_item_count%></dt>
-            <dt>Cost of items:<%= number_to_currency(@item_sub_total) %></dt>
-            <dt>Shipping & Handling:<%= number_to_currency(@total_ship_cost) %></dt>
-            <dt>Discount:<%= number_to_currency(@discount_amount) %></dt>
+            <dt>Total number of items: <%= @cart_item_count%></dt>
+            <dt>Cost of items: <%= number_to_currency(@item_sub_total) %></dt>
+            <dt>Shipping & Handling: <%= number_to_currency(@total_ship_cost) %></dt>
+            <dt>Discount: <%= number_to_currency(@discount_amount) %></dt>
           </td>
         </tr>
 
         <tr class="danger">
           <td>
-            <dt>Total before tax:<%= number_to_currency(@cart_sub_total) %></dt>
-            <dt>Estimated tax :<%= number_to_currency(@total_tax) %></dt>
+            <dt>Total before tax: <%= number_to_currency(@cart_sub_total) %></dt>
+            <dt>Estimated tax: <%= number_to_currency(@total_tax) %></dt>
           </td>
         </tr>
 
         <tr class="success">
           <td>
-            <dt>Order Total:<%= number_to_currency(@total_due) %></dt>
+            <dt>Order Total: <%= number_to_currency(@total_due) %></dt>
           </td>
         </tr>
 
         <tr>
           <td class="list_actions">
             <dt> <%= link_to(image_tag("https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_cc_171x47.png"), checkout_index_url(transaction: 'successful'))%>
+            </dt>
+
+            <dt> <%= link_to(image_tag("https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_cc_171x47.png"), @url)%>
             </dt>
 
           </td>

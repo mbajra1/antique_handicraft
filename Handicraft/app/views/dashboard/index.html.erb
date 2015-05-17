@@ -34,14 +34,14 @@
                     <%end%>
                     <%end%>
                 <%end%>
-                <% if !@purchase_details_history.nil?%>
-                    <%@purchase_shipping_history.each do |ship|%>
-                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_name%></li>
-                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_address%></li>
-                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_city%>, <%=ship.shipping_state_province%> <%=ship.shipping_zip_postal%>
-                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%=ship.shipping_country_region%>
-                    <%end%>
-                <%end%>
+                <%# if !@purchase_details_history.nil?%>
+                    <%#@purchase_shipping_history.each do |ship|%>
+                        <!--<li class="c-result-item pd-rt list-unstyled ">&nbsp;<%#=ship.shipping_name%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%#=ship.shipping_address%></li>
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%#=ship.shipping_city%>, <%#=ship.shipping_state_province%> <%#=ship.shipping_zip_postal%>
+                        <li class="c-result-item pd-rt list-unstyled ">&nbsp;<%#=ship.shipping_country_region%>-->
+                    <%#end%>
+                <%#end%>
             <% else %>
                 <li class="c-result-item pd-rt">Currently there are no purchases in your history</li><br />
             <% end %>
@@ -55,7 +55,7 @@
           <% if !@history.nil?%>
               <%  @history.each do |history| %>
                   <li class="c-result-item pd-rt">
-                    <%= link_to history.product_name, product_details_index_path(product_id: history.product_id)%></a>
+                    <%= link_to history.product_name, product_details_path(product_id: history.product_id)%></a>
                   </li><br />
               <% end %>
             <% else %>
@@ -73,7 +73,7 @@
                 <% @bid_history.each do |auction| %>
                     <%@product=Product.where(product_id: auction.bid_cart.bid_product_id)%>
                     <%@product.each do |product|%>
-                        <!--<li class="c-result-item pd-rt list-unstyled "><%= image_tag ("thumbnails/" + product.image_url)%></li>-->
+                        <!--<li class="c-result-item pd-rt list-unstyled "><%#= image_tag ("thumbnails/" + product.image_url)%></li>-->
                         <li class="c-result-item pd-rt list-unstyled ">Item on Auction:&nbsp;<%= product.name%></li>
                         <li class="c-result-item pd-rt list-unstyled ">Opening Price:&nbsp;<%= number_to_currency(auction.bid_cart.opening_price) %>
                     <%end%>

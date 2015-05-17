@@ -1,4 +1,5 @@
 class BidCartsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_bid_cart, only: [:show, :edit, :update, :destroy]
 
   # GET /bid_carts

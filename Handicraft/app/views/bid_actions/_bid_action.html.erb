@@ -1,61 +1,10 @@
-<!--
-<table border="0">
+<div class="bid" data-time="<%= bid_action.created_at.to_i %>">
+  <table border="1" style="border-spacing: 20px; border-collapse: separate;">
+    <tr>
+      <td><strong><%= bid_action.bidder_id %></strong></td>
+      <td><strong><%= bid_action.bid_amount %></strong></td>
+      <td><em>on <%= bid_action.created_at.strftime('%b %d, %Y at %I:%M %p') %></em></td>
+    </tr>
+  </table>
 
-  <tr>
-    <td>
-      <li><%= bid_action.bidder_id %> </li>
-    </td>
-    <td>
-      <li><%= bid_action.bid_amount %> </li>
-    </td>
-    <td>
-      <span class="created_at"><%= bid_action.created_at.strftime("%H:%M") %></span>
-      <%=@auction_winner%>
-    </td>
-    <td>
-
-    </td>
-  </tr>
-
-</table>-->
-
-
-<!--<table border="1" style="border-spacing: 10px; border-collapse: separate;">
-
-  <tr>
-    <td>
-     <%= bid_action.bidder_id %>
-    </td>
-    <td>
-     <%= bid_action.bid_amount %>
-    </td>
-    <td>
-      <span class="created_at"><%= bid_action.created_at.strftime("%H:%M") %></span>
-      <%=@bid_action%>
-    </td>
-  </tr>
-
-</table>-->
-
-<table style="border-spacing: 10px; border-collapse: separate;">
-  <tr>
-
-
-        <td><%= bid_action.bidder_id %></td>
-        <td></td>
-        <td></td>
-        <td><%= bid_action.bid_amount %></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><%= bid_action.created_at.strftime("%H:%M:%S") %></td>
-
-
-
-  </tr>
-</table>
-
-
-
+</div>

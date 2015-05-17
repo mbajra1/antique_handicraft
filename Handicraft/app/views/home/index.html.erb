@@ -12,7 +12,7 @@
             <%  @bid_cart.each do |auction| %>
                 <li class="col-sm-4 c-result-item list-unstyled">
                   <div class ="s-item-container">
-                    <div class="spacing-mini"><%= link_to image_tag(@product_image_url, class: 'img-responsive img-thumbnail'),product_details_path(product_id: auction.bid_product_id)%></div>
+                    <div class="spacing-mini"><%= link_to image_tag(@product_image_url, class: 'img-responsive img-thumbnail'),bid_cart_path(@bid_cart_id)%></div>
                     <div class="spacing-mini"><h4><%= link_to @product_name, bid_cart_path(@bid_cart_id)%></a></h4></div>
                     <div class="spacing-mini">Opening Price:<br /><h4><%= number_to_currency(auction.opening_price) %></h4></div>
                     <div class="spacing-mini"><p>Auction Ends on:<%= auction.bid_end_date%></p></div>
@@ -65,20 +65,21 @@
 
     <div class="row row-adjust">
       <% if @featured_products%>
-          <% @featured_products.each do |product| %>
+          <% @product=Product.where(product_id: @featured_products) %>
+          <%@product.each do |product|%>
               <div class="col-sm-4 col-lg-4 col-md-4">
                 <div class="thumbnail">
-                  <%= image_tag(product.image_url, class: 'img-responsive img-thumbnail')%>
+                  <%= image_tag(product.image.url(:medium), class: 'img-responsive img-thumbnail')%>
                   <div class="caption">
                     <h4 class="pull-right"><%= number_to_currency(product.price) %></h4>
-                    <h4><%= link_to product.product_name, product_details_path(product_id: product.product_id)%></a>
+                    <h4><%= link_to product.name, product_details_path(product_id: product.product_id)%></a>
                     </h4>
                     <p><%= product.description[0..100] +"..." %></p>
                   </div>
                 </div>
               </div>
           <% end %>
-      <%end%>
+          <%end%>
     </div>
 
     <div class="row row-adjust"> <h3> NEW ITEMS</h3> <hr></div>

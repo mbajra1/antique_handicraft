@@ -226,6 +226,8 @@ body#custom {
   .container {
     width: auto;
     padding-bottom:60px;
+    div.width{width:200px; display:inline;}
+    img.resize{height:60px}
 
     .alert{ background-color:#9FC820; color: #fff; text-align: center; }
     .highlight {

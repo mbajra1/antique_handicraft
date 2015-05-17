@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
+  <div class="form-group">
+    <%= f.label :last_name, class: 'control-label' %><br>
+    <%= f.text_field :last_name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
+  <div class="form-group">
+    <%= f.label :first_name, class: 'control-label' %><br>
+    <%= f.text_field :first_name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :home_phone %><br>
-    <%= f.text_field :home_phone %>
+  <div class="form-group">
+    <%= f.label :home_phone, class: 'control-label' %><br>
+    <%= f.text_field :home_phone, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :cell_phone %><br>
-    <%= f.text_field :cell_phone %>
+  <div class="form-group">
+    <%= f.label :cell_phone, class: 'control-label' %><br>
+    <%= f.text_field :cell_phone, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :fax %><br>
-    <%= f.text_field :fax %>
+  <div class="form-group">
+    <%= f.label :fax, class: 'control-label' %><br>
+    <%= f.text_field :fax, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
+  <div class="form-group">
+    <%= f.label :address, class: 'control-label' %><br>
+    <%= f.text_field :address, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+  <div class="form-group">
+    <%= f.label :city, class: 'control-label' %><br>
+    <%= f.text_field :city, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :state_province %><br>
-    <%= f.text_field :state_province %>
+  <div class="form-group">
+    <%= f.label :state_province, class: 'control-label' %><br>
+    <%= f.text_field :state_province, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :zip_postal_code %><br>
-    <%= f.text_field :zip_postal_code %>
+  <div class="form-group">
+    <%= f.label :zip_postal_code, class: 'control-label' %><br>
+    <%= f.text_field :zip_postal_code, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :country_region %><br>
-    <%= f.text_field :country_region %>
-  </div>
+  <div class="form-group">
+    <%= f.label :country_region, class: 'control-label' %><br>
+    <%= f.text_field :country_region, class: 'form-control' %>
+  </div><br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-small btn-success"%>
   </div>
 <% end %>

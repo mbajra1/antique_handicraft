@@ -7,7 +7,7 @@
 
 <% if @shipping_books %>
     <% @shipping_books.each do |shipping_book| %>
-        <table border="1">
+        <table border="0" style="border-spacing: 3px; border-collapse: separate;">
           <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
             <td>
               <dt><%=shipping_book.shipping_name  %></dt>
@@ -17,14 +17,14 @@
             </td>
           </tr>
           <tr>
-            <td><%= link_to 'Ship to this address',checkout_index_path,:onclick=>session[:shipping_book_id]=shipping_book.shipping_book_id %></td>
+            <td><%= link_to 'Ship to this address',checkout_index_path(shipping_book_id: shipping_book.shipping_book_id),:class => 'btn btn-large btn-info' %></td>
           </tr>
           <tr>
             <td>
-              <%= link_to 'Edit', edit_shipping_book_path(shipping_book) %>
+              <%= link_to 'Edit', edit_shipping_book_path(shipping_book),:class => 'btn btn-large btn-warning' %>
             </td>
             <td>
-              <%= link_to 'Destroy', shipping_book, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= button_to 'Destroy', shipping_book, method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-large btn-danger' %>
             </td>
           </tr>
         </table>

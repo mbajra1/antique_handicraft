@@ -1,9 +1,15 @@
-<h4>YOUR PRODUCTS</h4><br/>
+
+<% if can? :new, @product %>
+    <%#= link_to 'New Product', new_product_path %>
+    <h4>Click on the "Add New product Button" to add your product</h4>
+    <%= link_to 'Add New Product', '#new_product_modal', 'data-toggle' => 'modal', :class => 'btn btn-large btn-info' %>
+
+<%end%>
+
 <table class="table table-striped">
 
   <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-
         <td class="col-md-2">
           <%= image_tag product.image.url(:thumb), class: 'img-responsive img-thumbnail' %>
         </td>
@@ -31,20 +37,12 @@
         <%end%>
         <td><% if can? :update, product %><%= link_to 'Edit', edit_product_path(product), :class =>"btn btn-small btn-success"%><% end %></td>
         <td><% if can? :destroy, product %><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-small btn-danger" %><% end %></td>
-
-
-
       </tr>
   <% end %>
 </table>
 
 <br>
-
 <%# Added Bootstrap data modal attribute %>
-<% if can? :new, @product %>
-    <%#= link_to 'New Product', new_product_path %>
-    <%= link_to 'New Product', '#new_product_modal', 'data-toggle' => 'modal', :class => 'btn btn-large btn-info' %>
-<%end%>
 
 
 <%# Bootstrap modal markup. @see: http://getbootstrap.com/javascript/#modals %>

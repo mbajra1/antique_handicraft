@@ -1,0 +1,3 @@
+<% unless @bid_actions.empty? %>
+$("#bids").append("<%=raw escape_javascript(render(@bid_actions)) %>");
+<% end %>

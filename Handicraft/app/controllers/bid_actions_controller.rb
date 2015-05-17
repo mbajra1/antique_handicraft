@@ -1,4 +1,5 @@
 class BidActionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_bid_action, only: [:show, :edit, :update, :destroy]
 
   #@@time_out=Time.now
@@ -7,7 +8,7 @@ class BidActionsController < ApplicationController
   # GET /bid_actions
   # GET /bid_actions.json
   def index
-    @bid_actions = BidAction.all
+    @bid_actions = BidAction.where("bid_cart_id = ? and created_at > ?", params[:cart_id], Time.at(params[:after].to_i + 1))
   end
 
   # GET /bid_actions/1

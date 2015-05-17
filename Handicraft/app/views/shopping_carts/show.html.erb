@@ -1,52 +1,69 @@
-<% if notice %>
-    <p id="notice"><%= notice %></p>
-<% end %>
-
 
 <h2>Your Shopping Cart</h2>
 
 
-Price Quantity Total Price
-<table border="0">
+<table border="0" style="border-spacing: 15px; border-collapse: separate;" class="table" >
+  <tr>
+    <th></th>
+    <th></th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Item Total</th>
+    <th></th>
+    <th></th>
+  </tr>
   <% @shopping_cart.cart_items.each do |item| %>
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td><%= link_to image_tag(item.product.image_url,class: 'list_image',:border =>0),product_details_path(product_id: item.product.product_id)%></td>
+      <%@product=Product.where(product_id: item.product_id)%>
+      <%@product.each do |product|%>
+      <tr>
+        <td><%= link_to image_tag(product.image.url(:thumb),class: 'img-responsive img-thumbnail'),product_details_path(product_id: product.product_id)%></td>
 
         <td>
-          <dt><%= item.product.name %></dt>
-          <%@seller= Seller.where(seller_id: item.seller_id)%>
+          <dt><%= product.name %></dt>
+          <%user=User.find(item.seller_id)%>
+          <%@seller= Seller.where(email: user.email)%>
           <%@seller.each do |name|%>
               <dt>Sold by:<%=name.company %></dt>
               <dt>Ships from:<%=name.city %>,<%=name.state_province %></dt>
           <%end%>
-          <dt>In Stock:<%= item.product.quantity %></dt>
+          <dt>In Stock:<%= product.quantity %></dt>
 
         </td>
-        <td class="list_actions" >
-
-
-        <td><%= number_to_currency(item.product.price) %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td><%= item.quantity %></td>
         <td><%= number_to_currency(item.total_price) %></td>
 
-        <td><%= link_to 'Delete', cart_item_path(:id => item.product.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Remove item', cart_item_path(:id => item.id), method: :delete, data: { confirm: 'Are you sure?' },:class => 'btn btn-large btn-danger' %></td>
 
-        <td><%= link_to 'Edit', edit_cart_item_path(:id => item.product.id) %> </td>
+        <td><%= link_to 'Edit item', edit_cart_item_path(:id => item.id),:class => 'btn btn-large btn-warning' %> </td>
 
 
         </td>
       </tr>
-
+      <% end %>
   <% end %>
   <tr>
-    <td><%= number_to_currency(@shopping_cart.total_price) %></td>
+    <td></td>
+    <td><b>Shopping Cart Total</b></td>
+    <td></td>
+    <td></td>
+    <td><b><%= number_to_currency(@shopping_cart.total_price) %></b></td>
+    <td></td>
+    <td></td>
 
   </tr>
+<tr></tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td><%= link_to 'Continue Shopping', catalog_path(:category => "All"),:class => 'btn btn-large btn-info' %></td>
+    <td><%= button_to 'Empty cart', @shopping_cart, method: :delete, confirm: 'Are you sure?',:class => 'btn btn-large btn-danger' %></td>
+    <td><%= link_to 'Proceed to Checkout', shipping_books_url,:class => 'btn btn-large btn-info' %></td>
+    <td></td>
+    <td></td>
+  </tr>
+
 </table>
 
-<br>
 
 
-<%= button_to 'Empty cart', @shopping_cart, method: :delete, confirm: 'Are you sure?' %>
-<%= link_to 'Continue Shopping', catalog_path %>
-<%= link_to 'Proceed to Checkout', shipping_books_url %>

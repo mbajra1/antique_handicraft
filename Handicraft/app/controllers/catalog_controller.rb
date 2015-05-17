@@ -14,7 +14,12 @@ class CatalogController < ApplicationController
 
     if category == "All" || prod_id
       @product = Product.all
+      if !prod_id.nil?
       @added_item=Product.where("product_id='#{prod_id}'")
+        @added_item.each do |added|
+          @prim_product_id=added.id
+        end
+      end
 
     elsif search
       @product = Product.search(search)   # For search result
@@ -24,10 +29,6 @@ class CatalogController < ApplicationController
     end
 
     # End display catalog
-
-    @added_item.each do |added|
-      @prim_product_id=added.id
-    end
 
     #get the shopping cart for the user
     @shopping_cart= session[:cart_id]

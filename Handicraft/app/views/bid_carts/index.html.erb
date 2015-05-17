@@ -20,8 +20,8 @@
             </td>
           <td class="col-md-4"></td>
           <td class="col-md-1"><%= link_to 'Start Bidding', bid_cart, :class => 'btn btn-large btn-info' %></td>
-          <td class="col-md-1"><%= link_to 'Edit Auction', edit_bid_cart_path(bid_cart), :class => 'btn btn-large btn-success' %></td>
-          <td class="col-md-1"><%= link_to 'Delete Auction', bid_cart, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-large btn-warning' %></td>
+          <td class="col-md-1"><% if can? :update, bid_cart %><%= link_to 'Edit Auction', edit_bid_cart_path(bid_cart), :class => 'btn btn-large btn-success' %><%end%></td>
+          <td class="col-md-1"><% if can? :update, bid_cart %><%= link_to 'Delete Auction', bid_cart, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-large btn-warning' %><%end%></td>
 
       </tr>
   <% end %>

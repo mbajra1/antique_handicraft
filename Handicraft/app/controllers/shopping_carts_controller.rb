@@ -1,4 +1,5 @@
 class ShoppingCartsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_shopping_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
@@ -59,7 +60,7 @@ class ShoppingCartsController < ApplicationController
     session[:cart_id]=nil
 
     respond_to do |format|
-      format.html { redirect_to catalog_url, notice: 'Your Shopping Cart is currently empty.' }
+      format.html { redirect_to catalog_path(:category => "All"), notice: 'Your Shopping Cart is currently empty.' }
       format.json { head :no_content }
     end
   end

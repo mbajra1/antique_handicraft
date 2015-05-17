@@ -22,15 +22,32 @@
           <%= link_to('Login', new_user_session_path) %> or <%= link_to('Register', new_user_registration_path)  %>
       <% end %>
     </div>
+
+
     <% if user_signed_in? %>
         <div class="cart-wrapper">
-          <%cart_id=session[:cart_id]%>
-          <%cart='/shopping_carts/'+cart_id.to_s%>
-          <a href='<%=cart%>' class="cart" title="Cart">
-            <i class="cart-icon"></i>
-            Cart </a>
-          <%count=CartItem.distinct.count('product_id')%>
-          <span class="cart-count"><%=count%></span>
+          <% @user_cart=ShoppingCart.where(u_id: current_user.id)%>
+              <%if @user_cart!=nil?%>
+              <%@user_cart.each do |shop_cart|%>
+                  <%session[:cart_id]=shop_cart.id%>
+                  <%cart='/shopping_carts/'+shop_cart.id.to_s%>
+                  <a href='<%=cart%>' class="cart" title="Cart">
+                    <i class="cart-icon"></i>
+                    Cart </a>
+                  <%count=CartItem.where(shopping_cart_id: shop_cart.id).distinct.count('product_id')%>
+                  <span class="cart-count"><%=count%></span>
+              <%end%>
+
+              <%else%>
+              <%cart='/shopping_carts/'%>
+              <a href='#' class="cart" title="Cart">
+                <i class="cart-icon"></i>
+                Cart </a>
+              <%count=0%>
+              <span class="cart-count"><%=count%></span>
+          <%end%>
+
+
         </div>
     <%end%>
 

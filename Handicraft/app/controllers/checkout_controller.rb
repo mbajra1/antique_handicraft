@@ -1,12 +1,14 @@
 class CheckoutController < ApplicationController
+
   def index
+
+
+    session[:shipping_book_id]=params[:shipping_book_id]
 
     # get user id in this case email from session
     email_id = ''
 
-    if current_user
-      email_id=current_user.email
-    end
+    email_id=current_user.email
 
     customer = Customer.find_by_email(email_id)
 
@@ -45,8 +47,12 @@ class CheckoutController < ApplicationController
 
     #get sub total of the items in shopping cart
     @check_cart_items.each do |item|
+      @product=Product.where(product_id: item.product_id)
+      @product.each do |product|
+        item_weight= product.technical_description.to_s.split(';')[1]
+      end
       item_total=item.total_price
-      item_weight= item.product.technical_description.to_s.split(';')[1]
+      #item_weight= item.product.technical_description.to_s.split(';')[1]
       item_weight= item_weight.to_s.split(' ')[0].to_f
       ship_total=ship_total+(item_weight*0.50*item.quantity)
       item_sub_total=@check_cart_items.to_a.sum { |item| item.total_price }
@@ -109,18 +115,31 @@ class CheckoutController < ApplicationController
 
     last_index =0
     values = {
-        :business => 'bharatisamir@gmail.com',
+        :business => 'your sandbox email',
         :cmd => '_cart',
         :upload => 1,
         :return => checkout_index_url(transaction: 'successful'),
-        :invoice =>cart_id
+        :invoice =>current_cart.invoice_id
     }
-    @check_cart_items.each_with_index do |item, index|
+
+
+
+    @check_cart_items.each_with_index do |item,index|
+      product_name=''
+      product_id=''
+
+      @product=Product.where(product_id: item.product_id)
+      @product.each do |product|
+        product_name=product.name
+        product_id=product.product_id
+      end
+
       last_index=last_index+index
       values.merge!({
+
                         "amount_#{index+1}" => item.price.round(2),
-                        "item_name_#{index+1}" => item.product.product_name,
-                        "item_number_#{index+1}" => item.product.product_id,
+                        "item_name_#{index+1}" => product_name,
+                        "item_number_#{index+1}" =>  product_id,
                         "quantity_#{index+1}" => item.quantity
 
                     })
@@ -174,7 +193,6 @@ class CheckoutController < ApplicationController
         order.save
 
 
-
         @current_order_id=''
         @current_order=Order.where(shopping_cart_id: cart_id)
 
@@ -196,20 +214,20 @@ class CheckoutController < ApplicationController
           #order_details.order_detail_status=to be checked with inventory and updated by seller
           order_details.save
 
-          @product=Product.where(id: items.product_id)
+          @product=Product.where(product_id: items.product_id)
 
           @product.each do |product|
             @quantity_balance=product.quantity-items.quantity
+            @prod_id=product.id
           end
 
-          Product.find_by_id(items.product_id).update_attribute(:quantity, @quantity_balance)
-
+          Product.find_by_id(@prod_id).update_attribute(:quantity, @quantity_balance)
 
         end
 
         #add sipment info
-        #shipment.shipping_id=to be handel by protokoll gem
-        shipment=Shipping.new
+        #order_shipment.shipment_id=to be handel by protokoll gem
+        shipment=OrderShipment.new
         shipment.order_id=@current_order_id
         shipment.customer_id=customer_id
         shipment.shipping_type='Domestic Standard'
@@ -228,17 +246,17 @@ class CheckoutController < ApplicationController
 
 
         current_shipping_id=''
-        @current_shipping=Shipping.where(order_id: @current_order_id)
+        @current_shipping=OrderShipment.where(order_id: @current_order_id)
 
         @current_shipping.each do |shipment|
-          current_shipping_id=shipment.shipping_id
+          current_shipping_id=shipment.shipment_id
         end
 
 
         Order.find_by_order_id(@current_order_id).update_attribute(:shipping_id, current_shipping_id)
 
         #OrderNotifier.deliver_received(order)
-        OrderNotifier.received(order).deliver_now
+        #OrderNotifier.received(order).deliver_now
 
         cart=current_cart
         cart.destroy
@@ -246,7 +264,7 @@ class CheckoutController < ApplicationController
         session[:shipping_book_id]=nil
         session[:discount]=nil
 
-        redirect_to :controller => 'catalog', :action => 'index', :transaction => 'successful'
+        redirect_to :controller => 'catalog',:category => "All", :action => 'index', :transaction => 'successful'
 
       end
     end

@@ -1,14 +1,11 @@
-
-
 <p id="notice"><%= notice %></p>
-
 
 <table border="1" class="table table-striped">
 
-  <tr>
 
+  <tr>
     <td>
-      <table border="0" style="border-spacing: 10px; border-collapse: separate;">
+    <!--  <table border="0" style="border-spacing: 10px; border-collapse: separate;">
         <tr>
           <th colspan="2">Bidder </th>
           <td></td>
@@ -21,12 +18,20 @@
           <th>Bid Amount </th>
           <th>Bid Time </th>
         </tr>
-        <tr id="bids">
-            <%= render @bid_actions %>
-          <%#= render @bid_actions %>
+        <tr>
         </tr>
 
-      </table>
+        </table>-->
+
+          <div id="bid_cart" data-id="<%=@bid_cart.id%>">
+
+            <div id="bids">
+              <%=render @bid_cart.bid_actions%>
+            </div>
+
+          </div>
+
+
     </td>
     <td>
       <% @bid_product.each do |item| %>

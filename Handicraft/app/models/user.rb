@@ -35,5 +35,5 @@ class User < ActiveRecord::Base
 
 end
 
-#Assign admin role to user
+# Assign admin role to user
 # u.roles << Role.find_by_name("admin")

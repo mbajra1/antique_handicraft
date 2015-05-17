@@ -1,12 +1,14 @@
 class ShoppingCart < ActiveRecord::Base
 
   protokoll :invoice_id, :pattern => "INV%y###"
+
   has_many :cart_items, dependent: :destroy
 
   def add_product(product_id)
 
     product = Product.find(product_id)
-    current_item = cart_items.find_by_product_id(product_id)
+    current_item = cart_items.find_by_product_id(product.product_id)
+
 
 
     if current_item
